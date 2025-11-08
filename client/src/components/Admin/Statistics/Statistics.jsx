@@ -34,7 +34,9 @@ const Statistics = () => {
     const getOrders = async () => {
       try {
         setLoading(true);
-        const res = await axios.get('https://rifi-bazar.vercel.app/get-orders');
+        const res = await axios.get(
+          'https://rifibazar-7vuv.vercel.app/get-orders'
+        );
         setOrders(res.data.slice(0, 6)); // Show only recent orders
       } catch (error) {
         console.error('Error fetching orders:', error);

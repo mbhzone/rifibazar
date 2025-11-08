@@ -53,7 +53,10 @@ function CheckoutModal({
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/orders', order);
+      const response = await axios.post(
+        'https://rifibazar-7vuv.vercel.app/orders',
+        order
+      );
       console.log('✅ Order Submitted:', response.data);
 
       setShowSuccess(true);

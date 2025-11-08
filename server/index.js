@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 // ✅ Allow Specific Origins
 const allowedOrigins = [
   'http://localhost:5173', // Local frontend
-  'https://rifi-bazar.vercel.app', // Live frontend
+  'https://rifibazar-7vuv.vercel.app', // Live frontend
 ];
 
 // ✅ Proper CORS Setup (only once)

@@ -50,7 +50,7 @@ const OrderTable = ({ order, setOrders }) => {
     if (newStatus === 'all') return; // skip if "Select Status"
     try {
       await axios.patch(
-        `https://rifibazar-7vuv.vercel.app/update-order/${order._id}`,
+        // `https://rifibazar-7vuv.vercel.app/update-order/${order._id}`,
         {
           status: newStatus,
         }

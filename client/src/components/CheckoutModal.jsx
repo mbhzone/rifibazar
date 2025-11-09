@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FaArrowLeft, FaLock } from 'react-icons/fa';
 import axios from 'axios';
 import SuccessModal from './Modal/SuccessModal';
+import Swal from 'sweetalert2';
 
 function CheckoutModal({
   book,
@@ -15,6 +16,9 @@ function CheckoutModal({
   setShowCheckout,
 }) {
   const [showSuccess, setShowSuccess] = useState(false);
+  // Add this new state at the top (inside component)
+  const [orderIdInput, setOrderIdInput] = useState('');
+  const [isOrderVerified, setIsOrderVerified] = useState(false);
 
   // 🔹 Radio field select handler
   const handleQuantityChange = e => {
@@ -69,6 +73,38 @@ function CheckoutModal({
   const handleSuccessClose = () => {
     setShowSuccess(false);
     setShowCheckout(false);
+  };
+
+  const handleCheckOrder = async e => {
+    e.preventDefault();
+    if (!orderIdInput.trim()) {
+      alert('Please enter an Order ID');
+      return;
+    }
+
+    try {
+      const response = await axios.get(
+        `https://rifibazar-7vuv.vercel.app/orders/${orderIdInput}`
+      );
+
+      if (response.data?.orderId === orderIdInput) {
+        setIsOrderVerified(true);
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: ' Order verified successfully! You got 50% discount.',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        setIsOrderVerified(false);
+        alert('❌ Invalid Order ID.');
+      }
+    } catch (error) {
+      console.error('❌ Order not found or API error:', error);
+      setIsOrderVerified(false);
+      alert('❌ Order not found. Please check your Order ID.');
+    }
   };
 
   return (
@@ -160,7 +196,10 @@ function CheckoutModal({
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Subtotal</span>
-                <span className="font-semibold">{totalPrice} Tk</span>
+                <span className="font-semibold">
+                  {isOrderVerified ? totalPrice * 0.5 : totalPrice}
+                  Tk
+                </span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Shipping</span>
@@ -177,7 +216,10 @@ function CheckoutModal({
               )}
               <div className="flex justify-between text-lg font-bold border-t border-gray-200 pt-3">
                 <span>Total</span>
-                <span className="text-indigo-600">{totalPrice} Tk</span>
+                <span className="text-indigo-600">
+                  {isOrderVerified ? totalPrice * 0.5 : totalPrice}
+                  Tk
+                </span>
               </div>
             </div>
 
@@ -258,36 +300,30 @@ function CheckoutModal({
                 />
               </div>
 
-              {/* City & ZIP */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
+              {/* Order ID Check Section */}
+              <div className="flex gap-4 items-end">
+                <div className="flex-1">
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    City
+                    Order ID
                   </label>
                   <input
                     type="text"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="City"
+                    value={orderIdInput}
+                    onChange={e => setOrderIdInput(e.target.value)}
+                    placeholder="Enter Order ID to check"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg 
+                 focus:outline-none focus:ring-2 focus:ring-indigo-500 
+                 focus:border-transparent"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    ZIP Code
-                  </label>
-                  <input
-                    type="text"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    placeholder="ZIP Code"
-                  />
-                </div>
+
+                <button
+                  onClick={handleCheckOrder}
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg 
+               font-semibold hover:bg-blue-700 transition"
+                >
+                  Check
+                </button>
               </div>
 
               {/* Submit Button */}
@@ -295,7 +331,9 @@ function CheckoutModal({
                 type="submit"
                 className="w-full bg-[#01662c] text-white py-4 rounded-lg font-semibold text-lg hover:bg-[#054923] transition duration-300 shadow-md hover:shadow-lg"
               >
-                Complete Order - {totalPrice} Tk
+                Complete Order -{' '}
+                {isOrderVerified ? totalPrice * 0.5 : totalPrice}
+                Tk
               </button>
 
               <div className="flex items-center justify-center space-x-2 text-gray-600">

@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 // ✅ Allow Specific Origins
 const allowedOrigins = [
-  'http://localhost:5173', // Local frontend
+  'http://localhost:5174', // Local frontend
   'https://rifibazar.vercel.app', // Live frontend
 ];
 
@@ -146,6 +146,25 @@ async function run() {
           .toArray();
         res.json(result);
       } catch (error) {
+        res.status(500).json({ error: 'Server error' });
+      }
+    });
+
+    // ✅ Get single order by orderId
+    app.get('/orders/:orderId', async (req, res) => {
+      try {
+        const { orderId } = req.params;
+
+        // find by orderId field in the DB
+        const order = await ordersCollection.findOne({ orderId: orderId });
+
+        if (!order) {
+          return res.status(404).json({ error: 'Order not found' });
+        }
+
+        res.json(order);
+      } catch (error) {
+        console.error('❌ Error fetching order:', error);
         res.status(500).json({ error: 'Server error' });
       }
     });

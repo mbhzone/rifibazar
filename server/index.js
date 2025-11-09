@@ -122,6 +122,23 @@ async function run() {
       }
     });
 
+    app.put('/products/:id', async (req, res) => {
+      try {
+        const { id } = req.params;
+        const updateData = req.body;
+
+        const result = await productCollection.updateOne(
+          { _id: new ObjectId(id) },
+          { $set: updateData } // DO NOT include _id
+        );
+
+        res.json({ message: 'Product updated successfully', result });
+      } catch (error) {
+        console.error('Update failed:', error);
+        res.status(500).json({ error: error.message });
+      }
+    });
+
     //  order Save
     app.post('/orders', async (req, res) => {
       try {

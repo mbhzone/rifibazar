@@ -101,9 +101,14 @@ function CheckoutModal({
         alert('❌ Invalid Order ID.');
       }
     } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Order not found. Please check your Order ID.',
+      });
+
       console.error('❌ Order not found or API error:', error);
       setIsOrderVerified(false);
-      alert('❌ Order not found. Please check your Order ID.');
     }
   };
 

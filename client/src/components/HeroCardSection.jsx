@@ -2,9 +2,9 @@ import React from 'react';
 
 const HeroCardSection = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-0">
+    <div className="w-full max-w-7xl mx-auto px-2 sm:px-0 ">
       {/* Additional Info Cards */}
-      <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 md:gap-6">
         <div className="bg-white p-3 sm:p-6 rounded-xl shadow-lg border border-amber-200 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-4">🌿</div>
           <h3 className="font-bold text-gray-900 text-xs sm:text-sm lg:text-base mb-1 sm:mb-2">
@@ -15,7 +15,7 @@ const HeroCardSection = () => {
           </p>
         </div>
 
-        <div className="bg-white p-3 sm:p-6 rounded-xl shadow-lg border border-amber-200 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div className="bg-white p-3 sm:p-6 rounded-xl shadow-lg border border-amber-200 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hidden md:block">
           <div className="text-xl sm:text-2xl lg:text-3xl mb-2 sm:mb-4">🥄</div>
           <h3 className="font-bold text-gray-900 text-xs sm:text-sm lg:text-base mb-1 sm:mb-2">
             Rich in Nutrients

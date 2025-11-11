@@ -250,7 +250,7 @@ const ProductDetails = () => {
           flex-1 text-center py-3 px-4 rounded-md border cursor-pointer transition-colors
           ${
             quantity === value
-              ? 'border-blue-500 bg-blue-500 text-white'
+              ? 'bg-gradient-to-r from-[#007200] to-[#70e000] hover:from-[#035303] hover:to-[#61c003]  text-white'
               : 'border-gray-300 text-gray-700 hover:border-gray-400'
           }
         `}
@@ -401,8 +401,8 @@ const ProductDetails = () => {
 
                     <button
                       onClick={handleCheckOrder}
-                      className="bg-blue-600 text-white px-6 py-3 rounded-lg 
-               font-semibold hover:bg-blue-700 transition"
+                      className="bg-gradient-to-r from-[#f94144] to-purple-600 hover:from-[#dd2d4a] hover:to-purple-700 text-white px-6 py-3 rounded-lg 
+               font-semibold  transition"
                     >
                       Check
                     </button>

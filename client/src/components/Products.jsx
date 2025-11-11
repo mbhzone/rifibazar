@@ -117,7 +117,7 @@ const Products = ({ product }) => {
         {/* Action Buttons */}
         <div className="flex space-x-3">
           <Link to={`/single-products/${_id}`} className="w-full block">
-            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md">
+            <button className="w-full bg-gradient-to-r from-[#f94144] to-purple-600 hover:from-[#dd2d4a] hover:to-purple-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md">
               Buy Now
             </button>
           </Link>

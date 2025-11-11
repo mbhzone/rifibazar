@@ -21,6 +21,14 @@ const ProductDetails = () => {
     address: '',
   });
 
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // smooth scroll, optional
+    });
+  }, []);
+
   useEffect(() => {
     fetch(`https://rifibazar-7vuv.vercel.app/single-products/${id}`)
       .then(res => res.json())

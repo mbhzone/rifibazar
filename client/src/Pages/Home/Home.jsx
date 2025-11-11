@@ -5,6 +5,7 @@ import Video from '../../components/Video';
 import ContactIcon from '../../components/ContactIcon';
 import Footer from '../../components/Footer';
 import Products from '../../components/Products';
+import HeroCardSection from '../../components/HeroCardSection';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -23,6 +24,8 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-100 to-indigo-100">
       {/* Heading */}
       <Heading />
+      {/* card */}
+      <HeroCardSection></HeroCardSection>
       {/* Faq */}
       <Video />
 

@@ -3,7 +3,7 @@ import Banner1 from '../assets/banner1.jpg';
 import Banner2 from '../assets/banner2.jpg';
 import Banner3 from '../assets/banner3.jpg';
 
-const Heading = ({ onBuyNow }) => {
+const Heading = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -47,7 +47,7 @@ const Heading = ({ onBuyNow }) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto  pb-12">
+    <div className="max-w-7xl mx-auto  ">
       {/* Slider Section */}
       <div className="relative mb-16">
         <div className="relative h-[40vh] min-h-[500px]  overflow-hidden shadow-2xl">

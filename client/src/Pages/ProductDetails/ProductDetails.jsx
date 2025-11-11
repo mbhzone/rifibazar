@@ -148,7 +148,7 @@ const ProductDetails = () => {
     setShowSuccess(false);
   };
 
-  // Handle input changes
+  // Handle input changes ..
   const handleChange = e => {
     setFormData({
       ...formData,

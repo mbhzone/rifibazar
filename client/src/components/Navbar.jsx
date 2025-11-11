@@ -31,7 +31,9 @@ function Navbar() {
             <div className="p-2 rounded-full">
               <img className="h-14 w-14" src={Logo} alt="" />
             </div>
-            <span className="text-white text-xl font-bold ">RIFI BAZAR</span>
+            <span className="text-white text-2xl font-bold -ml-4">
+              RIFI BAZAR
+            </span>
           </div>
 
           {/* Desktop Menu */}

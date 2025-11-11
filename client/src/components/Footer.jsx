@@ -14,6 +14,7 @@ import {
   FaArrowRight,
   FaLeaf,
 } from 'react-icons/fa';
+import Logo from '../assets/icon.png';
 
 const Footer = () => {
   return (
@@ -24,12 +25,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="bg-green-600 p-2 rounded-full">
-                <FaLeaf className="text-white text-xl" />
+            <div className="flex items-center space-x-2 -ml-3">
+              <div className="p-2 rounded-full">
+                <img className="h-14 w-14" src={Logo} alt="" />
               </div>
-              <span className="text-white text-xl font-bold font-serif">
-                Date Molasses
+              <span className="text-white text-2xl font-bold -ml-4">
+                RIFI BAZAR
               </span>
             </div>
             <p className="text-green-100 text-sm lg:text-base leading-relaxed mb-6">
@@ -94,8 +95,6 @@ const Footer = () => {
                 <FaMapMarkerAlt className="text-green-400 mt-1 flex-shrink-0" />
                 <p className="text-green-100 text-sm lg:text-base">
                   123 Book Street
-                  <br />
-                  Knowledge City, KC 12345
                 </p>
               </div>
               <div className="flex items-center space-x-3">

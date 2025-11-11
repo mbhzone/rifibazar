@@ -115,13 +115,14 @@ const ProductDetails = () => {
     window.dataLayer.push({
       event: 'purchase',
 
-      product: {
+      ecommerce: {
         id: product.id,
         title: product.title,
         author: product.author,
         price: product.price,
         image: product.image,
       },
+      EcommerceCurrency: 'BDT',
       totalPrice: totalPrice,
       userEmail: formData.email,
       userPhone: formData.phone,

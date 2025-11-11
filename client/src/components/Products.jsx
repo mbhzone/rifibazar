@@ -49,7 +49,7 @@ const Products = ({ product }) => {
   };
 
   return (
-    <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 max-w-sm overflow-hidden border border-gray-100">
+    <div className="group relative bg-white rounded-md shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 max-w-sm overflow-hidden border border-gray-100 ">
       {/* Product Badges */}
       <div className="absolute top-3 left-3 z-10 flex flex-col space-y-2">
         {combo && (
@@ -84,7 +84,7 @@ const Products = ({ product }) => {
       {/* Product Info */}
       <div className="p-6">
         {/* Title */}
-        <h3 className="font-bold text-lg text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+        <h3 className="font-bold text-lg text-green-700 mb-2 line-clamp-2  transition-colors duration-300">
           {title}
         </h3>
         <p>
@@ -121,8 +121,8 @@ const Products = ({ product }) => {
         {/* Action Buttons */}
         <div className="flex space-x-3">
           <Link to={`/single-products/${_id}`} className="w-full block">
-            <button className="w-full bg-gradient-to-r from-[#f94144] to-purple-600 hover:from-[#dd2d4a] hover:to-purple-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md">
-              Buy Now
+            <button className="w-full bg-[#f48323] text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md">
+              Pre Order Now
             </button>
           </Link>
         </div>

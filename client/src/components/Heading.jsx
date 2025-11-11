@@ -1,34 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import Banner1 from '../assets/banner1.jpg';
+import Banner2 from '../assets/banner2.jpg';
+import Banner3 from '../assets/banner3.jpg';
 
 const Heading = ({ onBuyNow }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      id: 1,
-      image:
-        'https://www.smartpack-eg.com/rec/upload/7a007e25ca7be8ed0ba1e775a019ca0b.jpg',
+      image: Banner1,
+      badge: 'Premium',
       title: 'Pure Date Molasses',
-      description:
-        '100% Natural & Organic Date Syrup - Rich in Nutrients and Natural Sweetness',
-      badge: 'NATURAL',
+      description: 'Taste the natural goodness of our finest date molasses.',
     },
     {
-      id: 2,
-      image:
-        'https://media.istockphoto.com/id/2030099577/photo/pouring-molasses-from-dipper.jpg?s=612x612&w=0&k=20&c=NPz7fRRj67cwNes82nt2vw3enwKqRATcIuk4CDfAjrs=',
-      title: 'Traditional Recipe',
-      description:
-        'Made with Ancient Methods to Preserve Authentic Flavor and Health Benefits',
-      badge: 'TRADITIONAL',
+      image: Banner2,
+      badge: 'Organic',
+      title: 'Rich in Nutrients',
+      description: 'Packed with vitamins and minerals to boost your energy.',
     },
     {
-      id: 3,
-      image: 'https://observerbd.com/2024/12/24/ob_1735048713.jpg',
-      title: 'Premium Quality',
-      description:
-        'Carefully Selected Dates for the Finest Molasses - No Additives or Preservatives',
-      badge: 'PREMIUM',
+      image: Banner3,
+      badge: 'Natural',
+      title: 'Vegan Friendly',
+      description: 'Suitable for all diets, heart-healthy and pure.',
     },
   ];
 
@@ -59,48 +54,17 @@ const Heading = ({ onBuyNow }) => {
           {/* Slides */}
           {slides.map((slide, index) => (
             <div
-              key={slide.id}
+              key={index}
               className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
                 index === currentSlide
                   ? 'opacity-100 transform translate-x-0'
                   : 'opacity-0 transform translate-x-full'
               }`}
             >
-              {/* Background Image with Overlay */}
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
-              </div>
-
-              {/* Content */}
-              <div className="relative h-full flex items-center">
-                <div className="max-w-2xl ml-8 md:ml-16 text-white">
-                  {/* Badge */}
-                  <div className="inline-block bg-[#01662c] text-white px-4 py-2 rounded-full text-sm font-bold mb-6 shadow-lg">
-                    {slide.badge}
-                  </div>
-
-                  {/* Title */}
-                  <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    {slide.title}
-                  </h2>
-
-                  {/* Description */}
-                  <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
-                    {slide.description}
-                  </p>
-
-                  {/* CTA Button */}
-                  <button
-                    onClick={onBuyNow}
-                    className="bg-[#01662c] text-white text-lg font-semibold px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-amber-500/25"
-                  >
-                    🍯 Shop Now - Taste the Natural Goodness
-                  </button>
-                </div>
-              </div>
+              ></div>
             </div>
           ))}
 
@@ -171,7 +135,7 @@ const Heading = ({ onBuyNow }) => {
 
         {/* Additional Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <div className="bg-white p-6 rounded-2xl shadow-lg border border-amber-200 text-center">
+          <div className="bg-white p-6 rounded-md shadow-lg border border-amber-200 text-center">
             <div className="text-3xl mb-3">🌿</div>
             <h3 className="font-bold text-gray-900 mb-2">100% Natural</h3>
             <p className="text-gray-600 text-sm">
@@ -179,7 +143,7 @@ const Heading = ({ onBuyNow }) => {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-lg border border-amber-200 text-center">
+          <div className="bg-white p-6 rounded-md shadow-lg border border-amber-200 text-center">
             <div className="text-3xl mb-3">🥄</div>
             <h3 className="font-bold text-gray-900 mb-2">Rich in Nutrients</h3>
             <p className="text-gray-600 text-sm">
@@ -187,7 +151,7 @@ const Heading = ({ onBuyNow }) => {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-lg border border-amber-200 text-center">
+          <div className="bg-white p-6 rounded-md shadow-lg border border-amber-200 text-center">
             <div className="text-3xl mb-3">🚚</div>
             <h3 className="font-bold text-gray-900 mb-2">Free Shipping</h3>
             <p className="text-gray-600 text-sm">On orders above ৳ 500</p>
@@ -196,13 +160,13 @@ const Heading = ({ onBuyNow }) => {
       </div>
 
       {/* Product Features Section */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-3xl p-8 shadow-lg border border-amber-200">
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-md p-8 shadow-lg border border-amber-200">
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
           Why Choose Our Date Molasses?
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center">
-            <div className="bg-white rounded-2xl p-4 shadow-md mb-3 inline-block">
+            <div className="bg-white rounded-md p-4 shadow-md mb-3 inline-block">
               <span className="text-2xl">🍯</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Pure Quality</h4>
@@ -212,7 +176,7 @@ const Heading = ({ onBuyNow }) => {
           </div>
 
           <div className="text-center">
-            <div className="bg-white rounded-2xl p-4 shadow-md mb-3 inline-block">
+            <div className="bg-white rounded-md p-4 shadow-md mb-3 inline-block">
               <span className="text-2xl">💪</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Energy Boost</h4>
@@ -220,7 +184,7 @@ const Heading = ({ onBuyNow }) => {
           </div>
 
           <div className="text-center">
-            <div className="bg-white rounded-2xl p-4 shadow-md mb-3 inline-block">
+            <div className="bg-white rounded-md p-4 shadow-md mb-3 inline-block">
               <span className="text-2xl">❤️</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Heart Healthy</h4>
@@ -230,7 +194,7 @@ const Heading = ({ onBuyNow }) => {
           </div>
 
           <div className="text-center">
-            <div className="bg-white rounded-2xl p-4 shadow-md mb-3 inline-block">
+            <div className="bg-white rounded-md p-4 shadow-md mb-3 inline-block">
               <span className="text-2xl">🌱</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Vegan Friendly</h4>

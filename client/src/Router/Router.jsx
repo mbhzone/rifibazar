@@ -8,6 +8,8 @@ import Statistics from '../components/Admin/Statistics/Statistics';
 import AllProducts from '../Pages/Adnin/AllProducts/AllProducts';
 import AddProduct from '../Pages/Adnin/AddProduct/AddProduct';
 import Order from '../Pages/Adnin/Order/Order';
+import CheckoutModal from '../components/CheckoutModal';
+import ProductDetails from '../Pages/ProductDetails/ProductDetails';
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: '/admin-login',
         Component: AdminLogin,
+      },
+      {
+        path: '/single-products/:id',
+        Component: ProductDetails,
       },
     ],
   },

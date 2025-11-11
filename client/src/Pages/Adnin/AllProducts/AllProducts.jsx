@@ -23,7 +23,9 @@ const AllProducts = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/get-products');
+        const res = await axios.get(
+          'https://rifibazar-7vuv.vercel.app/get-products'
+        );
         setProducts(res.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -62,7 +64,7 @@ const AllProducts = () => {
       if (result.isConfirmed) {
         try {
           const res = await axios.delete(
-            `http://localhost:5000/products/${id}`
+            `https://rifibazar-7vuv.vercel.app/products/${id}`
           );
           if (res.data.deletedCount > 0) {
             Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
@@ -102,7 +104,7 @@ const AllProducts = () => {
     try {
       const { _id, ...updateData } = editProduct; // use editProduct state
       const res = await axios.put(
-        `http://localhost:5000/products/${_id}`,
+        `https://rifibazar-7vuv.vercel.app/products/${_id}`,
         updateData
       );
       console.log('Update success:', res.data);

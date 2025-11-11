@@ -1,5 +1,5 @@
 // CheckoutModal.jsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaLock } from 'react-icons/fa';
 import axios from 'axios';
 import SuccessModal from './Modal/SuccessModal';
@@ -32,6 +32,18 @@ function CheckoutModal({
     return `ORD-${datePart}-${randomPart}`;
   };
 
+  useEffect(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'view_content',
+      productId: book.id,
+      booksName: book.title,
+      price: book.price,
+    });
+  }, [book]);
+
+  console.log(window.dataLayer);
+
   // 🔹 Handle form submit
   const handleSubmitOrder = async e => {
     e.preventDefault();
@@ -55,6 +67,26 @@ function CheckoutModal({
       customer: formData,
       status: 'Pending',
     };
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'purchase',
+      orderId: orderId,
+      product: {
+        id: book.id,
+        title: book.title,
+        author: book.author,
+        price: book.price,
+        image: book.image,
+      },
+      totalPrice: totalPrice,
+      userEmail: formData.email,
+      userPhone: formData.phone,
+      combo: book.combo,
+      quantity: finalQuantity,
+    });
+
+    console.log(window.dataLayer);
 
     try {
       const response = await axios.post(

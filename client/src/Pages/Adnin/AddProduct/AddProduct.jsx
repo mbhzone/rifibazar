@@ -137,7 +137,7 @@ const AddProduct = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:5000/products', {
+      const res = await fetch('https://rifibazar-7vuv.vercel.app/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

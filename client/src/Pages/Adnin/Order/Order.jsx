@@ -17,6 +17,7 @@ const Order = () => {
   const [filterStatus, setFilterStatus] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [orders, setOrders] = useState([]);
+  console.log(orders);
 
   useEffect(() => {
     const getOrders = async () => {

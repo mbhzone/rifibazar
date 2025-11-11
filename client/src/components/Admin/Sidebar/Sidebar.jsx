@@ -199,9 +199,7 @@ const Sidebar = () => {
               <p className="text-white font-medium text-sm truncate">
                 Admin User
               </p>
-              <p className="text-gray-400 text-xs truncate">
-                admin@chashmaexpress.com
-              </p>
+              <p className="text-gray-400 text-xs truncate">admin@gmail.com</p>
             </div>
             <div className="w-2 h-2 bg-green-400 rounded-full"></div>
           </div>

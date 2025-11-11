@@ -1,10 +1,7 @@
 import axios from 'axios';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
-  FaEye,
   FaEdit,
-  FaTrash,
   FaShoppingCart,
   FaCheckCircle,
   FaTimesCircle,
@@ -13,31 +10,27 @@ import {
 import { toast } from 'react-toastify';
 
 const OrderTable = ({ order, setOrders }) => {
-  console.log(order);
-
-  const [newStatus, setNewStatus] = useState(order.status);
+  const [newStatus, setNewStatus] = useState(order?.status || '');
 
   const getStatusBadge = status => {
+    if (!status) return null; // prevent undefined error
+
     const statusConfig = {
-      pending: {
-        color: 'bg-yellow-100 text-yellow-800',
-        icon: FaShoppingCart,
-      },
+      pending: { color: 'bg-yellow-100 text-yellow-800', icon: FaShoppingCart },
       processing: { color: 'bg-blue-100 text-blue-800', icon: FaEdit },
       shipped: { color: 'bg-purple-100 text-purple-800', icon: FaTruck },
-      delivered: {
-        color: 'bg-green-100 text-green-800',
-        icon: FaCheckCircle,
-      },
+      delivered: { color: 'bg-green-100 text-green-800', icon: FaCheckCircle },
       cancelled: { color: 'bg-red-100 text-red-800', icon: FaTimesCircle },
     };
+
     const { color, icon: Icon } = statusConfig[status] || {
       color: 'bg-gray-100 text-gray-800',
       icon: FaShoppingCart,
     };
+
     return (
       <span
-        className={`px-3 py-1 rounded-full text-xs font-medium  ${color} flex items-center gap-1`}
+        className={`px-3 py-1 rounded-full text-xs font-medium ${color} flex items-center gap-1`}
       >
         <Icon className="w-3 h-3" />
         {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -45,18 +38,15 @@ const OrderTable = ({ order, setOrders }) => {
     );
   };
 
-  // handle update button click
   const handleUpdate = async () => {
-    if (newStatus === 'all') return; // skip if "Select Status"
+    if (!newStatus || newStatus === 'all') return;
+
     try {
       await axios.patch(
-        // `https://rifibazar-7vuv.vercel.app/update-order/${order._id}`,
-        {
-          status: newStatus,
-        }
+        `https://rifibazar-7vuv.vercel.app/update-order/${order._id}`,
+        { status: newStatus }
       );
 
-      // update UI
       setOrders(prevOrders =>
         prevOrders.map(o =>
           o._id === order._id ? { ...o, status: newStatus } : o
@@ -66,15 +56,17 @@ const OrderTable = ({ order, setOrders }) => {
       toast.success('Order updated successfully ✅');
     } catch (error) {
       console.error('Error updating status:', error);
+      toast.error('Failed to update order ❌');
     }
   };
+
   return (
     <tr key={order._id} className="hover:bg-gray-50">
       <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">
         <div className="relative group">
           <div className="w-14 h-14 bg-gray-50 rounded-md overflow-hidden border border-gray-200 flex items-center justify-center shadow-sm">
             <img
-              src={order.product.image}
+              src={order?.product?.image}
               alt={order?.product?.title || 'Product'}
               className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-200"
               onError={e => {
@@ -83,39 +75,32 @@ const OrderTable = ({ order, setOrders }) => {
               }}
             />
           </div>
-          {/* Tooltip on hover */}
           {order?.product?.title && (
             <div className="absolute hidden group-hover:block z-10 bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md whitespace-nowrap">
-              {order?.product?.title}
+              {order.product.title}
             </div>
           )}
         </div>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap">
-        <div>
-          <div className="text-sm font-medium text-gray-900">
-            {order?.customer?.name}
-          </div>
-        </div>
-      </td>
-      <td className="px-6 py-4 whitespace-nowrap">
-        <div>
-          <div className="text-sm font-medium text-gray-900">
-            {order?.customer?.address}
-          </div>
-        </div>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+        {order?.name}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-        {new Date(order.createdAt).toLocaleDateString()}
+        {order?.address}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-        {(Number(order?.product?.price) + 120).toLocaleString()} Tk
+        {order?.createdAt
+          ? new Date(order.createdAt).toLocaleDateString()
+          : '-'}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-        {order?.customer?.phone}
+        {(Number(order?.product?.price || 0) + 120).toLocaleString()} Tk
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+        {order?.phone || '-'}
       </td>
       <td className="px-6 py-4 whitespace-nowrap">
-        {getStatusBadge(order.status)}
+        {getStatusBadge(order?.status)}
       </td>
       <td className="whitespace-nowrap flex justify-center items-center mt-5">
         <select
@@ -135,19 +120,6 @@ const OrderTable = ({ order, setOrders }) => {
           Update
         </button>
       </td>
-      {/* <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-        <div className="flex space-x-2">
-          <button className="text-blue-600 hover:text-blue-900">
-            <FaEye className="w-4 h-4" />
-          </button>
-          <button className="text-green-600 hover:text-green-900">
-            <FaEdit className="w-4 h-4" />
-          </button>
-          <button className="text-red-600 hover:text-red-900">
-            <FaTrash className="w-4 h-4" />
-          </button>
-        </div>
-      </td> */}
     </tr>
   );
 };

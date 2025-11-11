@@ -169,10 +169,10 @@ const ProductDetails = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-4 sm:py-8">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto ">
         {/* Breadcrumb */}
         <div className="mb-4 sm:mb-6">
-          <nav className="flex text-xs sm:text-sm text-gray-500">
+          <nav className="flex text-xs sm:text-sm text-gray-500 ml-2">
             <a href="/" className="hover:text-blue-600">
               Home
             </a>

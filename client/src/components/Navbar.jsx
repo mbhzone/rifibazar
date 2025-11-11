@@ -6,6 +6,7 @@ import {
   FaTimes,
   FaLeaf,
 } from 'react-icons/fa';
+import Logo from '../assets/icon.png';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,12 +28,10 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="bg-green-600 p-2 rounded-full">
-              <FaLeaf className="text-white text-xl" />
+            <div className="p-2 rounded-full">
+              <img className="h-14 w-14" src={Logo} alt="" />
             </div>
-            <span className="text-white text-xl font-bold font-serif">
-              Date Molasses
-            </span>
+            <span className="text-white text-xl font-bold ">RIFI BAZAR</span>
           </div>
 
           {/* Desktop Menu */}

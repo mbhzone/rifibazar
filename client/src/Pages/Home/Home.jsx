@@ -30,7 +30,12 @@ const Home = () => {
       <Video />
 
       {/* Show all products */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+      <div className="text-center py-10">
+        <h2 className="text-3xl font-bold text-gray-800 mb-3">
+          আমাদের পণ্যসমূহ
+        </h2>
+      </div>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
         {Array.isArray(products) &&
           products.map(product => (
             <Products key={product._id} product={product} />

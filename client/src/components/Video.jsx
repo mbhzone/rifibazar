@@ -26,10 +26,10 @@ const Video = () => {
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-3">
-          Discover Date Molasses
+          জানুন কেন রিফি বাজারের খেজুর গুড় সেরা?
         </h2>
         <p className="text-gray-600 text-lg">
-          Learn about the traditional process of making natural date molasses
+          বিস্তারিত দেখুন ও জানুন রিফি বাজারের খেজুর গুড়ের গুণগতমান সম্পর্কে
         </p>
       </div>
 
@@ -46,14 +46,6 @@ const Video = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-            </div>
-
-            {/* Video Description */}
-            <div className="mt-4 flex-1">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                {video.title}
-              </h3>
-              <p className="text-gray-600">{video.description}</p>
             </div>
           </div>
         ))}

@@ -87,7 +87,11 @@ const Products = ({ product }) => {
         <h3 className="font-bold text-lg text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
           {title}
         </h3>
-        <p>{description}</p>
+        <p>
+          {description.length > 100
+            ? description.slice(0, 80) + '...'
+            : description}
+        </p>
 
         {/* Rating and Reviews */}
         <div className="flex items-center justify-between mb-4">

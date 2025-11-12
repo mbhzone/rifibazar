@@ -189,7 +189,7 @@ const ProductDetails = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-5">
           {/* Left side - Product Details */}
           <div className="w-full lg:w-1/2">
             <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
@@ -292,86 +292,154 @@ const ProductDetails = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Total Price */}
-                <div className="border-t border-gray-200 pt-3 sm:pt-4 mt-4 sm:mt-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-base sm:text-lg font-semibold text-gray-900">
-                      Total:
-                    </span>
-                    <div className="text-right">
-                      {isOrderVerified && (
-                        <div className="text-xs sm:text-sm text-green-600 font-medium mb-1">
-                          50% Discount Applied!
-                        </div>
-                      )}
-                      <span className="text-xl sm:text-2xl font-bold text-gray-900">
-                        {finalPrice} Tk
-                      </span>
-                      {isOrderVerified && (
-                        <div className="text-xs text-gray-500 line-through">
-                          {totalPrice} Tk
-                        </div>
-                      )}
+              </div>
+              {/* Total Price */}
+              <div className="">
+                {/* Order Summary Card */}
+                <div className="bg-white  border border-gray-100 overflow-hidden">
+                  {/* Header */}
+                  <div className="bg-gradient-to-r from-orange-50 to-amber-50 px-6 py-4 border-b border-orange-100">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full"></div>
+                      <h3 className="text-xl font-bold text-gray-800">
+                        Order Summary
+                      </h3>
                     </div>
                   </div>
-                  <div className="space-y-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
                     {/* Delivery Charge */}
                     <div className="flex justify-between items-center py-2">
-                      <div className="flex items-center">
-                        <span className="text-base sm:text-lg font-medium text-gray-700">
-                          Home Delivery Charge
-                        </span>
-                        {quantity === 5 && (
-                          <span className="ml-2 px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full font-medium">
-                            FREE
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+                          <svg
+                            className="w-5 h-5 text-blue-500"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                        <div>
+                          <span className="text-base font-semibold text-gray-800">
+                            Delivery Charge
+                          </span>
+                          <div className="text-sm text-gray-500">
+                            Home delivery
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        {quantity === 5 ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-green-600">
+                              Free
+                            </span>
+                            <span className="px-2 py-1 text-xs bg-green-100 text-green-700 rounded-full font-semibold">
+                              FREE
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="text-lg font-bold text-gray-900">
+                            99 Tk
                           </span>
                         )}
                       </div>
-                      <div className="text-right">
-                        <span
-                          className={`text-lg sm:text-xl font-bold ${
-                            quantity === 5 ? 'text-green-600' : 'text-gray-900'
-                          }`}
-                        >
-                          {quantity === 5 ? 'Free' : '99 Tk'}
-                        </span>
-                      </div>
                     </div>
+
+                    {/* Progress Bar for Free Delivery */}
+                    {quantity < 5 && (
+                      <div className="bg-gray-50 rounded-xl p-4">
+                        <div className="flex justify-between text-sm text-gray-600 mb-2">
+                          <span>Free delivery at 5 items</span>
+                          <span>{quantity}/5 items</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div
+                            className="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${(quantity / 5) * 100}%` }}
+                          ></div>
+                        </div>
+                        <p className="text-xs text-gray-500 mt-2">
+                          Add {5 - quantity} more item
+                          {5 - quantity > 1 ? 's' : ''} for free delivery
+                        </p>
+                      </div>
+                    )}
 
                     {/* Divider */}
                     <div className="border-t border-gray-200"></div>
 
-                    {/* Sub Total */}
-                    <div className="flex justify-between items-center py-2 bg-gray-50 -mx-4 px-4 rounded">
-                      <span className="text-lg sm:text-xl font-semibold text-gray-900">
-                        Sub Total
-                      </span>
-                      <div className="text-right">
-                        <span className="text-xl sm:text-2xl font-bold text-blue-600">
-                          {quantity === 5 ? finalPrice : finalPrice + 99} Tk
-                        </span>
-                        {quantity === 5 && (
-                          <p className="text-sm text-green-600 mt-1 font-medium">
-                            🎉 You saved 99 Tk on delivery!
-                          </p>
-                        )}
+                    {/* Subtotal */}
+                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-4">
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <span className="text-lg font-semibold text-gray-800">
+                            Sub Total
+                          </span>
+                          <div className="text-sm text-gray-500 mt-1">
+                            Including delivery charge
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-2xl font-bold text-orange-600">
+                            {quantity === 5 ? finalPrice : finalPrice + 99} Tk
+                          </span>
+                          {quantity === 5 && (
+                            <div className="flex items-center gap-1 mt-1">
+                              <svg
+                                className="w-4 h-4 text-green-500"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                              <p className="text-sm text-green-600 font-medium">
+                                You saved 99 Tk!
+                              </p>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Free delivery message */}
+                    {/* Free Delivery Celebration */}
                     {quantity === 5 && (
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-2">
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0">
-                            <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                              <span className="text-white text-sm">✓</span>
-                            </div>
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                            <svg
+                              className="w-4 h-4 text-white"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
                           </div>
-                          <p className="ml-3 text-sm text-blue-800 font-medium">
-                            Free delivery applied! You've qualified for free
-                            home delivery.
-                          </p>
+                          <div>
+                            <p className="text-sm font-semibold text-green-800">
+                              Free Delivery Unlocked!
+                            </p>
+                            <p className="text-sm text-green-700 mt-1">
+                              You've qualified for free home delivery by
+                              ordering 5 items
+                            </p>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -454,7 +522,7 @@ const ProductDetails = () => {
                     <textarea
                       name="address"
                       required
-                      rows="3"
+                      rows="5"
                       value={formData.address}
                       onChange={handleChange}
                       className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm sm:text-base"

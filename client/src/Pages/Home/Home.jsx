@@ -35,12 +35,14 @@ const Home = () => {
           আমাদের পণ্যসমূহ
         </h2>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-4 ml-3">
-        {Array.isArray(products) &&
-          products.map(product => (
-            <Products key={product._id} product={product} />
-          ))}
-      </div>
+      <section className="w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 mb-4 px-2 ">
+          {Array.isArray(products) &&
+            products.map(product => (
+              <Products key={product._id} product={product} />
+            ))}
+        </div>
+      </section>
 
       <ContactIcon></ContactIcon>
       <Footer></Footer>

@@ -24,10 +24,11 @@ const Video = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-3">
+      <div className="text-center  py-9">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-gray-900 mb-3  lg:mb-5">
           জানুন কেন রিফি বাজারের খেজুর গুড় সেরা?
         </h2>
+
         <p className="text-gray-600 text-lg">
           বিস্তারিত দেখুন ও জানুন রিফি বাজারের খেজুর গুড়ের গুণগতমান সম্পর্কে
         </p>

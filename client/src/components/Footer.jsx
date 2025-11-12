@@ -13,6 +13,7 @@ import {
   FaMapMarkerAlt,
   FaArrowRight,
   FaLeaf,
+  FaTiktok,
 } from 'react-icons/fa';
 import Logo from '../assets/icon.png';
 
@@ -39,28 +40,23 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/rifibazar"
                 className="bg-green-700 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 <FaFacebook className="text-white" />
               </a>
+
               <a
-                href="#"
-                className="bg-green-700 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <FaTwitter className="text-white" />
-              </a>
-              <a
-                href="#"
+                href=" https://www.instagram.com/rifibazar?igsh=dDhub3V0NnE5Nmdv"
                 className="bg-green-700 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
                 <FaInstagram className="text-white" />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@rifibazar "
                 className="bg-green-700 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
               >
-                <FaLinkedin className="text-white" />
+                <FaTiktok className="text-white" />
               </a>
             </div>
           </div>
@@ -71,7 +67,7 @@ const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {['Home', 'About', 'Services', 'Products'].map(item => (
+              {['Home', 'About', 'Products'].map(item => (
                 <li key={item}>
                   <a
                     href="#"
@@ -94,19 +90,19 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-green-400 mt-1 flex-shrink-0" />
                 <p className="text-green-100 text-sm lg:text-base">
-                  123 Book Street
+                  49/2 Rajib Chattar,Old Bilshimla,Boalia,Rajshahi
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-green-400 flex-shrink-0" />
                 <p className="text-green-100 text-sm lg:text-base">
-                  +1 (555) 123-4567
+                  +880 1308-685589
                 </p>
               </div>
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-green-400 flex-shrink-0" />
                 <p className="text-green-100 text-sm lg:text-base">
-                  info@bookhaven.com
+                  rifibazar01@gmail.com
                 </p>
               </div>
             </div>

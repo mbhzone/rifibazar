@@ -273,14 +273,14 @@ const Statistics = () => {
         <>
           {/* Statistics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <StatCard
+            {/* <StatCard
               title="Total Revenue"
               value={statsData.revenue}
               icon={<FaMoneyBillWave className="w-6 h-6" />}
               change={statsData.revenueChange}
               isPositive={statsData.revenueChange > 0}
               prefix="Tk "
-            />
+            /> */}
             <StatCard
               title="Total Orders"
               value={statsData.totalOrders}

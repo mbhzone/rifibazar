@@ -83,7 +83,7 @@ async function run() {
 
         const result = await productCollection
           .find(query)
-          .sort({ createdAt: -1 })
+          .sort({ createdAt: 1 })
           .toArray();
 
         res.send(result);

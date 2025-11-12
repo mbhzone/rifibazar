@@ -1,42 +1,16 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import {
-  FaEdit,
   FaShoppingCart,
+  FaEdit,
   FaCheckCircle,
   FaTimesCircle,
-  FaTruck,
 } from 'react-icons/fa';
+
 import { toast } from 'react-toastify';
 
 const OrderTable = ({ order, setOrders }) => {
   const [newStatus, setNewStatus] = useState(order?.status || '');
-
-  const getStatusBadge = status => {
-    if (!status) return null; // prevent undefined error
-
-    const statusConfig = {
-      pending: { color: 'bg-yellow-100 text-yellow-800', icon: FaShoppingCart },
-      processing: { color: 'bg-blue-100 text-blue-800', icon: FaEdit },
-      shipped: { color: 'bg-purple-100 text-purple-800', icon: FaTruck },
-      delivered: { color: 'bg-green-100 text-green-800', icon: FaCheckCircle },
-      cancelled: { color: 'bg-red-100 text-red-800', icon: FaTimesCircle },
-    };
-
-    const { color, icon: Icon } = statusConfig[status] || {
-      color: 'bg-gray-100 text-gray-800',
-      icon: FaShoppingCart,
-    };
-
-    return (
-      <span
-        className={`px-3 py-1 rounded-full text-xs font-medium ${color} flex items-center gap-1`}
-      >
-        <Icon className="w-3 h-3" />
-        {status.charAt(0).toUpperCase() + status.slice(1)}
-      </span>
-    );
-  };
 
   const handleUpdate = async () => {
     if (!newStatus || newStatus === 'all') return;
@@ -58,6 +32,27 @@ const OrderTable = ({ order, setOrders }) => {
       console.error('Error updating status:', error);
       toast.error('Failed to update order ❌');
     }
+  };
+  const statusConfig = {
+    pending: { color: 'bg-yellow-100 text-yellow-800', icon: FaShoppingCart },
+    processing: { color: 'bg-blue-100 text-blue-800', icon: FaEdit },
+    delivered: { color: 'bg-green-100 text-green-800', icon: FaCheckCircle },
+    cancel: { color: 'bg-red-100 text-red-800', icon: FaTimesCircle },
+  };
+
+  const getStatusBadge = status => {
+    const config = statusConfig[status]; // status অনুযায়ী config নাও
+    if (!config) return null; // unknown status হলে কিছু দেখাবে না
+
+    const Icon = config.icon; // icon component
+    return (
+      <span
+        className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${config.color}`}
+      >
+        <Icon className="mr-1" />{' '}
+        {status.charAt(0).toUpperCase() + status.slice(1)}
+      </span>
+    );
   };
 
   return (
@@ -94,14 +89,18 @@ const OrderTable = ({ order, setOrders }) => {
           : '-'}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-        {(Number(order?.product?.price || 0) + 120).toLocaleString()} Tk
+        {Number(order?.product?.price || 0).toLocaleString()} Tk
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
         {order?.phone || '-'}
       </td>
+      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+        {order?.orderId || '-'}
+      </td>
       <td className="px-6 py-4 whitespace-nowrap">
         {getStatusBadge(order?.status)}
       </td>
+
       <td className="whitespace-nowrap flex justify-center items-center mt-5">
         <select
           value={newStatus}
@@ -111,6 +110,8 @@ const OrderTable = ({ order, setOrders }) => {
           <option value="all">Select Status</option>
           <option value="pending">Pending</option>
           <option value="delivered">Delivered</option>
+          <option value="cancel">cancel</option>
+          <option value="processing">Processing </option>
         </select>
 
         <button

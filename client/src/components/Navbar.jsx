@@ -7,6 +7,7 @@ import {
   FaLeaf,
 } from 'react-icons/fa';
 import Logo from '../assets/icon.png';
+import { Link } from 'react-router';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,7 +15,6 @@ function Navbar() {
   const routes = [
     { name: 'Home', icon: <FaLeaf className="mr-2" /> },
     { name: 'Products', icon: <FaCalendar className="mr-2" /> },
-    { name: 'Services', icon: <FaLeaf className="mr-2" /> },
     { name: 'About', icon: <FaCalendar className="mr-2" /> },
   ];
 
@@ -22,19 +22,31 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToBottom = () => {
+    const scrollHeight =
+      document.documentElement.scrollHeight || document.body.scrollHeight;
+
+    window.scrollTo({
+      top: scrollHeight,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <nav className="bg-green-800 shadow-lg sticky top-0 z-50 py-1.5">
       <div className="max-w-7xl mx-auto px-4 sm:px-0">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="p-2 rounded-full">
-              <img className="h-14 w-14" src={Logo} alt="" />
+          <Link to={'/'}>
+            <div className="flex items-center space-x-2">
+              <div className="p-2 rounded-full">
+                <img className="h-14 w-14" src={Logo} alt="" />
+              </div>
+              <span className="text-white text-2xl font-bold -ml-4">
+                RIFI BAZAR
+              </span>
             </div>
-            <span className="text-white text-2xl font-bold -ml-4">
-              RIFI BAZAR
-            </span>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -55,7 +67,10 @@ function Navbar() {
             <button className="text-green-100 hover:text-white p-2 rounded-full hover:bg-green-700 transition duration-300">
               <FaShoppingCart className="text-lg" />
             </button>
-            <button className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300 ease-in-out transform hover:scale-105">
+            <button
+              onClick={scrollToBottom}
+              className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300 ease-in-out transform hover:scale-105"
+            >
               Shop Now
             </button>
           </div>

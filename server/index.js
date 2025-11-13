@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 // ✅ Allow Specific Origins
 const allowedOrigins = [
-  'http://localhost:5174', // Local frontend
+  'http://localhost:5173', // Local frontend
   'https://rifibazar.com', // Live frontend
   'https://www.rifibazar.com', // Live frontend
   'https://rifibazar-7vuv.vercel.app', // Live frontend

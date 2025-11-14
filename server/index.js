@@ -153,7 +153,7 @@ async function run() {
         const result = await ordersCollection.insertOne(order);
         console.log(result);
 
-        // ✅ Send Email After Order Save
+        // ✅ Send Email After Order Save in email
         const transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {

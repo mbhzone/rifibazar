@@ -34,7 +34,8 @@ const Home = () => {
           আমাদের পণ্যসমূহ
         </h2>
       </div>
-      <section className="w-full">
+      {/*
+            <section className="w-full">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 mb-4 px-2 ">
           {Array.isArray(products) &&
             products.map(product => (
@@ -42,6 +43,7 @@ const Home = () => {
             ))}
         </div>
       </section>
+      */}
 
       <ContactIcon></ContactIcon>
       <Footer></Footer>

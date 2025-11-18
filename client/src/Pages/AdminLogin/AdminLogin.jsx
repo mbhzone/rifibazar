@@ -12,7 +12,7 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        'https://rifibazar-7vuv.vercel.app/admin-login',
+        `${import.meta.env.VITE_BASE_URL}/admin-login`,
         {
           email,
           password,

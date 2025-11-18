@@ -40,7 +40,7 @@ const ProductDetails = () => {
   }, [product]);
 
   useEffect(() => {
-    fetch(`https://rifibazar-7vuv.vercel.app/single-products/${id}`)
+    fetch(`${import.meta.env.VITE_BASE_URL}/single-products/${id}`)
       .then(res => res.json())
       .then(data => setProduct(data))
       .catch(err => console.error('Error fetching single product:', err));
@@ -56,7 +56,7 @@ const ProductDetails = () => {
 
     try {
       const response = await axios.get(
-        `https://rifibazar-7vuv.vercel.app/orders/${orderIdInput}`
+        `${import.meta.env.VITE_BASE_URL}/orders/${orderIdInput}`
       );
 
       if (response.data?.orderId === orderIdInput) {
@@ -148,7 +148,7 @@ const ProductDetails = () => {
 
     try {
       const response = await axios.post(
-        'https://rifibazar-7vuv.vercel.app/orders',
+        `${import.meta.env.VITE_BASE_URL}/orders`,
         finalData
       );
       console.log('✅ Order Submitted:', response.data);

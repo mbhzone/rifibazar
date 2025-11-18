@@ -11,7 +11,7 @@ const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://rifibazar-7vuv.vercel.app/get-products')
+    fetch(`${import.meta.env.VITE_BASE_URL}/get-products`)
       .then(res => res.json())
       .then(data => {
         setProducts(data);

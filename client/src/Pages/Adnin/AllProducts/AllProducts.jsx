@@ -24,7 +24,7 @@ const AllProducts = () => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          'https://rifibazar-7vuv.vercel.app/get-products'
+          `${import.meta.env.VITE_BASE_URL}/get-products`
         );
         setProducts(res.data);
       } catch (error) {
@@ -64,7 +64,7 @@ const AllProducts = () => {
       if (result.isConfirmed) {
         try {
           const res = await axios.delete(
-            `https://rifibazar-7vuv.vercel.app/products/${id}`
+            `${import.meta.env.VITE_BASE_URL}/products/${id}`
           );
           if (res.data.deletedCount > 0) {
             Swal.fire('Deleted!', 'Your product has been deleted.', 'success');
@@ -104,7 +104,7 @@ const AllProducts = () => {
     try {
       const { _id, ...updateData } = editProduct; // use editProduct state
       const res = await axios.put(
-        `https://rifibazar-7vuv.vercel.app/products/${_id}`,
+        `${import.meta.env.VITE_BASE_URL}/products/${_id}`,
         updateData
       );
       console.log('Update success:', res.data);

@@ -137,7 +137,7 @@ const AddProduct = () => {
     };
 
     try {
-      const res = await fetch('https://rifibazar-7vuv.vercel.app/products', {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

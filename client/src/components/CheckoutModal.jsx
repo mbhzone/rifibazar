@@ -90,7 +90,7 @@ function CheckoutModal({
 
     try {
       const response = await axios.post(
-        'https://rifibazar-7vuv.vercel.app/orders',
+        `${import.meta.env.VITE_BASE_URL}/orders`,
         order
       );
       console.log('✅ Order Submitted:', response.data);
@@ -116,7 +116,7 @@ function CheckoutModal({
 
     try {
       const response = await axios.get(
-        `https://rifibazar-7vuv.vercel.app/orders/${orderIdInput}`
+        `${import.meta.env.VITE_BASE_URL}/orders/${orderIdInput}`
       );
 
       if (response.data?.orderId === orderIdInput) {

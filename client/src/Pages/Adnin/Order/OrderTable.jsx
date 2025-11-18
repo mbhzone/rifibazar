@@ -17,7 +17,7 @@ const OrderTable = ({ order, setOrders }) => {
 
     try {
       await axios.patch(
-        `https://rifibazar-7vuv.vercel.app/update-order/${order._id}`,
+        `${import.meta.env.VITE_BASE_URL}/update-order/${order._id}`,
         { status: newStatus }
       );
 

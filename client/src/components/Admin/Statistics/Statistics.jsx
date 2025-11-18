@@ -35,7 +35,7 @@ const Statistics = () => {
       try {
         setLoading(true);
         const res = await axios.get(
-          'https://rifibazar-7vuv.vercel.app/get-orders'
+          `${import.meta.env.VITE_BASE_URL}/get-orders`
         );
         setOrders(res.data.slice(0, 6)); // Show only recent orders
       } catch (error) {

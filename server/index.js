@@ -34,7 +34,9 @@ app.use(
 app.use(express.json());
 
 // ✅ MongoDB Connection
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.csfnsag.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.csfnsag.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+// ✅ MongoDB Connection
+const uri = `mongodb+srv://rifibazar:${process.env.DB_PASS}@rifiuser.wuxahls.mongodb.net/?appName=rifiUser`;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,

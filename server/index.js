@@ -10,6 +10,7 @@ const port = process.env.PORT || 5000;
 // ✅ Allow Specific Origins
 const allowedOrigins = [
   'http://localhost:5173', // Local frontend
+  'http://localhost:5174', // Local frontend
   'https://rifibazar.com', // Live frontend
   'https://www.rifibazar.com', // Live frontend
   'https://rifibazar-7vuv.vercel.app', // Live frontend
@@ -148,20 +149,30 @@ async function run() {
     app.post('/orders', async (req, res) => {
       try {
         const order = req.body;
-        console.log(order);
-
         order.createdAt = new Date();
 
         const result = await ordersCollection.insertOne(order);
-        console.log(result);
+        console.log('Order Saved:', result.insertedId);
 
-        // ✅ Send Email After Order Save in email
+        // ===================== EMAIL FIX =====================
+        // Gmail SMTP Must Use App Password
         const transporter = nodemailer.createTransport({
-          service: 'gmail',
+          host: 'smtp.gmail.com',
+          port: 587,
+          secure: false,
           auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
+            user: process.env.EMAIL_USER, // example: rifibazar01@gmail.com
+            pass: process.env.EMAIL_PASS, // App Password
           },
+        });
+
+        // transport verify (to see if working)
+        transporter.verify((error, success) => {
+          if (error) {
+            console.log('❌ SMTP ERROR:', error);
+          } else {
+            console.log('✅ SMTP Connected Successfully');
+          }
         });
 
         const mailOptions = {
@@ -169,81 +180,77 @@ async function run() {
           to: order.email,
           subject: '🛒 Order Confirmation - Rifi Bazar',
           html: `
-  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border-radius: 12px; border: 1px solid #e0e0e0; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1)">
-    <div style="background: linear-gradient(90deg, #f97316, #fb923c); padding: 20px; color: white; text-align: center;">
-      <h1 style="margin: 0;">Rifi Bazar</h1>
-      <p style="margin: 0; font-size: 16px;">Thank you for your order!</p>
-    </div>
+  <div style="font-family: Arial, sans-serif; background:#f7f7f7; padding:20px;">
+    <div style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+      
+      <!-- Header -->
+      <div style="background:#ff4d4d; padding:20px; text-align:center; color:#fff;">
+        <h1 style="margin:0; font-size:24px;">⭐ Order Confirmed ⭐</h1>
+        <p style="margin:5px 0 0; font-size:14px;">Thanks for shopping with Rifi Bazar</p>
+      </div>
 
-    <div style="padding: 25px;">
-      <h2 style="color: #333;">Hello ${order.name || 'Customer'},</h2>
-      <p style="color: #555; font-size: 15px;">
-        We’ve received your order and we’re getting it ready to ship. You’ll get another email when your order ships.
-      </p>
+      <!-- Product Image -->
+      <div style="text-align:center; padding:20px;">
+        <img 
+          src="${order.product?.image}" 
+          alt="Product Image"
+          style="max-width:200px; width:100%; border-radius:10px; border:1px solid #eee;"
+        />
+      </div>
 
-      <div style="border-top: 2px solid #f97316; margin: 20px 0;"></div>
+      <!-- Body -->
+      <div style="padding:25px; color:#333;">
+        <h2 style="margin-top:0;">Hello ${order.name},</h2>
+        <p style="font-size:16px; line-height:1.5;">
+          Your order has been <strong>successfully received!</strong>  
+          We’re preparing everything, and you will get updates soon.
+        </p>
 
-      <h3 style="color: #f97316;">🛍️ Order Summary</h3>
-
-      <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
-        <img src="${
-          order.product.image || 'https://via.placeholder.com/100'
-        }" alt="Product Image" width="100" height="100" style="border-radius: 8px; object-fit: cover; border: 1px solid #ddd;">
-        <div style="margin-left: 10px;">
-          <p style="margin: 5px 0; font-size: 16px; font-weight: bold; color: #333;">${
-            order.product.title || 'Product Name'
-          }</p>
-          <p style="margin: 2px 0; color: #555;">Quantity: ${
-            order.quantity || 1
-          }</p>
-          <p style="margin: 2px 0; color: #555;"> Description: <strong>${
-            order.product.description || ''
-          }</strong></p>
+        <div style="margin-top:20px;">
+          <h3 style="margin-bottom:10px;">🛍️ Order Details</h3>
+          <div style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #eee;">
+            <p style="margin:6px 0;"><strong>Product:</strong> ${
+              order.product?.title
+            }</p>
+            <p style="margin:6px 0;"><strong>Price:</strong> ${
+              order.product?.price
+            }৳</p>
+            <p style="margin:6px 0;"><strong>Quantity:</strong> ${
+              order.quantity
+            }</p>
+            <p style="margin:6px 0;"><strong>Order ID:</strong> ${
+              order.orderId
+            }</p>
+          </div>
         </div>
+
+        <p style="margin-top:20px; font-size:15px; color:#555;">
+          If you have any questions, feel free to reply to this email.
+        </p>
+
+        <p style="margin-top:30px; font-size:14px; color:#777;">
+          — Rifi Bazar Team ❤️
+        </p>
       </div>
 
-      <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px;">
-        <p style="font-size: 16px; font-weight: bold; color: #222;">Total: ${
-          order.product.price || 0
-        }৳</p>
+      <!-- Footer -->
+      <div style="background:#f2f2f2; text-align:center; padding:12px; font-size:13px; color:#888;">
+        © ${new Date().getFullYear()} Rifi Bazar — All Rights Reserved
       </div>
-
-      <div style="margin-top: 25px;">
-        <p style="font-size: 14px; color: #666;">Order ID: <strong>${
-          order.orderId
-        }</strong></p>
-        <p style="font-size: 14px; color: #666;">Order Date: ${new Date().toLocaleString()}</p>
-      </div>
-
-      <div style="margin-top: 30px; text-align: center;">
-        <a href="https://rifibazar.com" style="background-color: #f97316; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; display: inline-block;">
-         
-Continue Shopping
-        </a>
-      </div>
-    </div>
-
-    <div style="background-color: #fafafa; text-align: center; padding: 15px; font-size: 13px; color: #777;">
-      <p>© ${new Date().getFullYear()} Rifi Bazar. All rights reserved.</p>
     </div>
   </div>
   `,
         };
 
-        // ✅ Try sending the mail
-        transporter.sendMail(mailOptions, (error, info) => {
-          if (error) {
-            console.error('❌ Email send failed:', error);
-          } else {
-            console.log('✅ Email sent:', info.response);
-          }
-        });
+        // Send email with async/await
+        await transporter.sendMail(mailOptions);
 
         res.status(201).json({
           message: 'Order saved & email sent successfully!',
           id: result.insertedId,
         });
       } catch (error) {
+        console.log('❌ Email sending error:', error);
         res.status(500).json({ error: error.message });
       }
     });

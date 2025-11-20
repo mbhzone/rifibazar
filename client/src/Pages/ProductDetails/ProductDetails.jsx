@@ -31,11 +31,11 @@ const ProductDetails = () => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'page_view',
-      title: product.title,
-      description: product.description,
-      details: product.details,
+      product_id: product.id,
+      quantity: 1,
+      item_name: product.title,
       price: product.price,
-      image: product.image,
+      item_brand: 'Rifi Bazar',
     });
   }, [product]);
 
@@ -132,14 +132,11 @@ const ProductDetails = () => {
     window.dataLayer.push({
       event: 'purchase',
       ecommerce: {
-        id: product.id,
-        title: product.title,
-        author: product.author,
+        product_id: product.id,
+        item_list_name: product.title,
         price: product.price,
-        image: product.image,
       },
-      EcommerceCurrency: 'BDT',
-      totalPrice: finalPriceToPay,
+      currency: 'BDT',
       userEmail: formData.email,
       userPhone: formData.phone,
       combo: product.combo,

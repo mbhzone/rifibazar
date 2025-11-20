@@ -3,19 +3,20 @@ import React from 'react';
 const Video = () => {
   const videos = [
     {
-      id: 'T42yvwokgLw',
+      id: 'ZI8kOt2ve4o',
       title: 'Traditional Date Molasses Making',
       description:
         'Watch the authentic process of creating date molasses using traditional methods.',
     },
     {
-      id: 'FfOLSvWVRMI',
+      id: '1o-SioMDS5Q',
       title: 'Date Syrup Production',
       description:
         'Learn how date syrup is commercially produced while maintaining quality and flavor.',
     },
+
     {
-      id: 'LGc35X2h_c4',
+      id: 'HU5gs42rW0A',
       title: 'Homemade Date Molasses',
       description:
         'Simple steps to make your own date molasses at home with minimal equipment.',
@@ -26,7 +27,7 @@ const Video = () => {
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="text-center  py-9">
         <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-center text-gray-900 mb-3  lg:mb-5">
-          জানুন কেন রিফি বাজারের খেজুর গুড় সেরা?
+          জানুন কেন রিফি বাজারের খেজুর গুড় সেরা ?
         </h2>
 
         <p className="text-gray-600 text-lg">

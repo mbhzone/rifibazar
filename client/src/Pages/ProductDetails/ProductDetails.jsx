@@ -30,7 +30,7 @@ const ProductDetails = () => {
     if (!product) return;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'page_view',
+      event: 'view_item',
       product_id: product.id,
       quantity: 1,
       item_name: product.title,

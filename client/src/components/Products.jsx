@@ -129,7 +129,7 @@ const Products = ({ product }) => {
           type="button"
           className="w-full bg-[#f48323] text-white text-sm sm:text-base py-2 sm:py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md mt-auto"
         >
-          Pre Order Now
+          Order Now
         </button>
       </div>
     </Link>

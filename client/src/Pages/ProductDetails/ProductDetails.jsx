@@ -436,7 +436,7 @@ const ProductDetails = () => {
                       <div className="flex items-center justify-center gap-2 sm:gap-3">
                         <FaLock className="text-white text-sm sm:text-base" />
                         <span>
-                          Pre Order -{' '}
+                          Order -{' '}
                           {(
                             (isOrderVerified
                               ? product.price * quantity * 0.9

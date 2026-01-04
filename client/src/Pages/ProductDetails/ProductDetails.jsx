@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FaLock } from 'react-icons/fa';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import SuccessModal from '../../components/Modal/SuccessModal';
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [isOrderVerified, setIsOrderVerified] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -158,7 +159,10 @@ const ProductDetails = () => {
     }
   };
 
-  const handleSuccessClose = () => setShowSuccess(false);
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
+    navigate('/');
+  };
 
   if (!product) {
     return (

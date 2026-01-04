@@ -3,20 +3,20 @@ import React from 'react';
 const Video = () => {
   const videos = [
     {
-      id: 'ZI8kOt2ve4o',
+      id: 'pKo0YmrJBpY',
       title: 'Traditional Date Molasses Making',
       description:
         'Watch the authentic process of creating date molasses using traditional methods.',
     },
     {
-      id: '1o-SioMDS5Q',
+      id: 'DSboqXv6V2w',
       title: 'Date Syrup Production',
       description:
         'Learn how date syrup is commercially produced while maintaining quality and flavor.',
     },
 
     {
-      id: 'HU5gs42rW0A',
+      id: 'bfUdiO_w7GI',
       title: 'Homemade Date Molasses',
       description:
         'Simple steps to make your own date molasses at home with minimal equipment.',

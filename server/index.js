@@ -129,111 +129,132 @@ async function run() {
     });
 
     //  order Save
+    //   app.post('/orders', async (req, res) => {
+    //     try {
+    //       const order = req.body;
+    //       order.createdAt = new Date();
+
+    //       const result = await ordersCollection.insertOne(order);
+    //       console.log('Order Saved:', result.insertedId);
+
+    //       // ===================== EMAIL FIX =====================
+    //       // Gmail SMTP Must Use App Password
+    //       const transporter = nodemailer.createTransport({
+    //         host: 'smtp.zoho.com',
+    //         port: 587,
+    //         secure: false, // false because TLS/STARTTLS
+    //         auth: {
+    //           user: process.env.EMAIL_USER, // info@rifibazar.com
+    //           pass: process.env.EMAIL_PASS, // KaUXyEgQ9cGP
+    //         },
+    //       });
+
+    //       // transport verify (to see if working)
+    //       transporter.verify((error, success) => {
+    //         if (error) {
+    //           console.log('❌ SMTP ERROR:', error);
+    //         } else {
+    //           console.log('✅ SMTP Connected Successfully');
+    //         }
+    //       });
+
+    //       const mailOptions = {
+    //         from: `"Rifi Bazar" <${process.env.EMAIL_USER}>`,
+    //         to: order.email,
+    //         subject: '🛒 Order Confirmation - Rifi Bazar',
+    //         html: `
+    // <div style="font-family: Arial, sans-serif; background:#f7f7f7; padding:20px;">
+    //   <div style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+
+    //     <!-- Header -->
+    //     <div style="background:#ff4d4d; padding:20px; text-align:center; color:#fff;">
+    //       <h1 style="margin:0; font-size:24px;">⭐ Order Confirmed ⭐</h1>
+    //       <p style="margin:5px 0 0; font-size:14px;">Thanks for shopping with Rifi Bazar</p>
+    //     </div>
+
+    //     <!-- Product Image -->
+    //     <div style="text-align:center; padding:20px;">
+    //       <img
+    //         src="${order.product?.image}"
+    //         alt="Product Image"
+    //         style="max-width:200px; width:100%; border-radius:10px; border:1px solid #eee;"
+    //       />
+    //     </div>
+
+    //     <!-- Body -->
+    //     <div style="padding:25px; color:#333;">
+    //       <h2 style="margin-top:0;">Hello ${order.name},</h2>
+    //       <p style="font-size:16px; line-height:1.5;">
+    //         Your order has been <strong>successfully received!</strong>
+    //         We’re preparing everything, and you will get updates soon.
+    //       </p>
+
+    //       <div style="margin-top:20px;">
+    //         <h3 style="margin-bottom:10px;">🛍️ Order Details</h3>
+    //         <div style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #eee;">
+    //           <p style="margin:6px 0;"><strong>Product:</strong> ${
+    //             order.product?.title
+    //           }</p>
+    //           <p style="margin:6px 0;"><strong>Price:</strong> ${
+    //             order.product?.price
+    //           }৳</p>
+    //           <p style="margin:6px 0;"><strong>Quantity:</strong> ${
+    //             order.quantity
+    //           }</p>
+    //           <p style="margin:6px 0;"><strong>Order ID:</strong> ${
+    //             order.orderId
+    //           }</p>
+    //         </div>
+    //       </div>
+
+    //       <p style="margin-top:20px; font-size:15px; color:#555;">
+    //         If you have any questions, feel free to reply to this email.
+    //       </p>
+
+    //       <p style="margin-top:30px; font-size:14px; color:#777;">
+    //         — Rifi Bazar Team ❤️
+    //       </p>
+    //     </div>
+
+    //     <!-- Footer -->
+    //     <div style="background:#f2f2f2; text-align:center; padding:12px; font-size:13px; color:#888;">
+    //       © ${new Date().getFullYear()} Rifi Bazar — All Rights Reserved
+    //     </div>
+    //   </div>
+    // </div>
+    // `,
+    //       };
+
+    //       // Send email with async/await
+    //       await transporter.sendMail(mailOptions);
+
+    //       res.status(201).json({
+    //         message: 'Order saved & email sent successfully!',
+    //         id: result.insertedId,
+    //       });
+    //     } catch (error) {
+    //       console.log('❌ Email sending error:', error);
+    //       res.status(500).json({ error: error.message });
+    //     }
+    //   });
+
+    // =================== ORDER SAVE ONLY ===================
     app.post('/orders', async (req, res) => {
       try {
         const order = req.body;
         order.createdAt = new Date();
 
+        // Save order to MongoDB
         const result = await ordersCollection.insertOne(order);
         console.log('Order Saved:', result.insertedId);
 
-        // ===================== EMAIL FIX =====================
-        // Gmail SMTP Must Use App Password
-        const transporter = nodemailer.createTransport({
-          host: 'smtp.zoho.com',
-          port: 587,
-          secure: false, // false because TLS/STARTTLS
-          auth: {
-            user: process.env.EMAIL_USER, // info@rifibazar.com
-            pass: process.env.EMAIL_PASS, // KaUXyEgQ9cGP
-          },
-        });
-
-        // transport verify (to see if working)
-        transporter.verify((error, success) => {
-          if (error) {
-            console.log('❌ SMTP ERROR:', error);
-          } else {
-            console.log('✅ SMTP Connected Successfully');
-          }
-        });
-
-        const mailOptions = {
-          from: `"Rifi Bazar" <${process.env.EMAIL_USER}>`,
-          to: order.email,
-          subject: '🛒 Order Confirmation - Rifi Bazar',
-          html: `
-  <div style="font-family: Arial, sans-serif; background:#f7f7f7; padding:20px;">
-    <div style="max-width:600px; margin:0 auto; background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.08);">
-      
-      <!-- Header -->
-      <div style="background:#ff4d4d; padding:20px; text-align:center; color:#fff;">
-        <h1 style="margin:0; font-size:24px;">⭐ Order Confirmed ⭐</h1>
-        <p style="margin:5px 0 0; font-size:14px;">Thanks for shopping with Rifi Bazar</p>
-      </div>
-
-      <!-- Product Image -->
-      <div style="text-align:center; padding:20px;">
-        <img 
-          src="${order.product?.image}" 
-          alt="Product Image"
-          style="max-width:200px; width:100%; border-radius:10px; border:1px solid #eee;"
-        />
-      </div>
-
-      <!-- Body -->
-      <div style="padding:25px; color:#333;">
-        <h2 style="margin-top:0;">Hello ${order.name},</h2>
-        <p style="font-size:16px; line-height:1.5;">
-          Your order has been <strong>successfully received!</strong>  
-          We’re preparing everything, and you will get updates soon.
-        </p>
-
-        <div style="margin-top:20px;">
-          <h3 style="margin-bottom:10px;">🛍️ Order Details</h3>
-          <div style="background:#fafafa; padding:15px; border-radius:8px; border:1px solid #eee;">
-            <p style="margin:6px 0;"><strong>Product:</strong> ${
-              order.product?.title
-            }</p>
-            <p style="margin:6px 0;"><strong>Price:</strong> ${
-              order.product?.price
-            }৳</p>
-            <p style="margin:6px 0;"><strong>Quantity:</strong> ${
-              order.quantity
-            }</p>
-            <p style="margin:6px 0;"><strong>Order ID:</strong> ${
-              order.orderId
-            }</p>
-          </div>
-        </div>
-
-        <p style="margin-top:20px; font-size:15px; color:#555;">
-          If you have any questions, feel free to reply to this email.
-        </p>
-
-        <p style="margin-top:30px; font-size:14px; color:#777;">
-          — Rifi Bazar Team ❤️
-        </p>
-      </div>
-
-      <!-- Footer -->
-      <div style="background:#f2f2f2; text-align:center; padding:12px; font-size:13px; color:#888;">
-        © ${new Date().getFullYear()} Rifi Bazar — All Rights Reserved
-      </div>
-    </div>
-  </div>
-  `,
-        };
-
-        // Send email with async/await
-        await transporter.sendMail(mailOptions);
-
+        // Response
         res.status(201).json({
-          message: 'Order saved & email sent successfully!',
+          message: 'Order saved successfully!',
           id: result.insertedId,
         });
       } catch (error) {
-        console.log('❌ Email sending error:', error);
+        console.log('❌ Order saving error:', error);
         res.status(500).json({ error: error.message });
       }
     });

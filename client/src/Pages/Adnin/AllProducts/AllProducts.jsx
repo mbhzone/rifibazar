@@ -238,7 +238,11 @@ const AllProducts = () => {
                             {product.title || 'No Name'}
                           </div>
                           <div className="text-sm text-gray-500">
-                            {product.description || 'No description'}
+                            {product.description
+                              ? product.description.length > 130
+                                ? product.description.slice(0, 130) + '...'
+                                : product.description
+                              : 'No description'}
                           </div>
                         </div>
                       </div>

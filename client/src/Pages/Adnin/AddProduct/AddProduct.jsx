@@ -409,7 +409,7 @@ const AddProduct = () => {
 
           {/* Submit Button */}
           <div className="mt-10 pt-8 border-t border-gray-200">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 px-3">
               <div className="text-sm text-gray-500">
                 Fields marked with * are required
               </div>

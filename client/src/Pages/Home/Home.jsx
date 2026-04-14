@@ -1,10 +1,10 @@
 import {} from 'react';
-import Banner from '../../components/Home/banner';
 import Product from '../../components/Home/Product';
 import ClientReview from '../../components/Home/ClientReview';
 import Sidler from '../../components/Home/Sidler';
 import AboutAcher from '../../components/Home/AboutAcher';
 import CheckOut from '../../components/Home/CheckOut';
+import Banner from '../../components/Home/Banner';
 
 const Home = () => {
   return (

@@ -114,7 +114,7 @@ const Sidler = () => {
     }
   };
   return (
-    <div className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50/30 to-red-50/20">
+    <div className="relative pb-5 md:pb-10 px-4 overflow-hidden ">
       {/* Animated Background Elements */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 animate-pulse delay-1000"></div>
@@ -131,7 +131,7 @@ const Sidler = () => {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-14">
+        {/* <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 text-sm font-semibold mb-5 shadow-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
@@ -147,7 +147,7 @@ const Sidler = () => {
               আচার কালেকশন
             </span>
           </h1>
-        </div>
+        </div> */}
 
         {/* Swiper Carousel */}
         <Swiper

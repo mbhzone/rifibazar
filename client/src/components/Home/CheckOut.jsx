@@ -138,10 +138,7 @@ const CheckOut = () => {
   };
 
   return (
-    <div
-      id="checkOut"
-      className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50"
-    >
+    <div id="checkOut" className="min-h-screen ">
       {/* Decorative background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>

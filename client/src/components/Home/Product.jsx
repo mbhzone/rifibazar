@@ -74,15 +74,8 @@ const Product = () => {
   };
 
   return (
-    <div className="py-16 px-4 min-h-screen bg-gradient-to-br from-amber-50 via-orange-50/30 to-red-50/20 font-sans">
+    <div className="py-10 md:py-16 px-4 min-h-screen  font-sans">
       <div className="max-w-6xl mx-auto">
-        {/* Decorative Top Element */}
-        <div className="text-center mb-4">
-          <span className="inline-block px-4 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-semibold tracking-wide">
-            আমাদের কালেকশন
-          </span>
-        </div>
-
         {/* Main Heading */}
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
@@ -92,10 +85,6 @@ const Product = () => {
               <span className="text-orange-600"> স্টকে?</span>
             </span>
           </h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-base md:text-lg">
-            ঘরোয়া স্বাদে তৈরি আমাদের সেরা আচার কালেকশন। ১০০% হাইজিন ও প্রিমিয়াম
-            প্যাকেজিংয়ে।
-          </p>
         </div>
 
         {/* Product Grid */}
@@ -139,14 +128,7 @@ const Product = () => {
                 <p className="text-sm text-gray-500 mb-3 line-clamp-2">
                   {product.description}
                 </p>
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <span className="text-2xl font-bold text-gray-800">
-                    {product.price}
-                  </span>
-                  <span className="text-sm text-gray-400 line-through">
-                    ৳৩৫০
-                  </span>
-                </div>
+
                 <button
                   onClick={scrollCheckOut}
                   className={`w-full py-2.5 rounded-xl ${colorStyles[product.color].button} text-white font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 ${colorStyles[product.color].ring} focus:ring-offset-2`}

@@ -99,13 +99,13 @@ const Product = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 md:gap-8">
           {products.map((product, index) => (
             <div
               key={index}
               className={`group relative bg-gradient-to-br ${
                 colorStyles[product.color].bg
-              } rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/50 ${colorStyles[product.color].border}`}
+              } rounded-md shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/50 ${colorStyles[product.color].border}`}
             >
               {/* Decorative Badge */}
               <div className="absolute top-3 right-3 z-10">

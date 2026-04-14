@@ -4,8 +4,6 @@ import {
   CreditCard,
   Gift,
   ShoppingBag,
-  Truck,
-  ShieldCheck,
   ChevronRight,
   Plus,
   Minus,
@@ -78,6 +76,13 @@ const CheckOut = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
 
+  const scrollOrderSummary = () => {
+    const checkOut = document.getElementById('order-summary');
+    if (checkOut) {
+      checkOut.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   //  ONLY FIXED DELIVERY CHARGE
   const subtotal = selectedProduct.price * qty;
   const delivery = 160;
@@ -143,7 +148,7 @@ const CheckOut = () => {
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-12">
         {/* Header Section with Animation */}
         <div className="text-center mb-10 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full shadow-lg mb-4">
@@ -176,18 +181,19 @@ const CheckOut = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5">
             {products.map((product, idx) => (
               <div
                 key={product.id}
                 onClick={() => {
                   setSelectedProduct(product);
+                  scrollOrderSummary();
                   setQty(1);
                 }}
-                className={`group cursor-pointer transition-all duration-300 transform hover:-translate-y-2`}
+                className={`group cursor-pointer `}
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="bg-white rounded-md overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300">
+                <div className="bg-white rounded-md overflow-hidden shadow-md ">
                   <div className="relative">
                     <div className="relative flex justify-center items-center h-40">
                       <img
@@ -245,93 +251,8 @@ const CheckOut = () => {
 
         {/* Main Checkout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
-          {/* LEFT: Order Information Form */}
-          <div className="lg:col-span-2">
-            <div className="bg-white/80 backdrop-blur-sm rounded-md shadow-xl p-6 md:p-8 border border-white/50">
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-gray-100">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center shadow-md">
-                  <User className="w-5 h-5 text-white" />
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800">
-                  ডেলিভারি তথ্য
-                </h2>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="relative">
-                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
-                    placeholder="আপনার নাম"
-                    required
-                  />
-                </div>
-
-                <div className="relative">
-                  <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="tel"
-                    name="mobile"
-                    value={formData.mobile}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
-                    placeholder="মোবাইল নম্বর"
-                    required
-                  />
-                </div>
-
-                <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
-                    placeholder="ইমেইল (ঐচ্ছিক)"
-                  />
-                </div>
-
-                <div className="relative">
-                  <MapPin className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
-                  <textarea
-                    name="address"
-                    value={formData.address}
-                    onChange={handleInputChange}
-                    rows={5}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none resize-none"
-                    placeholder="পূর্ণ ঠিকানা (বাড়ি/রাস্তা/জেলা)"
-                    required
-                  />
-                </div>
-
-                <div className="relative">
-                  <input
-                    type="text"
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
-                    placeholder="অর্ডার সংক্রান্ত বিশেষ নোট (ঐচ্ছিক)"
-                  />
-                </div>
-
-                <div className="flex items-center gap-3 text-sm text-gray-500 bg-amber-50 p-3 rounded-xl">
-                  <Clock className="w-5 h-5 text-amber-600" />
-                  <span>
-                    অর্ডার করার ২৪ ঘন্টার মধ্যে ডেলিভারি দেওয়া হবে ইনশাআল্লাহ
-                  </span>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          {/* RIGHT: Order Summary Card */}
-          <div className="lg:col-span-1">
+          {/*  LEFT: Order Summary Card */}
+          <div id="order-summary" className="lg:col-span-1">
             <div className="bg-white rounded-md shadow-xl overflow-hidden sticky top-8 border border-gray-100">
               <div className="bg-gradient-to-r from-orange-500 to-amber-600 px-6 py-5 text-white">
                 <div className="flex items-center gap-2">
@@ -414,9 +335,88 @@ const CheckOut = () => {
                   </span>
                 </div>
 
-                {/* Order Button with animation */}
+                {/* Cash on delivery info */}
+                <div className="mt-5 text-center text-xs text-gray-500 bg-gray-50 p-3 rounded-xl">
+                  <p className="flex items-center justify-center gap-1">
+                    <CreditCard className="w-3 h-3" /> ক্যাশ অন ডেলিভারি উপলব্ধ
+                  </p>
+                  <p className="mt-1">অর্ডার কনফার্মেশনের জন্য কল দেওয়া হবে</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/*RIGHT : Order Information Form */}
+          <div className="lg:col-span-2">
+            <div className="bg-white/80 backdrop-blur-sm rounded-md shadow-xl p-6 md:p-8 border border-white/50">
+              <div className="flex items-center gap-3 mb-6  border-b border-gray-100">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center shadow-md">
+                  <User className="w-5 h-5 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  ডেলিভারি তথ্য
+                </h2>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="relative">
+                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
+                    placeholder="আপনার নাম"
+                    required
+                  />
+                </div>
+
+                <div className="relative">
+                  <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="tel"
+                    name="mobile"
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
+                    placeholder="মোবাইল নম্বর"
+                    required
+                  />
+                </div>
+
+                <div className="relative">
+                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
+                    placeholder="ইমেইল (ঐচ্ছিক)"
+                  />
+                </div>
+
+                <div className="relative">
+                  <MapPin className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
+                  <textarea
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    rows={3}
+                    className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none resize-none"
+                    placeholder="পূর্ণ ঠিকানা (বাড়ি/রাস্তা/জেলা)"
+                    required
+                  />
+                </div>
+
+                <div className="flex items-center gap-3 text-sm text-gray-500 bg-amber-50 p-3 rounded-xl">
+                  <Clock className="w-5 h-5 text-amber-600" />
+                  <span>
+                    অর্ডার করার ২৪ ঘন্টার মধ্যে ডেলিভারি দেওয়া হবে ইনশাআল্লাহ
+                  </span>
+                </div>
                 <button
-                  onClick={handleSubmit}
+                  type="submit"
                   disabled={
                     isSubmitting ||
                     !formData.name ||
@@ -434,26 +434,7 @@ const CheckOut = () => {
                 >
                   {isSubmitting ? (
                     <>
-                      <svg
-                        className="animate-spin h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <span className="animate-spin">⏳</span>
                       প্রক্রিয়াকরণ...
                     </>
                   ) : (
@@ -463,15 +444,7 @@ const CheckOut = () => {
                     </>
                   )}
                 </button>
-
-                {/* Cash on delivery info */}
-                <div className="mt-5 text-center text-xs text-gray-500 bg-gray-50 p-3 rounded-xl">
-                  <p className="flex items-center justify-center gap-1">
-                    <CreditCard className="w-3 h-3" /> ক্যাশ অন ডেলিভারি উপলব্ধ
-                  </p>
-                  <p className="mt-1">অর্ডার কনফার্মেশনের জন্য কল দেওয়া হবে</p>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>

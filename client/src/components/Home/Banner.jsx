@@ -12,7 +12,7 @@ const Banner = () => {
     }
   };
   return (
-    <div className="px-4  relative overflow-hidden ">
+    <div className="px-4  relative overflow-hidden pt-15 md:pt-0">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-orange-200 rounded-full filter blur-3xl opacity-20 -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-green-200 rounded-full filter blur-3xl opacity-20 translate-x-1/2 translate-y-1/2"></div>

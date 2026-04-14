@@ -58,14 +58,14 @@ const fakeReviews = [
 
 const ClientReview = () => {
   return (
-    <div className="relative py-20  overflow-hidden ">
+    <div className="relative pt-10  overflow-hidden ">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-4">
             <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
             গ্রাহকদের মতামত

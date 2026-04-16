@@ -387,12 +387,30 @@ const CheckOut = () => {
                 </div>
 
                 {/* Cash on delivery info */}
-                <div className="mt-5 flex items-center gap-2 text-xs text-gray-500 bg-gray-50 p-3 rounded-xl">
-                  <CreditCard className="w-3 h-3" />
-                  <p className="whitespace-nowrap">
-                    ক্যাশ অন ডেলিভারি উপলব্ধ - অর্ডার কনফার্মেশনের জন্য কল দেওয়া
+                <div
+                  className=" flex items-center justify-center gap-3 text-xs 
+  bg-gradient-to-r from-orange-50 via-amber-50 to-yellow-50 
+  border border-orange-200 
+  p-3 rounded-2xl shadow-sm
+  text-orange-800
+  hover:shadow-md transition-all duration-300
+"
+                >
+                  <div className="p-1.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white">
+                    <CreditCard className="w-3.5 h-3.5" />
+                  </div>
+
+                  <p className="whitespace-nowrap font-medium">
+                    ক্যাশ অন ডেলিভারি উপলব্ধ — অর্ডার কনফার্মেশনের জন্য কল দেওয়া
                     হবে
                   </p>
+
+                  <span
+                    className="ml-2 px-2 py-0.5 text-[10px] rounded-full 
+    bg-orange-500 text-white font-semibold"
+                  >
+                    COD
+                  </span>
                 </div>
                 <button
                   type="submit"

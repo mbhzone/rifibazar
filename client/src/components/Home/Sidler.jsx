@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import Achar from '../../assets/achaer.png'; // Your jar image
 import { FaStar, FaRegStar, FaShoppingCart, FaHeart } from 'react-icons/fa';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -89,21 +89,21 @@ const products = [
   },
 ];
 
-const badgeColors = {
-  orange: 'bg-orange-100 text-orange-700',
-  green: 'bg-green-100 text-green-700',
-  red: 'bg-red-100 text-red-700',
-  purple: 'bg-purple-100 text-purple-700',
-  blue: 'bg-blue-100 text-blue-700',
-  pink: 'bg-pink-100 text-pink-700',
-};
+// const badgeColors = {
+//   orange: 'bg-orange-100 text-orange-700',
+//   green: 'bg-green-100 text-green-700',
+//   red: 'bg-red-100 text-red-700',
+//   purple: 'bg-purple-100 text-purple-700',
+//   blue: 'bg-blue-100 text-blue-700',
+//   pink: 'bg-pink-100 text-pink-700',
+// };
 
 const Sidler = () => {
-  const [liked, setLiked] = useState({});
+  // const [liked, setLiked] = useState({});
 
-  const toggleLike = id => {
-    setLiked(prev => ({ ...prev, [id]: !prev[id] }));
-  };
+  // const toggleLike = id => {
+  //   setLiked(prev => ({ ...prev, [id]: !prev[id] }));
+  // };
 
   // scroll to checkout section
 
@@ -114,11 +114,11 @@ const Sidler = () => {
     }
   };
   return (
-    <div className="relative pb-5 md:pb-10 px-4 overflow-hidden ">
+    <div className="relative pb-5 md:pb-2 px-4 overflow-hidden ">
       {/* Animated Background Elements */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+      {/* <div className="absolute top-0 left-0 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 animate-pulse delay-1000"></div>
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div> */}
 
       {/* Decorative Dots Pattern */}
       <div className="absolute top-20 right-10 opacity-20">
@@ -177,23 +177,23 @@ const Sidler = () => {
               <div className="group h-full">
                 <div className="bg-white rounded-2xl shadow-lg  overflow-hidden h-full flex flex-col relative">
                   {/* Badge */}
-                  <div className="absolute top-3 left-3 z-20">
+                  {/* <div className="absolute top-3 left-3 z-20">
                     <span
                       className={`px-3 py-1 text-xs font-bold rounded-full shadow-md ${badgeColors[product.badgeColor]}`}
                     >
                       {product.badge}
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* Wishlist Button */}
-                  <button
+                  {/* <button
                     onClick={() => toggleLike(product.id)}
                     className="absolute top-3 right-3 z-20 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110"
                   >
                     <FaHeart
                       className={`w-4 h-4 transition-colors ${liked[product.id] ? 'text-red-500 fill-red-500' : 'text-gray-400'}`}
                     />
-                  </button>
+                  </button> */}
 
                   {/* Image Container */}
                   <div className="relative overflow-hidden bg-gradient-to-br from-orange-50 to-amber-50 pt-6 pb-2">
@@ -206,19 +206,19 @@ const Sidler = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-5 flex-1 flex flex-col">
-                    {/* Name */}
-                    <div>
+                  {/* <div className="p-5 flex-1 flex flex-col"> */}
+                  {/* Name */}
+                  {/* <div>
                       <h2 className="text-xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors">
                         {product.name}
                       </h2>
                       <p className="text-xs text-gray-400 mt-0.5">
                         {product.nameEn}
                       </p>
-                    </div>
+                    </div> */}
 
-                    {/* Rating */}
-                    <div className="flex items-center gap-2 mt-3">
+                  {/* Rating */}
+                  {/* <div className="flex items-center gap-2 mt-3">
                       <div className="flex gap-0.5">
                         {Array.from({ length: 5 }).map((_, i) =>
                           i < product.rating ? (
@@ -237,15 +237,15 @@ const Sidler = () => {
                       <span className="text-xs text-gray-400">
                         ({product.reviewCount})
                       </span>
-                    </div>
+                    </div> */}
 
-                    {/* Description */}
-                    <p className="text-sm text-gray-500 mt-3 leading-relaxed flex-1 line-clamp-2">
+                  {/* Description */}
+                  {/* <p className="text-sm text-gray-500 mt-3 leading-relaxed flex-1 line-clamp-2">
                       {product.description}
-                    </p>
+                    </p> */}
 
-                    {/* Price and CTA */}
-                    <div className="mt-4 pt-3 border-t border-gray-100">
+                  {/* Price and CTA */}
+                  {/* <div className="mt-4 pt-3 border-t border-gray-100">
                       <div className="flex items-center justify-between">
                         <div>
                           <span className="text-2xl font-bold text-orange-600">
@@ -265,8 +265,8 @@ const Sidler = () => {
                           </span>
                         </button>
                       </div>
-                    </div>
-                  </div>
+                    </div> */}
+                  {/* </div> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -274,7 +274,7 @@ const Sidler = () => {
         </Swiper>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-7 md:mt-12">
           <button
             onClick={scrollCheckOut}
             className="group relative px-8 py-3 bg-white border-2 border-orange-500 text-orange-600 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg overflow-hidden"

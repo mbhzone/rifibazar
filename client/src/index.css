@@ -1,8 +1,22 @@
 @import 'tailwindcss';
 @plugin "daisyui";
 
+/* Tailwind theme variables */
 @theme {
   --color-sec-500: ;
   --color-main-500: #1d232a;
   --color-primary-500: #ffffff;
 }
+
+/* ✅ Custom Bangla Font */
+@font-face {
+  font-family: 'Li Ador Noirrit';
+  src: url('/fonts/Li_Ador_Noirrit.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ✅ Global font apply */
+/* body {
+  font-family: 'Li Ador Noirrit', sans-serif !important;
+} */

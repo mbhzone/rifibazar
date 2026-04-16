@@ -139,13 +139,13 @@ const CheckOut = () => {
 
   return (
     <div id="checkOut" className="min-h-screen ">
-      {/* Decorative background elements */}
+      {/* Decorative background elements
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-amber-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
-      </div>
+      </div> */}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4  md:pb-10">
         {/* Header Section with Animation */}
         <div className="text-center mb-10 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full shadow-lg mb-4">
@@ -154,10 +154,10 @@ const CheckOut = () => {
               সুরক্ষিত চেকআউট
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-700 to-amber-700 bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-5xl font-extrabold bg-gradient-to-r from-orange-700 to-amber-700 bg-clip-text text-transparent md:pt-3">
             আপনার অর্ডার নিশ্চিত করুন
           </h1>
-          <p className="text-gray-600 mt-3 max-w-md mx-auto">
+          <p className="text-gray-600 mt-3 max-w-md mx-auto hidden sm:block">
             দেশের সেরা হাতের তৈরি আচার, সরাসরি আপনার দোরগোড়ায়
           </p>
         </div>
@@ -169,7 +169,7 @@ const CheckOut = () => {
               <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
                 <ShoppingBag className="w-5 h-5 text-orange-600" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">
+              <h2 className="text-xl font-bold text-gray-800 ">
                 আপনার পছন্দের আচার বেছে নিন
               </h2>
             </div>
@@ -331,14 +331,6 @@ const CheckOut = () => {
                     ৳{total}
                   </span>
                 </div>
-
-                {/* Cash on delivery info */}
-                <div className="mt-5 text-center text-xs text-gray-500 bg-gray-50 p-3 rounded-xl">
-                  <p className="flex items-center justify-center gap-1">
-                    <CreditCard className="w-3 h-3" /> ক্যাশ অন ডেলিভারি উপলব্ধ
-                  </p>
-                  <p className="mt-1">অর্ডার কনফার্মেশনের জন্য কল দেওয়া হবে</p>
-                </div>
               </div>
             </div>
           </div>
@@ -382,18 +374,6 @@ const CheckOut = () => {
                 </div>
 
                 <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full pl-12 pr-4 py-3.5 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all outline-none"
-                    placeholder="ইমেইল (ঐচ্ছিক)"
-                  />
-                </div>
-
-                <div className="relative">
                   <MapPin className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
                   <textarea
                     name="address"
@@ -406,11 +386,13 @@ const CheckOut = () => {
                   />
                 </div>
 
-                <div className="flex items-center gap-3 text-sm text-gray-500 bg-amber-50 p-3 rounded-xl">
-                  <Clock className="w-5 h-5 text-amber-600" />
-                  <span>
-                    অর্ডার করার ২৪ ঘন্টার মধ্যে ডেলিভারি দেওয়া হবে ইনশাআল্লাহ
-                  </span>
+                {/* Cash on delivery info */}
+                <div className="mt-5 flex items-center gap-2 text-xs text-gray-500 bg-gray-50 p-3 rounded-xl">
+                  <CreditCard className="w-3 h-3" />
+                  <p className="whitespace-nowrap">
+                    ক্যাশ অন ডেলিভারি উপলব্ধ - অর্ডার কনফার্মেশনের জন্য কল দেওয়া
+                    হবে
+                  </p>
                 </div>
                 <button
                   type="submit"

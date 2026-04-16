@@ -21,14 +21,14 @@ const Product = () => {
       name: 'মিক্সড আচার',
       nameEn: 'Mixed Achar',
       price: '৳৩০০',
-      color: 'purple',
+      color: 'orange',
       description: 'বিভিন্ন ফলের মিশেলে তৈরি স্পেশাল আচার',
     },
     {
       name: 'আম আচার',
       nameEn: 'Mango Achar',
       price: '৳২৮০',
-      color: 'yellow',
+      color: 'green',
       description: 'কাঁচা আমের টক-মিষ্টি  ঝাল সুস্বাদু  আচার',
     },
   ];
@@ -47,20 +47,6 @@ const Product = () => {
       text: 'text-green-600',
       button: 'bg-green-500 hover:bg-green-600',
       ring: 'focus:ring-green-500',
-    },
-    purple: {
-      bg: 'from-purple-50 to-fuchsia-50',
-      border: 'hover:border-purple-200',
-      text: 'text-purple-600',
-      button: 'bg-purple-500 hover:bg-purple-600',
-      ring: 'focus:ring-purple-500',
-    },
-    yellow: {
-      bg: 'from-yellow-50 to-amber-50',
-      border: 'hover:border-yellow-200',
-      text: 'text-amber-600',
-      button: 'bg-amber-500 hover:bg-amber-600',
-      ring: 'focus:ring-amber-500',
     },
   };
 
@@ -146,7 +132,7 @@ const Product = () => {
         </div>
 
         {/* Features Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mt-7 md:mt-20 grid grid-cols-4 gap-1 md:gap-4">
           <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-2xl backdrop-blur-sm">
             <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-2">
               <svg
@@ -230,10 +216,10 @@ const Product = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-7 md:mt-12">
           <div className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 rounded-full p-[2px] shadow-lg">
             <div className="bg-white rounded-full px-8 py-3">
-              <p className="text-orange-600 text-xl md:text-2xl font-bold">
+              <p className="text-orange-600  md:text-2xl font-bold">
                 সর্বোচ্চ হাইজিন ও প্রিমিয়াম প্যাকেজিং
               </p>
             </div>

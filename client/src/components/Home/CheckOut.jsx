@@ -22,6 +22,7 @@ const CheckOut = () => {
       name: 'তেতুল আচার',
       nameEn: 'Tetul Achar',
       price: 250,
+      discountPrice: 200,
       image:
         'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
       badge: 'বেস্ট সেলার',
@@ -33,6 +34,7 @@ const CheckOut = () => {
       name: 'বরই আচার',
       nameEn: 'Boroi Achar',
       price: 220,
+      discountPrice: 200,
       image:
         'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
       badge: 'টক-মিষ্টি',
@@ -44,6 +46,7 @@ const CheckOut = () => {
       name: 'মিক্সড আচার',
       nameEn: 'Mixed Achar',
       price: 300,
+      discountPrice: 200,
       image:
         'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
       badge: 'স্পেশাল',
@@ -55,6 +58,7 @@ const CheckOut = () => {
       name: 'আম আচার',
       nameEn: 'Aam Achar',
       price: 280,
+      discountPrice: 200,
       image:
         'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
       badge: 'টক ঝাল',
@@ -236,9 +240,14 @@ const CheckOut = () => {
                         ({product.reviews})
                       </span>
                     </div>
-                    <p className="text-orange-600 font-bold text-xl">
-                      {product.price} TK
-                    </p>
+                    <div className="flex items-center justify-center gap-3">
+                      <p className="text-orange-600 font-bold text-xl">
+                        {product.discountPrice} TK
+                      </p>
+                      <p className="text-gray-600 font-bold text-xl line-through">
+                        {product.price} TK
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -273,9 +282,14 @@ const CheckOut = () => {
                     <h3 className="font-bold text-gray-800 text-lg">
                       {selectedProduct.name}
                     </h3>
-                    <p className="text-orange-600 font-bold text-xl">
-                      {selectedProduct.price} Tk
-                    </p>
+                    <div className="flex items-center gap-3 ">
+                      <p className="text-orange-600 font-bold text-xl">
+                        {selectedProduct.discountPrice} Tk
+                      </p>
+                      <p className="text-gray-600 font-bold  line-through">
+                        {selectedProduct.price} Tk
+                      </p>
+                    </div>
                     <div className="flex items-center gap-2 mt-1">
                       <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                       <span className="text-xs text-gray-500">
@@ -337,7 +351,7 @@ const CheckOut = () => {
           {/*RIGHT : Order Information Form */}
           <div className="lg:col-span-2">
             <div className="bg-white/80 backdrop-blur-sm rounded-md shadow-xl p-6 md:p-8 border border-white/50">
-              <div className="flex items-center gap-3 mb-6  border-b border-gray-100">
+              <div className="flex items-center gap-3 mb-3  border-b border-gray-100">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center shadow-md">
                   <User className="w-5 h-5 text-white" />
                 </div>

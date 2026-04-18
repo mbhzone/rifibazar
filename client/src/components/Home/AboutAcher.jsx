@@ -40,7 +40,7 @@ const AboutAcher = () => {
         {/* Main Heading */}
         <div className="text-center mb-7 md:mb-12">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 tracking-tight mt-0 md:mt-3">
-            কেনো নিবেন আমাদের
+            কেনো কিনবেন আমাদের
             <span className="relative inline-block ml-2">
               <span className="absolute inset-0 bg-gradient-to-r from-orange-200 to-amber-200 -skew-y-2 rounded-lg -z-10"></span>
               এক্সক্লুসিভ আচার?

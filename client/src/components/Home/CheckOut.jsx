@@ -88,7 +88,7 @@ const CheckOut = () => {
   };
 
   //  ONLY FIXED DELIVERY CHARGE
-  const subtotal = selectedProduct.price * qty;
+  const subtotal = selectedProduct.discountPrice * qty;
   const delivery = 160;
   const total = subtotal + delivery;
 

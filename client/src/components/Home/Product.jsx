@@ -1,11 +1,6 @@
 import React from 'react';
-import Achar from '../../assets/achaer bm.png'; 
-
-// ৪টি আলাদা প্রোডাক্টের জন্য ৪টি আলাদা ইমেজ এখানে ইমপোর্ট করুন
-import TetulImg from '../../assets/tetul 12.png'; 
-import BoroiImg from '../../assets/achaer bm.png'; // আপনার বরই আচারের ইমেজের পাথ দিন
-import MixedImg from '../../assets/tetul 12.png'; // আপনার মিক্সড আচারের ইমেজের পাথ দিন
-import ComboImg from '../../assets/tetul 12.png'; // আপনার কম্বো আচারের ইমেজের পাথ দিন
+import Boroi from '../../assets/achaer bm.png'; // Your jar image
+import Tetul from '../../assets/tetul 12.png'; // Your jar image
 
 const Product = () => {
   const products = [
@@ -15,7 +10,7 @@ const Product = () => {
       price: '৳২৫০',
       color: 'orange',
       description: 'টক-মিষ্টি স্বাদে মুখরোচক তেঁতুল আচার',
-      img: TetulImg, // আলাদা ইমেজ ১
+      img: Tetul,
     },
     {
       name: 'বরই আচার',
@@ -23,7 +18,7 @@ const Product = () => {
       price: '৳২২০',
       color: 'green',
       description: 'টক-মিষ্টি স্বাদে অতুলনীয় সুস্বাদু বরই আচার',
-      img: BoroiImg, // আলাদা ইমেজ ২
+      img: Boroi,
     },
     {
       name: 'তেঁতুল-বরই মিক্সড আচার ',
@@ -31,7 +26,7 @@ const Product = () => {
       price: '৳৩০০',
       color: 'orange',
       description: 'টক-ঝাল-মিষ্টি মিশেলে তৈরি স্পেশাল আচার',
-      img: MixedImg, // আলাদা ইমেজ ৩
+      img: Tetul,
     },
     {
       name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো',
@@ -39,7 +34,7 @@ const Product = () => {
       price: '৳২৮০',
       color: 'green',
       description: 'টক-ঝাল-মিষ্টি সকল স্পেশাল আচার',
-      img: ComboImg, // আলাদা ইমেজ ৪
+      img: Tetul,
     },
   ];
 
@@ -104,7 +99,6 @@ const Product = () => {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="w-32 h-32 bg-orange-200/30 rounded-full blur-2xl"></div>
                 </div>
-                {/* এখানে product.img ডায়নামিক করা হয়েছে */}
                 <img
                   src={product.img}
                   alt={product.name}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Achar from '../../assets/achaer bm.png'; // Your jar image
+import Tetul from '../../assets/tetul 12.png'; // Your jar image
 
 const Product = () => {
   const products = [
@@ -95,7 +96,7 @@ const Product = () => {
                   <div className="w-32 h-32 bg-orange-200/30 rounded-full blur-2xl"></div>
                 </div>
                 <img
-                  src={Achar}
+                  src={Tetul}
                   alt={product.name}
                   className="w-36 md:w-40 mx-auto drop-shadow-xl transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 relative z-10"
                 />

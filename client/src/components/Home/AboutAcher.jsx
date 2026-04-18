@@ -347,7 +347,7 @@ const AboutAcher = () => {
               onClick={scrollCheckOut}
               className="group relative px-8 py-3 bg-white border-2 border-orange-500 text-orange-600 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg overflow-hidden"
             >
-              <span className="relative z-10">অর্ডার করুন</span>
+              <span className="relative z-10">অর্ডার করতে চাই</span>
               <div className="absolute inset-0 bg-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
             </button>
           </div>

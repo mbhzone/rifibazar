@@ -5,31 +5,31 @@ const Product = () => {
   const products = [
     {
       name: 'তেঁতুল আচার',
-      nameEn: 'Tetul Achar',
+      nameEn: 'Tamarind Pickle',
       price: '৳২৫০',
       color: 'orange',
-      description: 'টক-মিষ্টি স্বাদে মুখরোচক তেতুলের আচার',
+      description: 'টক-মিষ্টি স্বাদে মুখরোচক তেঁতুল আচার',
     },
     {
       name: 'বরই আচার',
-      nameEn: 'Bori Achar',
+      nameEn: 'Jujube Pickle',
       price: '৳২২০',
       color: 'green',
-      description: 'ক্রিস্পি ও স্বাদে অতুলনীয় সুস্বাদু  বরই আচার',
+      description: 'টক-মিষ্টি স্বাদে অতুলনীয় সুস্বাদু বরই আচার',
     },
     {
-      name: 'মিক্সড আচার',
-      nameEn: 'Mixed Achar',
+      name: 'তেঁতুল-বরই মিক্সড আচার ',
+      nameEn: 'Tamarind-Jujube Mixed Pickle',
       price: '৳৩০০',
       color: 'orange',
-      description: 'বিভিন্ন ফলের মিশেলে তৈরি স্পেশাল আচার',
+      description: 'টক-ঝাল-মিষ্টি মিশেলে তৈরি স্পেশাল আচার',
     },
     {
-      name: 'আম আচার',
-      nameEn: 'Mango Achar',
+      name: 'তেঁতুল,বরই ও তেঁতুল-বরই মিক্সড আচার কম্বো',
+      nameEn: 'Tamarind-Jujube Mixed Pickler Combo',
       price: '৳২৮০',
       color: 'green',
-      description: 'কাঁচা আমের টক-মিষ্টি  ঝাল সুস্বাদু  আচার',
+      description: 'টক-ঝাল-মিষ্টি সকল স্পেশাল আচার',
     },
   ];
 
@@ -190,7 +190,7 @@ const Product = () => {
               </svg>
             </div>
             <span className="text-sm font-semibold text-gray-700">
-              ২৪ ঘন্টা ডেলিভারি
+              দ্রত ডেলিভারি
             </span>
           </div>
           <div className="flex flex-col items-center text-center p-4 bg-white/50 rounded-2xl backdrop-blur-sm">
@@ -214,13 +214,13 @@ const Product = () => {
             </span>
           </div>
         </div>
-
+ 
         {/* Bottom CTA */}
         <div className="text-center mt-7 md:mt-12">
           <div className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 rounded-full p-[2px] shadow-lg">
             <div className="bg-white rounded-full px-8 py-3">
               <p className="text-orange-600  md:text-2xl font-bold">
-                সর্বোচ্চ হাইজিন ও প্রিমিয়াম প্যাকেজিং
+                সেরা স্বাদের ও প্রিমিয়াম প্যাকেজিং আচার 
               </p>
             </div>
           </div>

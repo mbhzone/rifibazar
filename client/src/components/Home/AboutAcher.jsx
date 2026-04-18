@@ -92,7 +92,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        কৃত্রিম ফ্লেভার ব্যবহার করা হয়
+                         স্বাস্থ্যের ঝুঁকি (কেমিক্যাল প্রিজারভেটিভ)
                       </span>
                     </li>
                     <li className="flex items-start gap-3 group/item">
@@ -112,7 +112,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        মানহীন বা পুরনো তেল ব্যবহার
+                        নিম্নমানের পোড়া তেল
                       </span>
                     </li>
                     <li className="flex items-start gap-3 group/item">
@@ -132,7 +132,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        প্রিজারভেটিভ ও কেমিক্যাল থাকে
+                       কৃত্রিম রঙ ও ফ্লেভার
                       </span>
                     </li>
                     <li className="flex items-start gap-3 group/item">
@@ -152,7 +152,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        কম হাইজিন মেইনটেইন করা হয়
+                        অস্বাস্থ্যকর উৎপাদন পরিবেশ
                       </span>
                     </li>
                     <li className="flex items-start gap-3 group/item">
@@ -172,7 +172,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        স্বাদ ও গুণগত মান অনিয়মিত
+                        স্মানহীন ও বাসি কাঁচামাল
                       </span>
                     </li>
                   </ul>
@@ -231,7 +231,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        ১০০% প্রাকৃতিক উপাদান ব্যবহার করা হয়
+                        ১১০০% ঘরোয়া ও প্রাকৃতিক
                       </span>
                     </li>
                     <li className="flex items-start gap-3 group/item">
@@ -251,27 +251,7 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        খাঁটি সরিষার তেল দিয়ে তৈরি
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3 group/item">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-0.5 group-hover/item:scale-110 transition">
-                        <svg
-                          className="w-4 h-4 text-green-600"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2.5}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <span className="text-slate-700 font-medium">
-                        কোনো কেমিক্যাল বা প্রিজারভেটিভ নেই
+                        খাঁটি সরিষার তেল
                       </span>
                     </li>
                     <li className="flex items-start gap-3 group/item">
@@ -311,7 +291,27 @@ const AboutAcher = () => {
                         </svg>
                       </div>
                       <span className="text-slate-700 font-medium">
-                        ফ্রেশ ও হাইজেনিক প্রোডাকশন
+                        নিখুঁত পরিচ্ছন্নতা নিশ্চিতি
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 group/item">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mt-0.5 group-hover/item:scale-110 transition">
+                        <svg
+                          className="w-4 h-4 text-green-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-slate-700 font-medium">
+                        ফ্রসতেজ ও প্রিমিয়াম কাঁচামাল
                       </span>
                     </li>
                   </ul>
@@ -331,7 +331,7 @@ const AboutAcher = () => {
                       ))}
                     </div>
                     <span className="text-green-700 text-sm font-semibold">
-                      ১০,০০০+ হ্যাপি কাস্টমার
+                      বাস্থ্যসম্মত - নিশ্চিতে নিতে পারেন
                     </span>
                   </div>
                 </div>

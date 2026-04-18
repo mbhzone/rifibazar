@@ -17,6 +17,7 @@ const Product = () => {
       price: '৳২২০',
       color: 'green',
       description: 'টক-মিষ্টি স্বাদে অতুলনীয় সুস্বাদু বরই আচার',
+      img: Achar,
     },
     {
       name: 'তেঁতুল-বরই মিক্সড আচার ',

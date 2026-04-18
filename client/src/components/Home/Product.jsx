@@ -25,7 +25,7 @@ const Product = () => {
       description: 'টক-ঝাল-মিষ্টি মিশেলে তৈরি স্পেশাল আচার',
     },
     {
-      name: 'তেঁতুল,বরই ও তেঁতুল-বরই মিক্সড আচার কম্বো',
+      name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো',
       nameEn: 'Tamarind-Jujube Mixed Pickler Combo',
       price: '৳২৮০',
       color: 'green',

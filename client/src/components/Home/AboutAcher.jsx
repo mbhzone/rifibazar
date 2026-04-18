@@ -331,7 +331,7 @@ const AboutAcher = () => {
                       ))}
                     </div>
                     <span className="text-green-700 text-sm font-semibold">
-                      বাস্থ্যসম্মত - নিশ্চিতে নিতে পারেন
+                      স্বাস্থ্যসম্মত - নিশ্চিতে নিতে পারেন
                     </span>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import Achar from '../../assets/achaer.png'; // Your jar image
 const Product = () => {
   const products = [
     {
-      name: 'তেতুল আচার',
+      name: 'তেঁতুল আচার',
       nameEn: 'Tetul Achar',
       price: '৳২৫০',
       color: 'orange',

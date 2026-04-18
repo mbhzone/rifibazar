@@ -1,6 +1,8 @@
 import React from 'react';
-import Boroi from '../../assets/achaer bm.png'; // Your jar image
-import Tetul from '../../assets/tetul 12.png'; // Your jar image
+import Boroi from '../../assets/Boroi A.png'; // Your jar image
+import Tetul from '../../assets/Tetul A.png'; // Your jar image
+import Mixed from '../../assets/Mixed A.png'; // Your jar image
+import Combo from '../../assets/Combo A.png'; // Your jar image
 
 const Product = () => {
   const products = [
@@ -26,7 +28,7 @@ const Product = () => {
       price: '৳৩০০',
       color: 'orange',
       description: 'টক-ঝাল-মিষ্টি মিশেলে তৈরি স্পেশাল আচার',
-      img: Tetul,
+      img: Mixed,
     },
     {
       name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো',
@@ -34,7 +36,7 @@ const Product = () => {
       price: '৳২৮০',
       color: 'green',
       description: 'টক-ঝাল-মিষ্টি সকল স্পেশাল আচার',
-      img: Tetul,
+      img: Combo,
     },
   ];
 

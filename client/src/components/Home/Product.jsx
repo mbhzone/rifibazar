@@ -1,5 +1,5 @@
 import React from 'react';
-import Achar from '../../assets/tetul b.png'; // Your jar image
+import Achar from '../../assets/boroi r.png'; // Your jar image
 
 const Product = () => {
   const products = [

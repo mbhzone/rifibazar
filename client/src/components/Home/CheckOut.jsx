@@ -19,7 +19,7 @@ const CheckOut = () => {
   const products = [
     {
       id: 1,
-      name: 'তেঁতুল  আচার',
+      name: 'তেঁতুল  আচার (400gm)',
       nameEn: 'Tamarind Pickle',
       price: 390,
       discountPrice: 350,
@@ -31,7 +31,7 @@ const CheckOut = () => {
     },
     {
       id: 2,
-      name: 'বরই আচার',
+      name: 'বরই আচার (400gm)',
       nameEn: 'Jujube Pickle',
       price: 390,
       discountPrice: 350,
@@ -43,7 +43,7 @@ const CheckOut = () => {
     },
     {
       id: 3,
-      name: 'তেঁতুল-বরই মিক্সড আচার',
+      name: 'তেঁতুল-বরই মিক্সড আচার (400gm)',
       nameEn: 'Tamarind-Jujube Mixed Pickle',
       price: 420,
       discountPrice: 370,
@@ -55,10 +55,10 @@ const CheckOut = () => {
     },
     {
       id: 4,
-      name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো',
+      name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো (1.2kg)',
       nameEn: 'Tamarind-Jujube Mixed Pickler Combo',
-      price: 950,
-      discountPrice: 200,
+      price: 1200,
+      discountPrice: 950,
       image:
         'https://i.ibb.co.com/qM9xkTGX/Combo-A.png',
       badge: 'এক অর্ডারে সব স্বাদ',

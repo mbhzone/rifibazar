@@ -51,7 +51,7 @@ const Banner = () => {
         <p className="md:mt-2 text-gray-700 text-base sm:text-lg">
           প্রিমিয়াম সুস্বাদু{' '}
           <span className="text-orange-500 font-bold text-lg sm:text-xl relative inline-block">
-            তেতুল
+            তেঁতুল
             <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-orange-300 rounded-full"></span>
           </span>{' '}
           ও{' '}

@@ -19,12 +19,12 @@ const CheckOut = () => {
   const products = [
     {
       id: 1,
-      name: 'তেতুল আচার',
-      nameEn: 'Tetul Achar',
-      price: 250,
-      discountPrice: 200,
+      name: 'তেঁতুল  আচার',
+      nameEn: 'Tamarind Pickle',
+      price: 390,
+      discountPrice: 350,
       image:
-        'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
+        'https://i.ibb.co.com/qLfhkwPr/Tetul-A.png',
       badge: 'বেস্ট সেলার',
       rating: 4.8,
       reviews: 124,
@@ -32,37 +32,37 @@ const CheckOut = () => {
     {
       id: 2,
       name: 'বরই আচার',
-      nameEn: 'Boroi Achar',
-      price: 220,
-      discountPrice: 200,
+      nameEn: 'Jujube Pickle',
+      price: 390,
+      discountPrice: 350,
       image:
-        'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
+        'https://i.ibb.co.com/20bcPkkQ/Boroi-A.png',
       badge: 'টক-মিষ্টি',
       rating: 4.6,
       reviews: 89,
     },
     {
       id: 3,
-      name: 'মিক্সড আচার',
-      nameEn: 'Mixed Achar',
-      price: 300,
-      discountPrice: 200,
+      name: 'তেঁতুল-বরই মিক্সড আচার',
+      nameEn: 'Tamarind-Jujube Mixed Pickle',
+      price: 420,
+      discountPrice: 370,
       image:
-        'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
+        'https://i.ibb.co.com/gZhRkdSy/Mixed-A.png',
       badge: 'স্পেশাল',
       rating: 4.9,
       reviews: 256,
     },
     {
       id: 4,
-      name: 'আম আচার',
-      nameEn: 'Aam Achar',
-      price: 280,
+      name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো',
+      nameEn: 'Tamarind-Jujube Mixed Pickler Combo',
+      price: 950,
       discountPrice: 200,
       image:
-        'https://i.ibb.co.com/zh4J5bY1/prod-3736676-boroi-removebg-preview.png',
-      badge: 'টক ঝাল',
-      rating: 4.7,
+        'https://i.ibb.co.com/qM9xkTGX/Combo-A.png',
+      badge: 'এক অর্ডারে সব স্বাদ',
+      rating: 4.8,
       reviews: 167,
     },
   ];
@@ -89,7 +89,7 @@ const CheckOut = () => {
 
   //  ONLY FIXED DELIVERY CHARGE
   const subtotal = selectedProduct.discountPrice * qty;
-  const delivery = 160;
+  const delivery = 130;
   const total = subtotal + delivery;
 
   const handleInputChange = e => {
@@ -162,7 +162,7 @@ const CheckOut = () => {
             আপনার অর্ডার নিশ্চিত করুন
           </h1>
           <p className="text-gray-600 mt-3 max-w-md mx-auto hidden sm:block">
-            দেশের সেরা হাতের তৈরি আচার, সরাসরি আপনার দোরগোড়ায়
+            দেশের সেরা ঘরোয়া আচার, সরাসরি আপনার দোরগোড়ায় 
           </p>
         </div>
 
@@ -415,8 +415,8 @@ const CheckOut = () => {
                   </div>
 
                   <p className="whitespace-nowrap font-medium">
-                    ক্যাশ অন ডেলিভারি উপলব্ধ — অর্ডার কনফার্মেশনের জন্য কল দেওয়া
-                    হবে
+                    ক্যাশ অন ডেলিভারি (হাতে পেয়ে তারপর টাকা) 
+          
                   </p>
 
                   <span

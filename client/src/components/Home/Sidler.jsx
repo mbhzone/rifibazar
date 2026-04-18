@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import Achar from '../../assets/achaer.png'; // Your jar image
+import Achar from '../../assets/tetul b.png'; // Your jar image
 import { FaStar, FaRegStar, FaShoppingCart, FaHeart } from 'react-icons/fa';
 // import { useState } from 'react';
 

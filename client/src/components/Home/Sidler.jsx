@@ -130,25 +130,6 @@ const Sidler = () => {
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        {/* Header Section */}
-        {/* <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 text-sm font-semibold mb-5 shadow-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
-            </span>
-            আমাদের স্পেশাল কালেকশন
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 tracking-tight">
-            আমাদের{' '}
-            <span className="relative inline-block">
-              <span className="absolute inset-0 bg-gradient-to-r from-orange-200 to-amber-200 -skew-y-2 rounded-lg -z-10"></span>
-              আচার কালেকশন
-            </span>
-          </h1>
-        </div> */}
-
         {/* Swiper Carousel */}
         <Swiper
           modules={[Pagination, Autoplay, Navigation]}
@@ -176,97 +157,14 @@ const Sidler = () => {
             <SwiperSlide key={product.id}>
               <div className="group h-full">
                 <div className="bg-white rounded-2xl shadow-lg  overflow-hidden h-full flex flex-col relative">
-                  {/* Badge */}
-                  {/* <div className="absolute top-3 left-3 z-20">
-                    <span
-                      className={`px-3 py-1 text-xs font-bold rounded-full shadow-md ${badgeColors[product.badgeColor]}`}
-                    >
-                      {product.badge}
-                    </span>
-                  </div> */}
-
-                  {/* Wishlist Button */}
-                  {/* <button
-                    onClick={() => toggleLike(product.id)}
-                    className="absolute top-3 right-3 z-20 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110"
-                  >
-                    <FaHeart
-                      className={`w-4 h-4 transition-colors ${liked[product.id] ? 'text-red-500 fill-red-500' : 'text-gray-400'}`}
-                    />
-                  </button> */}
-
                   {/* Image Container */}
-                  <div className="relative overflow-hidden bg-gradient-to-br from-orange-50 to-amber-50 pt-6 pb-2">
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative w-full h-64 md:h-72 overflow-hidden">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-56 object-contain transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                     />
                   </div>
-
-                  {/* Content */}
-                  {/* <div className="p-5 flex-1 flex flex-col"> */}
-                  {/* Name */}
-                  {/* <div>
-                      <h2 className="text-xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors">
-                        {product.name}
-                      </h2>
-                      <p className="text-xs text-gray-400 mt-0.5">
-                        {product.nameEn}
-                      </p>
-                    </div> */}
-
-                  {/* Rating */}
-                  {/* <div className="flex items-center gap-2 mt-3">
-                      <div className="flex gap-0.5">
-                        {Array.from({ length: 5 }).map((_, i) =>
-                          i < product.rating ? (
-                            <FaStar
-                              key={i}
-                              className="text-amber-400 text-sm"
-                            />
-                          ) : (
-                            <FaRegStar
-                              key={i}
-                              className="text-amber-400 text-sm"
-                            />
-                          ),
-                        )}
-                      </div>
-                      <span className="text-xs text-gray-400">
-                        ({product.reviewCount})
-                      </span>
-                    </div> */}
-
-                  {/* Description */}
-                  {/* <p className="text-sm text-gray-500 mt-3 leading-relaxed flex-1 line-clamp-2">
-                      {product.description}
-                    </p> */}
-
-                  {/* Price and CTA */}
-                  {/* <div className="mt-4 pt-3 border-t border-gray-100">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <span className="text-2xl font-bold text-orange-600">
-                            {product.price}
-                          </span>
-                          <span className="text-sm text-gray-400 line-through ml-2">
-                            {product.originalPrice}
-                          </span>
-                        </div>
-                        <button
-                          onClick={scrollCheckOut}
-                          className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 active:scale-95"
-                        >
-                          <FaShoppingCart className="w-4 h-4" />
-                          <span className="text-sm font-semibold">
-                            অর্ডার করুন
-                          </span>
-                        </button>
-                      </div>
-                    </div> */}
-                  {/* </div> */}
                 </div>
               </div>
             </SwiperSlide>

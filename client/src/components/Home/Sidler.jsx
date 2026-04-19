@@ -158,6 +158,7 @@ const Sidler = () => {
               <div className="group h-full">
                 <div className="bg-white rounded-2xl shadow-lg  overflow-hidden h-full flex flex-col relative">
                   {/* Image Container */}
+                  {/* h-64 md:h-72 */}
                   <div className="relative w-full  overflow-hidden">
                     <img
                       src={product.image}

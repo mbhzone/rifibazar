@@ -35,7 +35,7 @@ const Statistics = () => {
       try {
         setLoading(true);
         const res = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/get-orders`
+          `${import.meta.env.VITE_BASE_URL}/get-orders`,
         );
         setOrders(res.data.slice(0, 6)); // Show only recent orders
       } catch (error) {
@@ -327,16 +327,16 @@ const Statistics = () => {
                     <div className="relative">
                       <img
                         className="w-14 h-14 rounded-xl object-cover shadow-md group-hover:shadow-lg transition-shadow duration-300"
-                        src={order.product.image}
-                        alt={order.product.title}
+                        src={order?.image}
+                        alt={order?.title}
                       />
                       <div
                         className={`absolute -top-1 -right-1 w-5 h-5 rounded-full border-2 border-white ${
                           order.status === 'Delivered'
                             ? 'bg-green-500'
                             : order.status === 'Shipped'
-                            ? 'bg-blue-500'
-                            : 'bg-yellow-500'
+                              ? 'bg-blue-500'
+                              : 'bg-yellow-500'
                         }`}
                       ></div>
                     </div>
@@ -344,10 +344,10 @@ const Statistics = () => {
                       <div className="flex items-start justify-between">
                         <div className="flex-1 min-w-0 mr-4">
                           <p className="text-sm font-semibold text-gray-900 truncate mb-1">
-                            {order?.customer?.name || 'Customer'}
+                            {order?.name || 'Customer'}
                           </p>
                           <p className="text-xs text-gray-600 truncate mb-2">
-                            {order?.product?.title}
+                            {order?.title}
                           </p>
                           <div className="flex items-center space-x-2">
                             <span
@@ -355,20 +355,20 @@ const Statistics = () => {
                                 order.status === 'delivered'
                                   ? 'bg-green-100 text-green-800 border border-green-200'
                                   : order.status === 'Shipped'
-                                  ? 'bg-blue-100 text-blue-800 border border-blue-200'
-                                  : 'bg-yellow-100 text-yellow-800 border border-yellow-200'
+                                    ? 'bg-blue-100 text-blue-800 border border-blue-200'
+                                    : 'bg-yellow-100 text-yellow-800 border border-yellow-200'
                               }`}
                             >
                               {order.status}
                             </span>
                             <span className="text-xs text-gray-500">
-                              {order?.combo ? 'Combo' : `${order?.quantity} Kg`}
+                              {order?.combo ? 'Combo' : `${order?.qty} Pieces`}
                             </span>
                           </div>
                         </div>
                         <div className="text-right">
                           <p className="text-sm font-bold text-gray-900 mb-1">
-                            {Number(order?.product?.price).toLocaleString()} Tk
+                            {Number(order?.price).toLocaleString()} Tk
                           </p>
                           <p className="text-xs text-gray-500">
                             {new Date(order.createdAt).toLocaleDateString()}

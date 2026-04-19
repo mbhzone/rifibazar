@@ -87,7 +87,7 @@ const Product = () => {
               key={index}
               className={`group relative bg-gradient-to-br ${
                 colorStyles[product.color].bg
-              } rounded-md shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/50 ${colorStyles[product.color].border}`}
+              } rounded-md shadow-md hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/50 ${colorStyles[product.color].border} flex flex-col h-full`}
             >
               {/* Decorative Badge */}
               <div className="absolute top-3 right-3 z-10">
@@ -109,22 +109,25 @@ const Product = () => {
               </div>
 
               {/* Product Info */}
-              <div className="text-center px-4 pb-6">
+              <div className="text-center px-4 pb-6 flex flex-col flex-1">
                 <h3
                   className={`text-xl md:text-2xl font-bold ${colorStyles[product.color].text} mb-1`}
                 >
                   {product.name}
                 </h3>
+
                 <p className="text-xs text-gray-400 tracking-wide mb-2">
                   {product.nameEn}
                 </p>
+
                 <p className="text-sm text-gray-500 mb-3 line-clamp-2">
                   {product.description}
                 </p>
 
+                {/* Button always bottom */}
                 <button
                   onClick={scrollCheckOut}
-                  className={`w-full py-2.5 rounded-xl ${colorStyles[product.color].button} text-white font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 ${colorStyles[product.color].ring} focus:ring-offset-2`}
+                  className={`mt-auto w-full py-2.5 rounded-xl ${colorStyles[product.color].button} text-white font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 ${colorStyles[product.color].ring} focus:ring-offset-2`}
                 >
                   অর্ডার করুন
                 </button>
@@ -221,13 +224,13 @@ const Product = () => {
             </span>
           </div>
         </div>
- 
+
         {/* Bottom CTA */}
         <div className="text-center mt-7 md:mt-12">
           <div className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 rounded-full p-[2px] shadow-lg">
             <div className="bg-white rounded-full px-8 py-3">
               <p className="text-orange-600  md:text-2xl font-bold">
-                সেরা স্বাদের ও প্রিমিয়াম প্যাকেজিং আচার 
+                সেরা স্বাদের ও প্রিমিয়াম প্যাকেজিং আচার
               </p>
             </div>
           </div>

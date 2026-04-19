@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import web1 from '../../assets/web d1.jpeg'; // Your jar image
 import web2 from '../../assets/web d2.jpeg'; // Your jar image
-import web3 from '../../assets/web d4.jpeg'; // Your jar image
+import web3 from '../../assets/web 4.png'; // Your jar image
 
 
 import { FaStar, FaRegStar, FaShoppingCart, FaHeart } from 'react-icons/fa';

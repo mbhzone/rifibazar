@@ -1,6 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import Achar from '../../assets/tetul b.png'; // Your jar image
+import web1 from '../../assets/web d1.jpeg'; // Your jar image
+import web2 from '../../assets/web d2.jpeg'; // Your jar image
+import web3 from '../../assets/web d3.jpeg'; // Your jar image
+
+
 import { FaStar, FaRegStar, FaShoppingCart, FaHeart } from 'react-icons/fa';
 // import { useState } from 'react';
 
@@ -20,7 +24,7 @@ const products = [
     reviewCount: 128,
     badge: 'বেস্টসেলার',
     badgeColor: 'orange',
-    image: Achar,
+    image: web1,
   },
   {
     id: 2,
@@ -33,7 +37,7 @@ const products = [
     reviewCount: 95,
     badge: 'নতুন',
     badgeColor: 'green',
-    image: Achar,
+    image: web2,
   },
   {
     id: 3,
@@ -46,7 +50,7 @@ const products = [
     reviewCount: 67,
     badge: 'ঝাল স্পেশাল',
     badgeColor: 'red',
-    image: Achar,
+    image: web3,
   },
   {
     id: 4,
@@ -59,7 +63,7 @@ const products = [
     reviewCount: 82,
     badge: 'সেরা বিক্রি',
     badgeColor: 'purple',
-    image: Achar,
+    image: web1,
   },
   {
     id: 5,
@@ -72,7 +76,7 @@ const products = [
     reviewCount: 43,
     badge: 'সীমিত সংস্করণ',
     badgeColor: 'blue',
-    image: Achar,
+    image: web3,
   },
   {
     id: 6,
@@ -85,7 +89,7 @@ const products = [
     reviewCount: 56,
     badge: 'লিমিটেড',
     badgeColor: 'pink',
-    image: Achar,
+    image: web2,
   },
 ];
 

@@ -23,8 +23,7 @@ const CheckOut = () => {
       nameEn: 'Tamarind Pickle',
       price: 390,
       discountPrice: 350,
-      image:
-        'https://i.ibb.co.com/qLfhkwPr/Tetul-A.png',
+      image: 'https://i.ibb.co.com/qLfhkwPr/Tetul-A.png',
       badge: 'বেস্ট সেলার',
       rating: 4.8,
       reviews: 124,
@@ -35,8 +34,7 @@ const CheckOut = () => {
       nameEn: 'Jujube Pickle',
       price: 390,
       discountPrice: 350,
-      image:
-        'https://i.ibb.co.com/20bcPkkQ/Boroi-A.png',
+      image: 'https://i.ibb.co.com/20bcPkkQ/Boroi-A.png',
       badge: 'টক-মিষ্টি',
       rating: 4.6,
       reviews: 89,
@@ -47,8 +45,7 @@ const CheckOut = () => {
       nameEn: 'Tamarind-Jujube Mixed Pickle',
       price: 420,
       discountPrice: 370,
-      image:
-        'https://i.ibb.co.com/gZhRkdSy/Mixed-A.png',
+      image: 'https://i.ibb.co.com/gZhRkdSy/Mixed-A.png',
       badge: 'স্পেশাল',
       rating: 4.9,
       reviews: 256,
@@ -59,8 +56,7 @@ const CheckOut = () => {
       nameEn: 'Tamarind-Jujube Mixed Pickler Combo',
       price: 1200,
       discountPrice: 950,
-      image:
-        'https://i.ibb.co.com/qM9xkTGX/Combo-A.png',
+      image: 'https://i.ibb.co.com/qM9xkTGX/Combo-A.png',
       badge: 'এক অর্ডারে সব স্বাদ',
       rating: 4.8,
       reviews: 167,
@@ -123,7 +119,29 @@ const CheckOut = () => {
         orderData,
       );
 
-      console.log('Order Saved:', res.data);
+      const data = res.data;
+      console.log(data);
+
+      // 🔹 success হলে GTM dataLayer push
+      if (data.message === 'Order saved successfully!') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'purchase',
+          ecommerce: {
+            transaction_id: data.orderId || 'T_' + Date.now(),
+            value: total,
+            currency: 'BDT',
+            items: [
+              {
+                item_id: selectedProduct.id,
+                item_name: selectedProduct.name,
+                price: selectedProduct.discountPrice,
+                quantity: qty,
+              },
+            ],
+          },
+        });
+      }
     } catch (error) {
       console.error(error);
       alert('Order failed!');
@@ -162,7 +180,7 @@ const CheckOut = () => {
             আপনার অর্ডার নিশ্চিত করুন
           </h1>
           <p className="text-gray-600 mt-3 max-w-md mx-auto hidden sm:block">
-            দেশের সেরা ঘরোয়া আচার, সরাসরি আপনার দোরগোড়ায় 
+            দেশের সেরা ঘরোয়া আচার, সরাসরি আপনার দোরগোড়ায়
           </p>
         </div>
 
@@ -415,8 +433,7 @@ const CheckOut = () => {
                   </div>
 
                   <p className="whitespace-nowrap font-medium">
-                    ক্যাশ অন ডেলিভারি (হাতে পেয়ে তারপর টাকা) 
-          
+                    ক্যাশ অন ডেলিভারি (হাতে পেয়ে তারপর টাকা)
                   </p>
 
                   <span

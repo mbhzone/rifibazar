@@ -158,12 +158,12 @@ const FinalCta = () => {
                   </span>
 
                   <a
-                    href="https://novasoft-frontend.vercel.app/"
+                    href="https://delt-a-digivast-frontend.vercel.app/"
                     target="_blank"
                     rel="noreferrer"
                     className="text-[10px] md:text-sm font-semibold text-orange-400 hover:text-orange-300 underline"
                   >
-                    softvisionix
+                    Delta Digivast
                   </a>
 
                   <Star className="w-3 h-3 text-yellow-400" />
@@ -173,7 +173,7 @@ const FinalCta = () => {
                 <div className="flex items-center gap-1">
                   <Globe className="w-3 h-3 text-blue-400" />
                   <a
-                    href="https://novasoft-frontend.vercel.app/"
+                    href="https://delt-a-digivast-frontend.vercel.app/"
                     target="_blank"
                     rel="noreferrer"
                     className="text-[10px] md:text-sm text-gray-400 hover:text-white"

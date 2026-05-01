@@ -16,7 +16,7 @@ const Home = () => {
       <Banner></Banner>
       <Influencer></Influencer>
       <Giveaway></Giveaway>
-      <AboutRajshahi></AboutRajshahi>
+      {/* <AboutRajshahi></AboutRajshahi> */}
       <Product></Product>
       <Sidler></Sidler>
       <AboutAcher></AboutAcher>

@@ -17,39 +17,39 @@ import {
 
 const CheckOut = () => {
   const products = [
-    {
-      id: 1,
-      name: 'তেঁতুল  আচার (400gm)',
-      nameEn: 'Tamarind Pickle',
-      price: 390,
-      discountPrice: 350,
-      image: 'https://i.ibb.co.com/qLfhkwPr/Tetul-A.png',
-      badge: 'বেস্ট সেলার',
-      rating: 4.8,
-      reviews: 124,
-    },
-    {
-      id: 2,
-      name: 'বরই আচার (400gm)',
-      nameEn: 'Jujube Pickle',
-      price: 390,
-      discountPrice: 350,
-      image: 'https://i.ibb.co.com/20bcPkkQ/Boroi-A.png',
-      badge: 'টক-মিষ্টি',
-      rating: 4.6,
-      reviews: 89,
-    },
-    {
-      id: 3,
-      name: 'তেঁতুল-বরই মিক্সড আচার (400gm)',
-      nameEn: 'Tamarind-Jujube Mixed Pickle',
-      price: 420,
-      discountPrice: 370,
-      image: 'https://i.ibb.co.com/gZhRkdSy/Mixed-A.png',
-      badge: 'স্পেশাল',
-      rating: 4.9,
-      reviews: 256,
-    },
+    // {
+    //   id: 1,
+    //   name: 'তেঁতুল  আচার (400gm)',
+    //   nameEn: 'Tamarind Pickle',
+    //   price: 390,
+    //   discountPrice: 350,
+    //   image: 'https://i.ibb.co.com/qLfhkwPr/Tetul-A.png',
+    //   badge: 'বেস্ট সেলার',
+    //   rating: 4.8,
+    //   reviews: 124,
+    // },
+    // {
+    //   id: 2,
+    //   name: 'বরই আচার (400gm)',
+    //   nameEn: 'Jujube Pickle',
+    //   price: 390,
+    //   discountPrice: 350,
+    //   image: 'https://i.ibb.co.com/20bcPkkQ/Boroi-A.png',
+    //   badge: 'টক-মিষ্টি',
+    //   rating: 4.6,
+    //   reviews: 89,
+    // },
+    // {
+    //   id: 3,
+    //   name: 'তেঁতুল-বরই মিক্সড আচার (400gm)',
+    //   nameEn: 'Tamarind-Jujube Mixed Pickle',
+    //   price: 420,
+    //   discountPrice: 370,
+    //   image: 'https://i.ibb.co.com/gZhRkdSy/Mixed-A.png',
+    //   badge: 'স্পেশাল',
+    //   rating: 4.9,
+    //   reviews: 256,
+    // },
     {
       id: 4,
       name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো (1.2kg)',
@@ -200,7 +200,7 @@ const CheckOut = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-2 md:gap-5">
             {products.map((product, idx) => (
               <div
                 key={product.id}
@@ -288,7 +288,7 @@ const CheckOut = () => {
                 </p>
               </div>
 
-              <div className="p-6">
+              <div className="px-6 py-3">
                 {/* Selected Product Card */}
                 <div className="flex gap-4 items-center bg-orange-50 rounded-2xl p-4 mb-6">
                   <img

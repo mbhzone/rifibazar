@@ -35,13 +35,8 @@ const Banner = () => {
 
       {/* Center Content */}
       <div className="text-center px-4 sm:px-6 relative z-10 max-w-4xl mx-auto pt-6 md:pt-0">
-        {/* Top Strip */}
-        <p className="text-sm bg-orange-100 text-orange-700 px-3 py-1 rounded-full inline-block mb-3">
-          🔴 FoodAppi রিভিউ করেছেন — ভিডিও দেখুন এখনই
-        </p>
-
         {/* Badges */}
-        <div className="flex justify-center gap-2 mb-3 flex-wrap">
+        <div className="flex justify-center gap-2 mb-3 flex-wrap mt-12 md-mt-0">
           <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm">
             রাজশাহীর খাঁটি আচার
           </span>

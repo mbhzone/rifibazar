@@ -214,14 +214,14 @@ const Product = () => {
                   <div className="mb-4">
                     <div className="flex items-baseline gap-3 flex-wrap">
                       <span className="text-3xl md:text-4xl font-extrabold text-gray-800">
-                        ৳৯৫০
+                        ৳৯৯৯
                       </span>
                       <span className="text-lg md:text-xl text-gray-400 line-through">
                         ৳১২০০
                       </span>
                       <div className="bg-green-100 px-3 py-1 rounded-full">
                         <span className="text-green-700 font-semibold text-sm">
-                          💰 ২৫০ টাকা সাশ্রয়!
+                          💰 ২০১ টাকা সাশ্রয়!
                         </span>
                       </div>
                     </div>

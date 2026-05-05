@@ -302,7 +302,7 @@ const Giveaway = () => {
             </p>
             <p className="text-xs text-gray-600 flex items-center gap-1">
               <Calendar className="w-3 h-3 text-orange-500" />
-              <span>ড্র তারিখ: ৩০শে এপ্রিল, ২০২৬</span>
+              <span>ড্র তারিখ:(দ্রুত জানানো হবে) </span>
             </p>
           </div>
 

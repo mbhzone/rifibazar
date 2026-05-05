@@ -55,7 +55,7 @@ const CheckOut = () => {
       name: 'তেঁতুল,বরই ও মিক্সড আচার কম্বো (1.2kg)',
       nameEn: 'Tamarind-Jujube Mixed Pickler Combo',
       price: 1200,
-      discountPrice: 950,
+      discountPrice: 999,
       image: 'https://i.ibb.co.com/qM9xkTGX/Combo-A.png',
       badge: 'এক অর্ডারে সব স্বাদ',
       rating: 4.8,

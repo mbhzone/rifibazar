@@ -47,7 +47,7 @@ const Banner = () => {
 
         {/* Heading */}
         <h2 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          স্বাদ ও রুচি <span className="text-orange-500">দুটোই বাড়িয়ে</span>{' '}
+          স্বাদ ও রুচি <span className="text-orange-500">দুটোই বাড়িয়ে তুলবে</span>{' '}
           <br />
           <span className="text-green-600">Rifi Bazar আচার</span>
         </h2>
@@ -55,7 +55,7 @@ const Banner = () => {
         {/* Tagline */}
         <p className="mt-4 text-gray-700 text-base sm:text-lg">
           প্রিমিয়াম স্বাদু <strong>তেঁতুল</strong> ও <strong>বরই আচার</strong>{' '}
-          — রাজশাহীর বাগান থেকে সরাসরি আপনার দরজায়
+          — রাজশাহীর ঘরোয়া পরিবেশ থেকে সরাসরি আপনার দরজায়
         </p>
 
         {/* Giveaway */}

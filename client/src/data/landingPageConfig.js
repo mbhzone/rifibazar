@@ -14,13 +14,6 @@ import LangraBanner from '../assets/am/web banner.png';
 //himsagor
 import himsagorslider1 from '../assets/am/shihab.jpg';
 import himsagorslider2 from '../assets/am/shihab2.jpg';
-import himsagorL1 from '../assets/am/am2.jpg';
-import himsagorL2 from '../assets/am/am1.jpg';
-import himsagorL3 from '../assets/am/am3.jpg';
-import himsagorL4 from '../assets/am/am4.jpg';
-
-
-
 
 
 // Amropali
@@ -32,6 +25,13 @@ import NakFojliSilder1 from '../assets/am/HimsagorBanner.jpg';
 import NakFojliSilder2 from '../assets/am/LangraBanner.webp';
 
 // product slider
+
+//himsagor
+import himsagorProductliSilder1 from '../assets/am/am2.jpg';
+import himsagorProductliSilder2 from '../assets/am/am1.jpg';
+import himsagorProductliSilder3 from '../assets/am/am3.jpg';
+import himsagorProductliSilder4 from '../assets/am/am4.jpg';
+
 // Amropali
 import AmropaProductliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
 import AmropaProductliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
@@ -250,10 +250,10 @@ export const landingPages = [
     },
 
     products: [
-      himsagorL1,
-      himsagorL2,
-      himsagorL3,
-      himsagorL4,
+      himsagorProductliSilder1,
+      himsagorProductliSilder2,
+      himsagorProductliSilder3,
+      himsagorProductliSilder4,
     ],
 
     faq: [

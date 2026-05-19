@@ -37,7 +37,7 @@ const HeroSection = ({ hero }) => {
           {/* Heading - Enhanced with gradient */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 md:mb-4 leading-tight drop-shadow-lg">
             {hero.heading}
-            <span className="block text-orange-400 mt-2">আমাদের সাথে</span>
+            <span className="block text-orange-400 mt-2">রাজশাহী ও নওগাঁর সরাসরি বাগান থেকে </span>
           </h1>
 
           {/* Subheading - Enhanced */}

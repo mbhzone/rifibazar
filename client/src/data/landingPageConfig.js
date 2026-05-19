@@ -6,7 +6,7 @@ import langra from '../assets/am/ল্যাংড়া আম.jpg';
 // banner
 import AmropaliBanner from '../assets/am/web banner.png';
 import NakFojliBanner from '../assets/am/web banner.png';
-import HimsagorBanner from '../assets/am/heroimgb.jpg';
+import HimsagorBanner from '../assets/am/heroimgr.jpg';
 import LangraBanner from '../assets/am/web banner.png';
 
 // why we slider

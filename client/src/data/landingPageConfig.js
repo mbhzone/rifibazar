@@ -10,6 +10,11 @@ import HimsagorBanner from '../assets/am/web banner.png';
 import LangraBanner from '../assets/am/web banner.png';
 
 // why we slider
+
+//himsagor
+import himsagorslider1 from '../assets/am/shihab.jpg';
+import himsagorslider2 from '../assets/am/shihab2.jpg';
+
 // Amropali
 import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
 import AmropaliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
@@ -227,7 +232,7 @@ export const landingPages = [
         'আমাদের বাগান থেকেই সরাসরি সংগ্রহ করা হয় একদম পরিপক্ক , সুস্বাদু ও তাজা আম—যা হাতে বাছাই করে সর্বোচ্চ সতেজতা নিশ্চিত করা হয়',
       subheading2:
         'আম পাকাতে আমরা  কোনো বিষাক্ত কার্বাইড বা ফরমালিন ব্যবহার করি না। একদম প্রাকৃতিকভাবে পরিপক্ক আম আমরা সরবরাহ করি।',
-      images: [AmropaliSilder1, AmropaliSilder2],
+      images: [himsagorslider1, himsagorslider2],
       points: [
         'কড়া মিষ্টি স্বাদ',
         'কেমিক্যালমুক্ত গ্যারান্টি',

@@ -104,7 +104,7 @@ const Products = ({ product }) => {
                     {/* Overlay Badge */}
                     <div className="absolute top-3 left-3 z-10">
                       <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2.5 py-1 rounded-lg text-xs font-semibold shadow-lg">
-                        রসালো আমগুলো
+                        টাটকা
                       </div>
                     </div>
                   </div>

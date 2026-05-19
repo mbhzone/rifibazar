@@ -105,7 +105,7 @@ const OrderViewModal = ({ order, onClose }) => {
 
                   <div className="flex-1">
                     <h4 className="text-xl font-bold text-gray-800 mb-2">
-                      {order?.title || 'Product Name'}
+                      {order?.productName || 'Product Name'}
                     </h4>
 
                     <div className="space-y-3 mt-4">
@@ -123,7 +123,7 @@ const OrderViewModal = ({ order, onClose }) => {
                           <FaShoppingCart className="text-blue-500" /> Quantity
                         </span>
                         <span className="font-semibold">
-                          {order?.quantity || 1}
+                          {order?.qty || 1} KG
                         </span>
                       </div>
 

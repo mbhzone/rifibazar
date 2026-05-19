@@ -8,6 +8,8 @@ import Statistics from '../components/Admin/Statistics/Statistics';
 import AllProducts from '../Pages/Adnin/AllProducts/AllProducts';
 import AddProduct from '../Pages/Adnin/AddProduct/AddProduct';
 import Order from '../Pages/Adnin/Order/Order';
+import Acher from '../Pages/Acher/Acher';
+import ProductDetails from '../Pages/ProductDetails/ProductDetails';
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +20,14 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home,
       },
-
+      {
+        path: '/acher',
+        Component: Acher,
+      },
+      {
+        path: '/product/:id',
+        Component: ProductDetails,
+      },
       {
         path: '/admin-login',
         Component: AdminLogin,

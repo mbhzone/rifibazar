@@ -14,6 +14,14 @@ import LangraBanner from '../assets/am/web banner.png';
 //himsagor
 import himsagorslider1 from '../assets/am/shihab.jpg';
 import himsagorslider2 from '../assets/am/shihab2.jpg';
+import himsagorL1 from '../assets/am/am2.jpg';
+import himsagorL2 from '../assets/am/am1.jpg';
+import himsagorL3 from '../assets/am/am3.jpg';
+import himsagorL4 from '../assets/am/am4.jpg';
+
+
+
+
 
 // Amropali
 import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
@@ -242,10 +250,10 @@ export const landingPages = [
     },
 
     products: [
-      NakFojliProductSilder1,
-      NakFojliProductSilder2,
-      NakFojliProductSilder1,
-      NakFojliProductSilder2,
+      himsagorL1,
+      himsagorL2,
+      himsagorL3,
+      himsagorL4,
     ],
 
     faq: [

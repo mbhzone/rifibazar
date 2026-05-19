@@ -1,6 +1,6 @@
 import Amropali from '../assets/am/amropali.webp';
 import nakfojli from '../assets/am/নাকফজলি আম.webp';
-import himsagor from '../assets/am/হিমসাগর আম.png';
+import himsagor from '../assets/am/am2.jpg';
 import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner

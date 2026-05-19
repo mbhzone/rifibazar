@@ -37,7 +37,7 @@ const Products = ({ product }) => {
         {/* Header Section */}
         <div className="text-center ">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">
-            <span className="text-orange-500">রসালো আমগুলো</span>দেখেই খেতে ইচ্ছে করতেছে
+            <span className="text-orange-500">রসালো আমগুলো</span> দেখেই খেতে ইচ্ছে করবে
           </h2>
 
           <div className="w-20 h-0.5 bg-gradient-to-r from-orange-400 to-amber-400 mx-auto mt-4 rounded-full"></div>

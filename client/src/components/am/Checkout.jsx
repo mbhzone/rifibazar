@@ -125,10 +125,10 @@ const Checkout = ({ selectedProduct }) => {
             <div className="p-5 md:p-6 border-b border-gray-100 bg-gradient-to-r from-orange-50 to-amber-50">
               <h2 className="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-2">
                 <ShoppingBag className="w-6 h-6 text-orange-500" />
-                অর্ডার সম্পন্ন করুন
+                এই আমের সিজন কিন্তু অল্প কয়দিনের
               </h2>
               <p className="text-gray-500 text-sm mt-1">
-                আপনার অর্ডার তথ্য যাচাই করে কনফার্ম করুন
+                দেরি করলে এই বছর এই আম আর পাবেন না 
               </p>
             </div>
 
@@ -157,7 +157,7 @@ const Checkout = ({ selectedProduct }) => {
                         ))}
                       </div>
                       <span className="text-xs text-gray-500">
-                        (১,২০০+ রিভিউ)
+                        (৭০০+ Happy Customer)
                       </span>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ const Checkout = ({ selectedProduct }) => {
                       >
                         {pkg.popular && (
                           <span className="absolute -top-2 -right-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-                            জনপ্রিয়
+                            সাশ্রয়ী ও জনপ্রিয়
                           </span>
                         )}
                         <p className="font-bold text-gray-800 text-sm">
@@ -233,7 +233,7 @@ const Checkout = ({ selectedProduct }) => {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">ডেলিভারি চার্জ</span>
-                    <span className="text-green-600 font-semibold">ফ্রি</span>
+                    <span className="text-green-600 font-semibold">সারাদেশে ফ্রী</span>
                   </div>
                   <div className="border-t border-gray-200 pt-2 mt-2">
                     <div className="flex justify-between items-center">
@@ -314,11 +314,11 @@ const Checkout = ({ selectedProduct }) => {
                           </svg>
                         </div>
                         <p className="text-sm font-semibold text-gray-700">
-                          <span className="text-green-600">আগে আম নিবেন</span>
+                          <span className="text-green-600">আগে একটা আম খাবেন </span>
                           <span className="mx-1 text-gray-400">|</span>
-                          <span className="text-gray-700">পড়ে টাকা দিবেন</span>
+                          <span className="text-gray-700">ভালো লাগলে টাকা দিবেন</span>
                           <span className="ml-1.5 bg-green-100 text-green-700 text-xs font-bold px-1.5 py-0.5 rounded">
-                            COD
+                            Cash On Delivery 
                           </span>
                         </p>
                       </div>
@@ -351,7 +351,7 @@ const Checkout = ({ selectedProduct }) => {
             <div className="p-4 bg-blue-50 flex items-start gap-2">
               <Truck className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
               <p className="text-xs text-blue-700">
-                অর্ডার কনফার্মেশনের ২৪-৪৮ ঘন্টার মধ্যে ডেলিভারি দেওয়া হবে
+                অর্ডার কনফার্মেশনের ২৪-৭২ ঘন্টার মধ্যে ডেলিভারি দেওয়া হবে
               </p>
             </div>
           </div>

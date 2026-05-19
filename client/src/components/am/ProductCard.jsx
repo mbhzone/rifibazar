@@ -22,7 +22,7 @@ export default function ProductCard({ data, id }) {
         <img
           src={data.image}
           alt={data.title}
-          className="w-full h-56 object-cover transform transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-56 object-cover transform transition-transform duration-700 group-hover:scale-110  "
         />
 
         <div

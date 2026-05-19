@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       {/* Products Grid Section */}
-      <div className="py-8 md:py-12 px-2 md:px-4 bg-white">
+      <div className="py-8 md:py-12 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-8">

@@ -100,6 +100,20 @@ export const landingPages = [
       heading: 'আম্রপালি অর্ডার করুন',
       formFields: ['name', 'phone', 'address', 'quantity'],
       note: 'অর্ডার করার পর আমরা দ্রুত আপনার সাথে যোগাযোগ করবো',
+      packages: [
+        {
+          label: '১২ কেজি প্যাকেজ',
+          value: 12,
+          price: 3000,
+          popular: false,
+        },
+        {
+          label: '২৪ কেজি প্যাকেজ',
+          value: 24,
+          price: 5000,
+          popular: true,
+        },
+      ],
     },
   },
 
@@ -171,6 +185,20 @@ export const landingPages = [
       heading: 'নাকফজলি অর্ডার করুন',
       formFields: ['name', 'phone', 'address', 'quantity'],
       note: 'অর্ডার কনফার্ম করার পর কল করা হবে',
+      packages: [
+        {
+          label: '১২ কেজি প্যাকেজ',
+          value: 12,
+          price: 3000,
+          popular: false,
+        },
+        {
+          label: '২৪ কেজি প্যাকেজ',
+          value: 24,
+          price: 5000,
+          popular: true,
+        },
+      ],
     },
   },
 
@@ -242,6 +270,20 @@ export const landingPages = [
       heading: 'হিমসাগর অর্ডার করুন',
       formFields: ['name', 'phone', 'address', 'quantity'],
       note: 'দ্রুত ডেলিভারি নিশ্চিত করা হয়',
+      packages: [
+        {
+          label: '১২ কেজি প্যাকেজ',
+          value: 12,
+          price: 3000,
+          popular: false,
+        },
+        {
+          label: '২৪ কেজি প্যাকেজ',
+          value: 24,
+          price: 5000,
+          popular: true,
+        },
+      ],
     },
   },
 
@@ -312,6 +354,20 @@ export const landingPages = [
       heading: 'ল্যাংড়া অর্ডার করুন',
       formFields: ['name', 'phone', 'address', 'quantity'],
       note: 'অর্ডার করার পর কনফার্ম করা হবে',
+      packages: [
+        {
+          label: '১২ কেজি প্যাকেজ',
+          value: 12,
+          price: 3000,
+          popular: false,
+        },
+        {
+          label: '২৪ কেজি প্যাকেজ',
+          value: 24,
+          price: 5000,
+          popular: true,
+        },
+      ],
     },
   },
 ];

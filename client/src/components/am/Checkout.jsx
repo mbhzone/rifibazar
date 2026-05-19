@@ -18,11 +18,7 @@ import {
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
-
-const packages = [
-  { label: '১২ কেজি প্যাকেজ', value: 12, price: 3000, popular: false },
-  { label: '২৪ কেজি প্যাকেজ', value: 24, price: 5000, popular: true },
-];
+import { pushToDataLayer } from '../../utils/gtm';
 
 const Checkout = ({ selectedProduct }) => {
   const [formData, setFormData] = useState({
@@ -31,11 +27,10 @@ const Checkout = ({ selectedProduct }) => {
     email: '',
     address: '',
   });
-
-  const [selectedPackage, setSelectedPackage] = useState(packages[1]);
+  const packages = selectedProduct?.checkout?.packages || [];
+  const [selectedPackage, setSelectedPackage] = useState(packages[0] || null);
   const [qty, setQty] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [orderSuccess, setOrderSuccess] = useState(false);
 
   // Calculate total based on selected package price and quantity
   const total = selectedPackage.price * qty;
@@ -65,7 +60,6 @@ const Checkout = ({ selectedProduct }) => {
 
     try {
       setIsSubmitting(true);
-      setOrderSuccess(true);
       const res = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/orders`,
         orderData,
@@ -81,7 +75,27 @@ const Checkout = ({ selectedProduct }) => {
           confirmButtonColor: '#f59e0b', // theme color
         });
         toast.success('Order saved successfully!');
-        setOrderSuccess(false);
+        pushToDataLayer('purchase', {
+          transaction_id: Date.now().toString(),
+          currency: 'BDT',
+          value: finalTotal,
+
+          customer_type: 'new',
+          delivery_area: formData.address,
+          payment_method: 'COD',
+
+          items: [
+            {
+              item_id: selectedProduct.id,
+              item_name: selectedProduct.card.title,
+              item_brand: 'Rifi Bazar',
+              item_category: 'Mango',
+              item_variant: selectedPackage.label,
+              price: selectedPackage.price,
+              quantity: qty,
+            },
+          ],
+        });
         setFormData({ name: '', mobile: '', email: '', address: '' });
         setQty(1);
         setSelectedPackage(packages[1]);
@@ -125,13 +139,13 @@ const Checkout = ({ selectedProduct }) => {
                 {/* Product Image & Name */}
                 <div className="flex gap-4 pb-4 border-b border-gray-100">
                   <img
-                    src={selectedProduct?.image}
-                    alt={selectedProduct?.name}
+                    src={selectedProduct?.card?.image}
+                    alt={selectedProduct?.card?.name}
                     className="w-20 h-20 object-cover rounded-xl shadow-md"
                   />
                   <div>
                     <h3 className="font-bold text-gray-800 text-lg">
-                      {selectedProduct?.title}
+                      {selectedProduct?.card?.title}
                     </h3>
                     <div className="flex items-center gap-2 mt-1">
                       <div className="flex gap-0.5">
@@ -281,16 +295,35 @@ const Checkout = ({ selectedProduct }) => {
                       required
                     />
                   </div>
-
-                  {/* Success Message */}
-                  {orderSuccess && (
-                    <div className="bg-green-50 border border-green-200 rounded-xl p-3 flex items-center gap-2 animate-fade-in">
-                      <CheckCircle className="w-5 h-5 text-green-600" />
-                      <p className="text-sm text-green-700">
-                        অর্ডার সফল হয়েছে!
-                      </p>
+                  <div className="mt-3">
+                    <div className="relative bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 px-3 py-2 rounded-r-lg">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center shadow-sm">
+                          <svg
+                            className="w-3.5 h-3.5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="text-sm font-semibold text-gray-700">
+                          <span className="text-green-600">আগে আম নিবেন</span>
+                          <span className="mx-1 text-gray-400">|</span>
+                          <span className="text-gray-700">পড়ে টাকা দিবেন</span>
+                          <span className="ml-1.5 bg-green-100 text-green-700 text-xs font-bold px-1.5 py-0.5 rounded">
+                            COD
+                          </span>
+                        </p>
+                      </div>
                     </div>
-                  )}
+                  </div>
 
                   {/* Submit Button */}
                   <button

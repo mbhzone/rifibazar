@@ -4,7 +4,7 @@ import './App.css';
 import './index.css';
 import { RouterProvider } from 'react-router';
 import { router } from './Router/Router.jsx';
-// 🔑 Toastify import
+//  Toastify import
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -23,5 +23,5 @@ createRoot(document.getElementById('root')).render(
       pauseOnHover
       theme="light"
     />
-  </StrictMode>
+  </StrictMode>,
 );

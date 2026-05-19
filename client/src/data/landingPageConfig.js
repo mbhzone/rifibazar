@@ -28,7 +28,7 @@ import NakFojliSilder2 from '../assets/am/LangraBanner.webp';
 
 //himsagor
 import himsagorProductliSilder1 from '../assets/am/am2.jpg';
-import himsagorProductliSilder2 from '../assets/am/am1.jpg';
+import himsagorProductliSilder2 from '../assets/am/am.jpg';
 import himsagorProductliSilder3 from '../assets/am/am3.jpg';
 import himsagorProductliSilder4 from '../assets/am/am4.jpg';
 

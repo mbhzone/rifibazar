@@ -23,7 +23,7 @@ export default function Faq({ faq }) {
             সাধারণ জিজ্ঞাসা
           </h2>
           <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
-            আপনার মনেহ যেকোনো প্রশ্নের উত্তর এখানে খুঁজে নিন। আরও কোনো কিছু
+            আপনার মনে যেকোনো প্রশ্নের উত্তর এখানে খুঁজে নিন। আরও কোনো কিছু
             জানতে চাইলে আমাদের সাথে যোগাযোগ করুন।
           </p>
           <div className="w-16 h-0.5 bg-gradient-to-r from-orange-400 to-amber-400 mx-auto mt-4 rounded-full"></div>

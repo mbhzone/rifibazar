@@ -13,7 +13,7 @@ app.use(
     origin: '*',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
     credentials: false,
-  })
+  }),
 );
 
 // ✅ Middleware ......
@@ -111,6 +111,26 @@ async function run() {
       }
     });
 
+    // Delete all orders
+    app.delete('/delete-all-orders', async (req, res) => {
+      try {
+        const result = await ordersCollection.deleteMany({});
+
+        res.json({
+          success: true,
+          message: 'All orders deleted successfully',
+          deletedCount: result.deletedCount,
+        });
+      } catch (error) {
+        console.error('❌ Delete failed:', error);
+
+        res.status(500).json({
+          success: false,
+          error: error.message,
+        });
+      }
+    });
+
     app.put('/products/:id', async (req, res) => {
       try {
         const { id } = req.params;
@@ -118,7 +138,7 @@ async function run() {
 
         const result = await productCollection.updateOne(
           { _id: new ObjectId(id) },
-          { $set: updateData } // DO NOT include _id
+          { $set: updateData }, // DO NOT include _id
         );
 
         res.json({ message: 'Product updated successfully', result });
@@ -302,7 +322,7 @@ async function run() {
 
         const result = await ordersCollection.updateOne(
           { _id: new ObjectId(id) },
-          { $set: { status } }
+          { $set: { status } },
         );
 
         res.json(result);

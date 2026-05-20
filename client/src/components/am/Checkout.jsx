@@ -42,6 +42,9 @@ const Checkout = ({ selectedProduct }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    // Prevent double submission
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
     // Prepare data for backend
@@ -49,32 +52,24 @@ const Checkout = ({ selectedProduct }) => {
       name: formData.name,
       mobile: formData.mobile,
       address: formData.address,
-      productName: selectedProduct?.title,
+      productName: selectedProduct?.card?.title,
       price: selectedPackage.price, // Selected package price
-      image: selectedProduct?.image,
+      image: selectedProduct?.card?.image,
       qty: selectedPackage.value, // Send KG/Package size instead of quantity
       total: finalTotal,
       status: 'processing',
       orderDate: new Date().toISOString(),
     };
+    console.log(orderData);
 
     try {
-      setIsSubmitting(true);
       const res = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/orders`,
         orderData,
       );
       const data = res.data;
       if (data.message === 'Order saved successfully!') {
-        Swal.fire({
-          title: 'Success!',
-          text: 'Order placed successfully',
-          icon: 'success',
-          background: '#fff',
-          color: '#222',
-          confirmButtonColor: '#f59e0b', // theme color
-        });
-        toast.success('Order saved successfully!');
+        // Push GTM event before UI feedback
         pushToDataLayer('purchase', {
           transaction_id: Date.now().toString(),
           currency: 'BDT',
@@ -96,11 +91,23 @@ const Checkout = ({ selectedProduct }) => {
             },
           ],
         });
+
+        // Show success UI after GTM event
+        Swal.fire({
+          title: 'Success!',
+          text: 'Order placed successfully',
+          icon: 'success',
+          background: '#fff',
+          color: '#222',
+          confirmButtonColor: '#f59e0b', // theme color
+        });
+        toast.success('Order saved successfully!');
+
         setFormData({ name: '', mobile: '', email: '', address: '' });
         setQty(1);
-        setSelectedPackage(packages[1]);
+        setSelectedPackage(packages[0]);
+        setIsSubmitting(false);
       }
-      setIsSubmitting(false);
     } catch (error) {
       console.log(error);
       setIsSubmitting(false);
@@ -128,7 +135,7 @@ const Checkout = ({ selectedProduct }) => {
                 এই আমের সিজন কিন্তু অল্প কয়দিনের
               </h2>
               <p className="text-gray-500 text-sm mt-1">
-                দেরি করলে এই বছর এই আম আর পাবেন না 
+                দেরি করলে এই বছর এই আম আর পাবেন না
               </p>
             </div>
 
@@ -233,7 +240,9 @@ const Checkout = ({ selectedProduct }) => {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">ডেলিভারি চার্জ</span>
-                    <span className="text-green-600 font-semibold">সারাদেশে ফ্রী</span>
+                    <span className="text-green-600 font-semibold">
+                      সারাদেশে ফ্রী
+                    </span>
                   </div>
                   <div className="border-t border-gray-200 pt-2 mt-2">
                     <div className="flex justify-between items-center">
@@ -314,11 +323,15 @@ const Checkout = ({ selectedProduct }) => {
                           </svg>
                         </div>
                         <p className="text-sm font-semibold text-gray-700">
-                          <span className="text-green-600">আগে একটা আম খাবেন </span>
+                          <span className="text-green-600">
+                            আগে একটা আম খাবেন{' '}
+                          </span>
                           <span className="mx-1 text-gray-400">|</span>
-                          <span className="text-gray-700">ভালো লাগলে টাকা দিবেন</span>
+                          <span className="text-gray-700">
+                            ভালো লাগলে টাকা দিবেন
+                          </span>
                           <span className="ml-1.5 bg-green-100 text-green-700 text-xs font-bold px-1.5 py-0.5 rounded">
-                            Cash On Delivery 
+                            Cash On Delivery
                           </span>
                         </p>
                       </div>

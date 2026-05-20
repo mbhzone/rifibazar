@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-import OrderViewModal from '../../../components/Modal/OrderViewModal';
+import { OrderViewModal } from '../../../components/Modal/OrderViewModal';
 import axios from 'axios';
 
 const OrderTable = ({ order, setOrders }) => {
@@ -120,7 +120,6 @@ const OrderTable = ({ order, setOrders }) => {
           </button>
         </td>
       </tr>
-
       {showModal && (
         <OrderViewModal order={order} onClose={() => setShowModal(false)} />
       )}

@@ -1,6 +1,6 @@
 import Amropali from '../assets/am/amropali.webp';
 import nakfojli from '../assets/am/নাকফজলি আম.webp';
-import himsagor from '../assets/am/am2.jpg';
+
 import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner
@@ -14,7 +14,6 @@ import LangraBanner from '../assets/am/web banner.png';
 //himsagor
 import himsagorslider1 from '../assets/am/shihab.jpg';
 import himsagorslider2 from '../assets/am/shihab2.jpg';
-
 
 // Amropali
 import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
@@ -222,13 +221,14 @@ export const landingPages = [
     card: {
       title: 'হিমসাগর আম',
       shortDescription: 'মিষ্টি স্বাদের বিখ্যাত হিমসাগর আম',
-      image: himsagor,
+      image: 'https://i.ibb.co.com/BK38frZ1/am2.jpg',
     },
 
     hero: {
       sesionTime: 'প্রি বুকিং চলছে ঈদের পর ডেলিভারি শুরু',
       heading: 'আমের রাজা হিমসাগর',
-      subHeading: 'রাজশাহীর এই হিমসাগর একবার খেলে সিজন শেষে আবার খুঁজবেন গ্যারান্টি দিয়ে বললাম',
+      subHeading:
+        'রাজশাহীর এই হিমসাগর একবার খেলে সিজন শেষে আবার খুঁজবেন গ্যারান্টি দিয়ে বললাম',
       description:
         'হিমসাগর আম তার অসাধারণ মিষ্টতা এবং নরম টেক্সচারের জন্য বিখ্যাত।',
       images: HimsagorBanner,

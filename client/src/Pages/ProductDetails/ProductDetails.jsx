@@ -34,29 +34,7 @@ export default function ProductDetails() {
         },
       ],
     });
-  }, [product]);
-
-  // begain_checkout
-  useEffect(() => {
-    if (!product) return;
-
-    pushToDataLayer('begin_checkout', {
-      currency: 'BDT',
-      value: product.checkout.packages[0].price,
-
-      items: [
-        {
-          item_id: product.id,
-          item_name: product.card.title,
-          item_brand: 'Rifi Bazar',
-          item_category: 'Mango',
-          item_variant: product.checkout.packages[0].label,
-          price: product.checkout.packages[0].price,
-          quantity: 1,
-        },
-      ],
-    });
-  }, [product]);
+  }, [id]);
 
   if (!product) {
     return (

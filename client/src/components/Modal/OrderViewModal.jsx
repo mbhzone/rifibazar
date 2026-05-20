@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   FaTimes,
   FaUser,
@@ -9,9 +10,11 @@ import {
   FaTag,
   FaShoppingCart,
   FaMoneyBill,
+  FaImage,
 } from 'react-icons/fa';
 
-const OrderViewModal = ({ order, onClose }) => {
+export const OrderViewModal = ({ order, onClose }) => {
+  const [imageError, setImageError] = useState(false);
   if (!order) return null;
 
   // Format date for better display
@@ -45,8 +48,8 @@ const OrderViewModal = ({ order, onClose }) => {
     }
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-opacity-60 backdrop-blur-sm">
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6">
@@ -91,16 +94,17 @@ const OrderViewModal = ({ order, onClose }) => {
                 </h3>
 
                 <div className="flex flex-col sm:flex-row gap-5">
-                  <div className="flex-shrink-0">
-                    <img
-                      src={order?.image || 'https://via.placeholder.com/150'}
-                      alt={order?.title}
-                      className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-lg shadow-md"
-                      onError={e => {
-                        e.target.onerror = null;
-                        e.target.src = 'https://via.placeholder.com/150';
-                      }}
-                    />
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg shadow-md bg-gray-100 flex items-center justify-center overflow-hidden">
+                    {!imageError && order?.image ? (
+                      <img
+                        src={order?.image}
+                        alt={order?.title}
+                        className="w-full h-full object-cover"
+                        onError={() => setImageError(true)}
+                      />
+                    ) : (
+                      <FaImage className="text-5xl text-gray-400" />
+                    )}
                   </div>
 
                   <div className="flex-1">
@@ -218,8 +222,7 @@ const OrderViewModal = ({ order, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 };
-
-export default OrderViewModal;

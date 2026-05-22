@@ -5,7 +5,6 @@ import WhyChooseUs from '../../components/am/WhyChooseUs';
 import Faq from '../../components/am/Faq';
 import Products from '../../components/am/Products';
 import Checkout from '../../components/am/Checkout';
-import { pushToDataLayer } from '../../utils/gtm';
 import { useEffect } from 'react';
 
 export default function ProductDetails() {
@@ -18,7 +17,16 @@ export default function ProductDetails() {
   useEffect(() => {
     if (!product) return;
 
-    pushToDataLayer('view_item', {
+    const viewedKey = `viewed_${id}`;
+
+    // Prevent duplicate firing
+    if (sessionStorage.getItem(viewedKey)) return;
+
+    sessionStorage.setItem(viewedKey, 'true');
+
+    window.dataLayer = window.dataLayer || [];
+
+    const ecommerceData = {
       currency: 'BDT',
       value: product.checkout.packages[0].price,
 
@@ -33,6 +41,24 @@ export default function ProductDetails() {
           quantity: 1,
         },
       ],
+    };
+
+    // view_item event
+    window.dataLayer.push({
+      event: 'view_item',
+      ecommerce: ecommerceData,
+    });
+
+    // add_to_cart event
+    window.dataLayer.push({
+      event: 'add_to_cart',
+      ecommerce: ecommerceData,
+    });
+
+    // begin_checkout
+    window.dataLayer.push({
+      event: 'begin_checkout',
+      ecommerce: ecommerceData,
     });
   }, [id]);
 

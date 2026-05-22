@@ -18,7 +18,6 @@ import {
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
-import { pushToDataLayer } from '../../utils/gtm';
 
 const Checkout = ({ selectedProduct }) => {
   const [formData, setFormData] = useState({
@@ -69,27 +68,31 @@ const Checkout = ({ selectedProduct }) => {
       );
       const data = res.data;
       if (data.message === 'Order saved successfully!') {
-        // Push GTM event before UI feedback
-        pushToDataLayer('purchase', {
-          transaction_id: Date.now().toString(),
-          currency: 'BDT',
-          value: finalTotal,
+        window.dataLayer = window.dataLayer || [];
 
-          customer_type: 'new',
-          delivery_area: formData.address,
-          payment_method: 'COD',
+        window.dataLayer.push({
+          event: 'purchase',
+          ecommerce: {
+            transaction_id: Date.now().toString(),
+            currency: 'BDT',
+            value: finalTotal,
 
-          items: [
-            {
-              item_id: selectedProduct.id,
-              item_name: selectedProduct.card.title,
-              item_brand: 'Rifi Bazar',
-              item_category: 'Mango',
-              item_variant: selectedPackage.label,
-              price: selectedPackage.price,
-              quantity: qty,
-            },
-          ],
+            customer_type: 'new',
+            delivery_area: formData.address,
+            payment_method: 'COD',
+
+            items: [
+              {
+                item_id: selectedProduct.id,
+                item_name: selectedProduct.card.title,
+                item_brand: 'Rifi Bazar',
+                item_category: 'Mango',
+                item_variant: selectedPackage.label,
+                price: selectedPackage.price,
+                quantity: qty,
+              },
+            ],
+          },
         });
 
         // Show success UI after GTM event

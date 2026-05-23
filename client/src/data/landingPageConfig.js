@@ -1,6 +1,6 @@
 import Amropali from '../assets/am/amropali.webp';
 import nakfojli from '../assets/am/নাকফজলি আম.webp';
-
+import himsagor from '../assets/am/am2.jpg';
 import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner
@@ -221,7 +221,7 @@ export const landingPages = [
     card: {
       title: 'হিমসাগর আম',
       shortDescription: 'মিষ্টি স্বাদের বিখ্যাত হিমসাগর আম',
-      image: 'https://i.ibb.co.com/BK38frZ1/am2.jpg',
+      image: himsagor,
     },
 
     hero: {

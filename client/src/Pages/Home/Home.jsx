@@ -18,17 +18,17 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white rounded-full shadow-sm mb-4">
             <Apple className="w-4 h-4 text-amber-600" />
             <span className="text-xs font-semibold text-amber-700 tracking-wide">
-              রাজশাহীর আমের রাজধানী
+              রাজশাহী আমের রাজধানী
             </span>
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            রাজশাহীর <span className="text-amber-600">সেরা আম</span> সরাসরি
+            রাজশাহী ও নওগাঁ <span className="text-amber-600">সেরা আম</span> সরাসরি
             বাগান থেকে
           </h1>
 
           <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            আমাদের নিজস্ব বাগানে উৎপাদিত রসালো, মিষ্টি ও সুগন্ধিযুক্ত আম। সরাসরি
+            বাছাইকৃত বাগান থেকে উৎপাদিত রসালো, মিষ্টি ও সুগন্ধিযুক্ত আম। সরাসরি
             গাছ থেকে তোলা, কোনো কেমিক্যাল ছাড়াই। সারা দেশে ডেলিভারি দেওয়া হয়।
           </p>
 

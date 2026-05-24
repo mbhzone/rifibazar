@@ -72,7 +72,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center p-3">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-2 shadow-md">
-                <Apple className="w-6 h-6 text-amber-600" />
+                <span className="text-amber-600 text-sm">🥭</span>
               </div>
               <p className="font-semibold text-gray-800 text-sm">
                 বাগান থেকে তাজা

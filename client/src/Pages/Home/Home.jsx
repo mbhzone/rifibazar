@@ -16,15 +16,15 @@ export default function Home() {
       <div className="bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 py-12 md:py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white rounded-full shadow-sm mb-4">
-            <Apple className="w-4 h-4 text-amber-600" />
+            <span className="text-amber-600 text-sm">🥭</span>
             <span className="text-xs font-semibold text-amber-700 tracking-wide">
               রাজশাহী আমের রাজধানী
             </span>
           </div>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            রাজশাহী ও নওগাঁ <span className="text-amber-600">সেরা আম</span> সরাসরি
-            বাগান থেকে
+            রাজশাহী ও নওগাঁ <span className="text-amber-600">সেরা আম</span>{' '}
+            সরাসরি বাগান থেকে
           </h1>
 
           <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">

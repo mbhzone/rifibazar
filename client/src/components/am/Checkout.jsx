@@ -76,8 +76,9 @@ const Checkout = ({ selectedProduct }) => {
             transaction_id: Date.now().toString(),
             currency: 'BDT',
             value: finalTotal,
-
             customer_type: 'new',
+            customer_name: formData.name,
+            customer_phone: formData.mobile,
             delivery_area: formData.address,
             payment_method: 'COD',
 

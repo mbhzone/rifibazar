@@ -119,7 +119,7 @@ export const landingPages = [
         {
           label: '২২ কেজি প্যাকেজ',
           value: 22,
-          price: 2795,
+          price: 2750,
           popular: true,
         },
       ],

@@ -51,7 +51,7 @@ export const landingPages = [
     },
 
     hero: {
-      sesionTime: 'প্রি বুকিং চলছে ঈদের পর ডেলিভারি শুরু',
+      sesionTime: '⏳ সিজন শেষ হতে আর মাত্র ৮ দিন বাকি! সরাসরি বাগান থেকে ডেলিভারি চলছে 🏃‍♂️',
       heading: 'আমের রাজা হিমসাগর',
       subHeading:
         'রাজশাহীর এই হিমসাগর একবার খেলে সিজন শেষে আবার খুঁজবেন গ্যারান্টি দিয়ে বললাম',
@@ -111,15 +111,15 @@ export const landingPages = [
       note: 'দ্রুত ডেলিভারি নিশ্চিত করা হয়',
       packages: [
         {
-          label: '১২ কেজি প্যাকেজ',
-          value: 12,
-          price: 1620,
+          label: '১১ কেজি প্যাকেজ',
+          value: 11,
+          price: 1420,
           popular: false,
         },
         {
-          label: '২৪ কেজি প্যাকেজ',
-          value: 24,
-          price: 3150,
+          label: '২২ কেজি প্যাকেজ',
+          value: 22,
+          price: 2795,
           popular: true,
         },
       ],

@@ -84,7 +84,7 @@ export default function ProductCard({ data, id }) {
                   ডেলিভারি শুরু
                 </p>
                 <p className="text-sm font-bold text-gray-800 leading-tight">
-                  ৫ মে, ২০২৬
+                 2 জুন, ২০২৬
                 </p>
               </div>
               <div className="flex-shrink-0">

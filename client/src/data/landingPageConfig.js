@@ -1,7 +1,7 @@
 import Amropali from '../assets/am/home him.webp';
-// import nakfojli from '../assets/am/নাকফজলি আম.webp';
+// import nakfojli from '../assets/am/home him.webp';
 import himsagor from '../assets/am/home him.webp';
-// import langra from '../assets/am/ল্যাংড়া আম.jpg';
+// import langra from '../assets/am/home him.webp';
 
 // banner
 import AmropaliBanner from '../assets/am/hero img.webp';

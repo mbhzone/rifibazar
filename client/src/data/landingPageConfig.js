@@ -12,7 +12,7 @@ import LangraBanner from '../assets/am/web banner.png';
 // why we slider
 
 //himsagor
-import himsagorslider1 from '../assets/am/Foodlover borna.jpg';
+import himsagorslider1 from '../assets/am/Foodlover borna.webp';
 import himsagorslider2 from '../assets/am/shihab2.jpg';
 
 // Amropali

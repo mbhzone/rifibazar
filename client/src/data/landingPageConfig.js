@@ -4,10 +4,10 @@ import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner
-import AmropaliBanner from '../assets/am/web banner.png';
-import NakFojliBanner from '../assets/am/web banner.png';
-import HimsagorBanner from '../assets/am/heroimgb.jpg';
-import LangraBanner from '../assets/am/web banner.png';
+import AmropaliBanner from '../assets/am/hero img.webp';
+import NakFojliBanner from '../assets/am/hero img.webp';
+import HimsagorBanner from '../assets/am/hero img.webp';
+import LangraBanner from '../assets/am/hero img.webp';
 
 // why we slider
 

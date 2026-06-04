@@ -20,7 +20,7 @@ import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 A
 import AmropaliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
 
 // Nak Fojli
-import NakFojliSilder1 from '../assets/am/HimsagorBanner.jpg';
+import NakFojliSilder1 from '../assets/am/home him.jpg';
 import NakFojliSilder2 from '../assets/am/LangraBanner.webp';
 
 // product slider

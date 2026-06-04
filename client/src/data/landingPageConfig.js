@@ -16,8 +16,8 @@ import himsagorslider1 from '../assets/am/Foodlover borna.webp';
 import himsagorslider2 from '../assets/am/shihab2.jpg';
 
 // Amropali
-import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
-import AmropaliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
+import AmropaliSilder1 from '../assets/am/Foodlover borna.webp';
+import AmropaliSilder2 from '../assets/am/Foodlover borna.webp';
 
 // Nak Fojli
 import NakFojliSilder1 from '../assets/am/home him.webp';
@@ -32,12 +32,12 @@ import himsagorProductliSilder3 from '../assets/am/am3.webp';
 import himsagorProductliSilder4 from '../assets/am/am4.webp';
 
 // Amropali
-import AmropaProductliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
-import AmropaProductliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
+import AmropaProductliSilder1 from '../assets/am/Foodlover borna.webp';
+import AmropaProductliSilder2 from '../assets/am/Foodlover borna.webp';
 
 // Nak Fojli
-import NakFojliProductSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
-import NakFojliProductSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
+import NakFojliProductSilder1 from '../assets/am/Foodlover borna.webp';
+import NakFojliProductSilder2 from '../assets/am/Foodlover borna.webp';
 
 export const landingPages = [
   // 🔵 1. হিমসাগর (Himsagor)

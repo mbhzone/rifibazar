@@ -1,4 +1,4 @@
-import Amropali from '../assets/am/amropali.webp';
+import Amropali from '../assets/am/home him.webp';
 // import nakfojli from '../assets/am/নাকফজলি আম.webp';
 import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/ল্যাংড়া আম.jpg';

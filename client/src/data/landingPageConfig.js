@@ -1,6 +1,6 @@
 import Amropali from '../assets/am/amropali.webp';
 // import nakfojli from '../assets/am/নাকফজলি আম.webp';
-import himsagor from '../assets/am/amhome.jpg';
+import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner
@@ -20,16 +20,16 @@ import AmropaliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 A
 import AmropaliSilder2 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';
 
 // Nak Fojli
-import NakFojliSilder1 from '../assets/am/home him.jpg';
-import NakFojliSilder2 from '../assets/am/LangraBanner.webp';
+import NakFojliSilder1 from '../assets/am/home him.webp';
+import NakFojliSilder2 from '../assets/am/Foodlover borna.webp';
 
 // product slider
 
 //himsagor
-import himsagorProductliSilder1 from '../assets/am/am2.jpg';
-import himsagorProductliSilder2 from '../assets/am/am.jpg';
-import himsagorProductliSilder3 from '../assets/am/am3.jpg';
-import himsagorProductliSilder4 from '../assets/am/am4.jpg';
+import himsagorProductliSilder1 from '../assets/am/am2.webp';
+import himsagorProductliSilder2 from '../assets/am/am.webp';
+import himsagorProductliSilder3 from '../assets/am/am3.webp';
+import himsagorProductliSilder4 from '../assets/am/am4.webp';
 
 // Amropali
 import AmropaProductliSilder1 from '../assets/am/WhatsApp Image 2026-05-13 at 2.23.26 AM.jpeg';

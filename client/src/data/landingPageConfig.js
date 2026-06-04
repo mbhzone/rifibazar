@@ -1,6 +1,6 @@
 import Amropali from '../assets/am/amropali.webp';
 // import nakfojli from '../assets/am/নাকফজলি আম.webp';
-import himsagor from '../assets/am/am2.jpg';
+import himsagor from '../assets/am/amhome.jpg';
 // import langra from '../assets/am/ল্যাংড়া আম.jpg';
 
 // banner
@@ -12,7 +12,7 @@ import LangraBanner from '../assets/am/web banner.png';
 // why we slider
 
 //himsagor
-import himsagorslider1 from '../assets/am/shihab.jpg';
+import himsagorslider1 from '../assets/am/Foodlover borna.jpg';
 import himsagorslider2 from '../assets/am/shihab2.jpg';
 
 // Amropali

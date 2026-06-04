@@ -13,7 +13,7 @@ import LangraBanner from '../assets/am/hero img.webp';
 
 //himsagor
 import himsagorslider1 from '../assets/am/Foodlover borna.webp';
-import himsagorslider2 from '../assets/am/shihab2.jpg';
+import himsagorslider2 from '../assets/am/shihab2.webp';
 
 // Amropali
 import AmropaliSilder1 from '../assets/am/Foodlover borna.webp';

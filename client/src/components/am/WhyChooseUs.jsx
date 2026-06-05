@@ -89,20 +89,22 @@ const WhyChooseUs = ({ whyChooseUs }) => {
                 </div>
               )}
 
-              {/* Custom Navigation Buttons - Responsive */}
+              {/* Custom Navigation Buttons - Fixed Accessibility */}
               {images.length > 1 && (
                 <>
                   <button
+                    type="button"
                     className="swiper-button-prev-custom absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-                    aria-label="Previous"
+                    aria-label="Previous Slide"
                   >
-                    <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 text-gray-700" />
+                    <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 text-gray-700" aria-hidden="true" />
                   </button>
                   <button
+                    type="button"
                     className="swiper-button-next-custom absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-                    aria-label="Next"
+                    aria-label="Next Slide"
                   >
-                    <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 text-gray-700" />
+                    <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 text-gray-700" aria-hidden="true" />
                   </button>
                 </>
               )}

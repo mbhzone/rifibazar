@@ -57,7 +57,10 @@ const Products = ({ product }) => {
             }}
             spaceBetween={20}
             slidesPerView={1}
-            navigation
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
             pagination={{ clickable: true, dynamicBullets: true }}
             autoplay={{
               delay: 3000,
@@ -100,7 +103,7 @@ const Products = ({ product }) => {
                       alt={item.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
- 
+
                     {/* Overlay Badge */}
                     <div className="absolute top-3 left-3 z-10">
                       <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-2.5 py-1 rounded-lg text-xs font-semibold shadow-lg">
@@ -114,6 +117,10 @@ const Products = ({ product }) => {
                 </div>
               </SwiperSlide>
             ))}
+
+            {/* Custom Fixed Navigation Buttons for Accessibility */}
+            <button type="button" className="swiper-button-prev" aria-label="Previous Slide"></button>
+            <button type="button" className="swiper-button-next" aria-label="Next Slide"></button>
           </Swiper>
         </div>
 

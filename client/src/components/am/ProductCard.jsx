@@ -31,6 +31,8 @@ export default function ProductCard({ data, id }) {
           }`}
         >
           <button
+            type="button"
+            aria-label={`দ্রুত দেখুন - ${data.title}`}
             onClick={e => {
               e.stopPropagation();
               handleCardClick();
@@ -69,6 +71,7 @@ export default function ProductCard({ data, id }) {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       strokeLinecap="round"
@@ -106,6 +109,8 @@ export default function ProductCard({ data, id }) {
         {/* 👇 FIXED BUTTON AREA */}
         <div className="mt-auto">
           <button
+            type="button"
+            aria-label={`বিস্তারিত দেখুন - ${data.title}`}
             onClick={e => {
               e.stopPropagation();
               handleCardClick();

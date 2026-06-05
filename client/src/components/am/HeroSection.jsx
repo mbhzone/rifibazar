@@ -48,11 +48,12 @@ const HeroSection = ({ hero }) => {
           {/* CTA Button - Enhanced */}
           <div className="flex justify-center">
             <button
+              type="button"
               onClick={scrollCheckOut}
               className="group bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-8 py-3.5 md:px-10 md:py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
             >
               <span>অর্ডার করুন</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </button>
           </div>
         </div>

@@ -42,6 +42,10 @@ export default function Faq({ faq }) {
             >
               {/* Question Button */}
               <button
+                type="button"
+                id={`faq-title-${index}`}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-panel-${index}`}
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between px-5 md:px-6 py-4 md:py-5 text-left cursor-pointer"
               >
@@ -71,11 +75,15 @@ export default function Faq({ faq }) {
                   className={`w-4 h-4 md:w-5 md:h-5 text-orange-500 transition-all duration-300 flex-shrink-0 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
+                  aria-hidden="true"
                 />
               </button>
 
               {/* Answer Panel */}
               <div
+                id={`faq-panel-${index}`}
+                role="region"
+                aria-labelledby={`faq-title-${index}`}
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${
                   openIndex === index
                     ? 'max-h-96 opacity-100'

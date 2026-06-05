@@ -26,7 +26,7 @@ import NakFojliSilder2 from '../assets/am/Foodlover borna.webp';
 // product slider
 
 //himsagor
-import himsagorProductliSilder1 from '../assets/am/am5.webp';
+import himsagorProductliSilder1 from '../assets/am/am.webp';
 import himsagorProductliSilder2 from '../assets/am/am2.webp';
 import himsagorProductliSilder3 from '../assets/am/am3.webp';
 import himsagorProductliSilder4 from '../assets/am/am4.webp';

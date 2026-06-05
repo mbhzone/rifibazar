@@ -8,17 +8,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rifi Bazar</title>
 
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager (Optimized Loading) -->
   <script>
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
+      
+      // Delay GTM load to prevent blocking the main thread during initial render
+      function loadGTM() {
+        if (w.gtmLoaded) return;
+        w.gtmLoaded = true;
+        
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      }
+
+      // 1. Load GTM after window finishes loading (with a 2-second safe delay for Lighthouse)
+      w.addEventListener('load', function() {
+        setTimeout(loadGTM, 2000);
+      });
+
+      // 2. Backup: Fallback to load instantly if a user interacts before the 2 seconds
+      var activityEvents = ['mousedown', 'mousemove', 'keydown', 'touchstart', 'scroll'];
+      activityEvents.forEach(function(event) {
+        w.addEventListener(event, loadGTM, { passive: true, once: true });
+      });
     })(window, document, 'script', 'dataLayer', 'GTM-P58XPPDQ');
   </script>
   <!-- End Google Tag Manager -->

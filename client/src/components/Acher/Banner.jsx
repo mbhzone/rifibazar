@@ -1,6 +1,6 @@
 import React from 'react';
-import Image1 from '../../assets/amlocky.png';
-import Image2 from '../../assets/tetul.png';
+import Image1 from '../../assets/amlocky.webp';
+import Image2 from '../../assets/amlocky.webp';
 
 const Banner = () => {
   const scrollCheckOut = () => {

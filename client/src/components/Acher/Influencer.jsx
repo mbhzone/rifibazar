@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Image from '../../assets/FoodAppi.jpg';
+import Image from '../../assets/shihab2.webp';
 
 const Influencer = () => {
   const [isVisible, setIsVisible] = useState(false);

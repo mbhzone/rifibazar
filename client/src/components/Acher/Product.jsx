@@ -1,8 +1,8 @@
 import React from 'react';
-import Boroi from '../../assets/Boroi A.png'; // Your jar image
-import Tetul from '../../assets/Tetul A.png'; // Your jar image
-import Mixed from '../../assets/Mixed A.png'; // Your jar image
-import Combo from '../../assets/Combo A.png'; // Your jar image
+import Boroi from '../../assets/shihab2.webp'; // Your jar image
+import Tetul from '../../assets/shihab2.webp'; // Your jar image
+import Mixed from '../../assets/shihab2.webp'; // Your jar image
+import Combo from '../../assets/shihab2.webp'; // Your jar image
 
 const Product = () => {
   const products = [

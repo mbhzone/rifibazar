@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import BG from '../../assets/BG.png';
+import BG from '../../assets/BG1.png';
 
 const Root = () => {
   return (

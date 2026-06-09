@@ -1,5 +1,5 @@
 import Amropali from '../assets/am/home him.webp';
-// import nakfojli from '../assets/am/home him.webp';
+import nakfojli from '../assets/am/home him.webp';
 import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/home him.webp';
 
@@ -48,6 +48,7 @@ export const landingPages = [
       title: 'হিমসাগর আম',
       shortDescription: 'মিষ্টি স্বাদের বিখ্যাত হিমসাগর আম',
       image: himsagor,
+      date: '2 জুন, ২০২৬',
     },
 
     hero: {
@@ -126,89 +127,90 @@ export const landingPages = [
     },
   },
   // 🟡 2. নাকফজলি (Nak Fojli)
-  // {
-  //   id: 'nakfojli',
+  {
+    id: 'nakfojli',
 
-  //   card: {
-  //     title: 'নাকফজলি আম',
-  //     shortDescription: 'বড় আকৃতির ও রসালো নাকফজলি আম',
-  //     image: nakfojli,
-  //   },
+    card: {
+      title: 'নাকফজলি আম',
+      shortDescription: 'বড় আকৃতির ও রসালো নাকফজলি আম',
+      date: '৫ জুন, ২০২৬',
+      image: nakfojli,
+    },
 
-  //   hero: {
-  //     sesionTime: 'মাত্র ২০ দিনের সিজন কোন সময়',
-  //     heading: 'রসালো নাকফজলি আম',
-  //     subHeading: 'বড় আকার, বেশি রস এবং অসাধারণ স্বাদ',
-  //     description:
-  //       'নাকফজলি আম তার বড় আকার এবং অতিরিক্ত রসের জন্য বিখ্যাত। আমরা সরাসরি বাগান থেকে সংগ্রহ করি।',
-  //     images: NakFojliBanner,
-  //   },
+    hero: {
+      sesionTime: 'মাত্র ২০ দিনের সিজন কোন সময়',
+      heading: 'রসালো নাকফজলি আম',
+      subHeading: 'বড় আকার, বেশি রস এবং অসাধারণ স্বাদ',
+      description:
+        'নাকফজলি আম তার বড় আকার এবং অতিরিক্ত রসের জন্য বিখ্যাত। আমরা সরাসরি বাগান থেকে সংগ্রহ করি।',
+      images: NakFojliBanner,
+    },
 
-  //   whyChooseUs: {
-  //     heading: 'কেন নাকফজলি আম আমাদের থেকে?',
-  //     subheading1:
-  //       'আমাদের বাগান থেকেই সরাসরি সংগ্রহ করা হয় একদম পাকা, সুস্বাদু ও তাজা আম—যা হাতে বাছাই করে সর্বোচ্চ সতেজতা নিশ্চিত করা হয়',
-  //     subheading2:
-  //       'কোনো ধরনের কেমিক্যাল কৃত্রিম রিপেনিং বা প্রিজারভেটিভ ছাড়াই সম্পূর্ণ প্রাকৃতিকভাবে উৎপাদিত স্বাস্থ্যকর ও নিরাপদ আম।',
+    whyChooseUs: {
+      heading: 'কেন নাকফজলি আম আমাদের থেকে?',
+      subheading1:
+        'আমাদের বাগান থেকেই সরাসরি সংগ্রহ করা হয় একদম পাকা, সুস্বাদু ও তাজা আম—যা হাতে বাছাই করে সর্বোচ্চ সতেজতা নিশ্চিত করা হয়',
+      subheading2:
+        'কোনো ধরনের কেমিক্যাল কৃত্রিম রিপেনিং বা প্রিজারভেটিভ ছাড়াই সম্পূর্ণ প্রাকৃতিকভাবে উৎপাদিত স্বাস্থ্যকর ও নিরাপদ আম।',
 
-  //     images: [NakFojliSilder1, NakFojliSilder2],
-  //     points: [
-  //       'প্রিমিয়াম কোয়ালিটি আম',
-  //       'সরাসরি বাগান থেকে সংগ্রহ',
-  //       'দ্রুত ডেলিভারি',
-  //       'ফ্রেশ গ্যারান্টি',
-  //     ],
-  //   },
-  //   products: [
-  //     NakFojliProductSilder1,
-  //     NakFojliProductSilder2,
-  //     NakFojliProductSilder1,
-  //     NakFojliProductSilder2,
-  //   ],
+      images: [NakFojliSilder1, NakFojliSilder2],
+      points: [
+        'প্রিমিয়াম কোয়ালিটি আম',
+        'সরাসরি বাগান থেকে সংগ্রহ',
+        'দ্রুত ডেলিভারি',
+        'ফ্রেশ গ্যারান্টি',
+      ],
+    },
+    products: [
+      NakFojliProductSilder1,
+      NakFojliProductSilder2,
+      NakFojliProductSilder1,
+      NakFojliProductSilder2,
+    ],
 
-  //   faq: [
-  //     {
-  //       question: 'আম কি ১০০% অর্গানিক হবে?',
-  //       answer:
-  //         'হ্যাঁ, আমাদের আম সম্পূর্ণ প্রাকৃতিকভাবে উৎপাদিত এবং কোনো ধরনের কেমিক্যাল বা কৃত্রিম রিপেনিং ব্যবহার করা হয় না।',
-  //     },
-  //     {
-  //       question: 'অগ্রিম টাকা দিতে হবে?',
-  //       answer:
-  //         'না, আপনি ডেলিভারি পাওয়ার পর ক্যাশ অন ডেলিভারি (COD) পেমেন্ট করতে পারবেন।',
-  //     },
-  //     {
-  //       question: 'ডেলিভারিতে কতদিন লাগে?',
-  //       answer:
-  //         'সাধারণত ২-৩ কার্যদিবসের মধ্যে আপনার নির্ধারিত ঠিকানায় ডেলিভারি করা হয়।',
-  //     },
-  //     {
-  //       question: 'আম নষ্ট হলে কি হবে?',
-  //       answer:
-  //         'ডেলিভারির সময় যদি কোনো আম নষ্ট বা সমস্যা থাকে, তাহলে আমরা রিপ্লেসমেন্ট বা রিফান্ড গ্যারান্টি দেই।',
-  //     },
-  //   ],
+    faq: [
+      {
+        question: 'আম কি ১০০% অর্গানিক হবে?',
+        answer:
+          'হ্যাঁ, আমাদের আম সম্পূর্ণ প্রাকৃতিকভাবে উৎপাদিত এবং কোনো ধরনের কেমিক্যাল বা কৃত্রিম রিপেনিং ব্যবহার করা হয় না।',
+      },
+      {
+        question: 'অগ্রিম টাকা দিতে হবে?',
+        answer:
+          'না, আপনি ডেলিভারি পাওয়ার পর ক্যাশ অন ডেলিভারি (COD) পেমেন্ট করতে পারবেন।',
+      },
+      {
+        question: 'ডেলিভারিতে কতদিন লাগে?',
+        answer:
+          'সাধারণত ২-৩ কার্যদিবসের মধ্যে আপনার নির্ধারিত ঠিকানায় ডেলিভারি করা হয়।',
+      },
+      {
+        question: 'আম নষ্ট হলে কি হবে?',
+        answer:
+          'ডেলিভারির সময় যদি কোনো আম নষ্ট বা সমস্যা থাকে, তাহলে আমরা রিপ্লেসমেন্ট বা রিফান্ড গ্যারান্টি দেই।',
+      },
+    ],
 
-  //   checkout: {
-  //     heading: 'নাকফজলি অর্ডার করুন',
-  //     formFields: ['name', 'phone', 'address', 'quantity'],
-  //     note: 'অর্ডার কনফার্ম করার পর কল করা হবে',
-  //     packages: [
-  //       {
-  //         label: '১২ কেজি প্যাকেজ',
-  //         value: 12,
-  //         price: 3000,
-  //         popular: false,
-  //       },
-  //       {
-  //         label: '২৪ কেজি প্যাকেজ',
-  //         value: 24,
-  //         price: 5000,
-  //         popular: true,
-  //       },
-  //     ],
-  //   },
-  // },
+    checkout: {
+      heading: 'নাকফজলি অর্ডার করুন',
+      formFields: ['name', 'phone', 'address', 'quantity'],
+      note: 'অর্ডার কনফার্ম করার পর কল করা হবে',
+      packages: [
+        {
+          label: '১২ কেজি প্যাকেজ',
+          value: 12,
+          price: 3000,
+          popular: false,
+        },
+        {
+          label: '২৪ কেজি প্যাকেজ',
+          value: 24,
+          price: 5000,
+          popular: true,
+        },
+      ],
+    },
+  },
   // 🟣 3. ল্যাংড়া (Langra)
   // {
   //   id: 'langra',

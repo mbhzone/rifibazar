@@ -36,8 +36,11 @@ import AmropaProductliSilder1 from '../assets/am/Foodlover borna.webp';
 import AmropaProductliSilder2 from '../assets/am/Foodlover borna.webp';
 
 // Nak Fojli
-import NakFojliProductSilder1 from '../assets/am/Foodlover borna.webp';
-import NakFojliProductSilder2 from '../assets/am/Foodlover borna.webp';
+import NakFojliProductSilder1 from '../assets/am/nak1.jpg';
+import NakFojliProductSilder2 from '../assets/am/nak2.jpg';
+import NakFojliProductSilder1 from '../assets/am/nak3.jpg';
+import NakFojliProductSilder1 from '../assets/am/nak4.jpg';
+
 
 export const landingPages = [
   // 🔵 1. হিমসাগর (Himsagor)

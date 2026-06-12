@@ -12,7 +12,7 @@ import LangraBanner from '../assets/am/hero img.webp';
 // why we slider
 
 //himsagor
-import himsagorslider1 from '../assets/am/Foodlover borna.webp';
+import himsagorslider1 from '../assets/am/foodappi.webp';
 import himsagorslider2 from '../assets/am/shihab2.webp';
 
 // Amropali
@@ -20,8 +20,8 @@ import AmropaliSilder1 from '../assets/am/Foodlover borna.webp';
 import AmropaliSilder2 from '../assets/am/Foodlover borna.webp';
 
 // Nak Fojli
-import NakFojliSilder1 from '../assets/am/home him.webp';
-import NakFojliSilder2 from '../assets/am/Foodlover borna.webp';
+import NakFojliSilder1 from '../assets/am/foodappi.webp';
+import NakFojliSilder2 from '../assets/am/shihab2.webp';
 
 // product slider
 

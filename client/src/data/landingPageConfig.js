@@ -1,5 +1,5 @@
 import Amropali from '../assets/am/home him.webp';
-import nakfojli from '../assets/am/home him.webp';
+import nakfojli from '../assets/am/heronak.jpg';
 import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/home him.webp';
 
@@ -16,8 +16,8 @@ import himsagorslider1 from '../assets/am/foodappi.webp';
 import himsagorslider2 from '../assets/am/shihab2.webp';
 
 // Amropali
-import AmropaliSilder1 from '../assets/am/Foodlover borna.webp';
-import AmropaliSilder2 from '../assets/am/Foodlover borna.webp';
+import AmropaliSilder1 from '../assets/am/foodappi.webp';
+import AmropaliSilder2 from '../assets/am/foodappi.webp';
 
 // Nak Fojli
 import NakFojliSilder1 from '../assets/am/foodappi.webp';
@@ -32,8 +32,8 @@ import himsagorProductliSilder3 from '../assets/am/am3.webp';
 import himsagorProductliSilder4 from '../assets/am/am4.webp';
 
 // Amropali
-import AmropaProductliSilder1 from '../assets/am/Foodlover borna.webp';
-import AmropaProductliSilder2 from '../assets/am/Foodlover borna.webp';
+import AmropaProductliSilder1 from '../assets/am/foodappi.webp';
+import AmropaProductliSilder2 from '../assets/am/foodappi.webp';
 
 // Nak Fojli
 import NakFojliProductSilder1 from '../assets/am/nak1.jpg';

@@ -138,7 +138,7 @@ export const landingPages = [
     },
 
     hero: {
-      sesionTime: 'মাত্র ২০ দিনের সিজন কোন সময়',
+      sesionTime: 'হিমসাগরের সিজন শেষ হতে আর ৩ দিন বাকি!',
       heading: 'রসালো নাকফজলি আম',
       subHeading: 'বড় আকার, বেশি রস এবং অসাধারণ স্বাদ',
       description:
@@ -197,15 +197,15 @@ export const landingPages = [
       note: 'অর্ডার কনফার্ম করার পর কল করা হবে',
       packages: [
         {
-          label: '১২ কেজি প্যাকেজ',
-          value: 12,
-          price: 3000,
+          label: '১০ কেজি প্যাকেজ',
+          value: 10,
+          price: 990,
           popular: false,
         },
         {
-          label: '২৪ কেজি প্যাকেজ',
-          value: 24,
-          price: 5000,
+          label: '২০ কেজি প্যাকেজ',
+          value: 20,
+          price: 1980,
           popular: true,
         },
       ],

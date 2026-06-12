@@ -38,8 +38,8 @@ import AmropaProductliSilder2 from '../assets/am/Foodlover borna.webp';
 // Nak Fojli
 import NakFojliProductSilder1 from '../assets/am/nak1.jpg';
 import NakFojliProductSilder2 from '../assets/am/nak2.jpg';
-import NakFojliProductSilder1 from '../assets/am/nak3.jpg';
-import NakFojliProductSilder1 from '../assets/am/nak4.jpg';
+import NakFojliProductSilder3 from '../assets/am/nak3.jpg';
+import NakFojliProductSilder4 from '../assets/am/nak4.jpg';
 
 
 export const landingPages = [
@@ -167,8 +167,8 @@ export const landingPages = [
     products: [
       NakFojliProductSilder1,
       NakFojliProductSilder2,
-      NakFojliProductSilder1,
-      NakFojliProductSilder2,
+      NakFojliProductSilder3,
+      NakFojliProductSilder4,
     ],
 
     faq: [

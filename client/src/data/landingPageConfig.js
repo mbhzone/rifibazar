@@ -1,4 +1,4 @@
-import Amropali from '../assets/am/home him.webp';
+import Amropali from '../assets/am/amru2.jpg';
 import nakfojli from '../assets/am/heronak.jpg';
 import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/home him.webp';
@@ -32,11 +32,12 @@ import himsagorProductliSilder3 from '../assets/am/am3.webp';
 import himsagorProductliSilder4 from '../assets/am/am4.webp';
 
 // Amropali
-import AmropaProductliSilder1 from '../assets/am/foodappi.webp';
-import AmropaProductliSilder2 from '../assets/am/foodappi.webp';
+import AmropaProductliSilder1 from '../assets/am/nak3.jpg';
+import AmropaProductliSilder2 from '../assets/am/amru2.jpg';
+import AmropaProductliSilder3 from '../assets/am/amru1.jpg';
 
 // Nak Fojli
-import NakFojliProductSilder1 from '../assets/am/nak1.jpg';
+import NakFojliProductSilder1 from '../assets/am/nak3.jpg';
 import NakFojliProductSilder2 from '../assets/am/nak2.jpg';
 import NakFojliProductSilder3 from '../assets/am/nak3.jpg';
 import NakFojliProductSilder4 from '../assets/am/nak4.jpg';
@@ -336,10 +337,8 @@ export const landingPages = [
     products: [
       AmropaProductliSilder1,
       AmropaProductliSilder2,
-      AmropaProductliSilder1,
-      AmropaProductliSilder2,
-      AmropaProductliSilder2,
-      AmropaProductliSilder1,
+      AmropaProductliSilder3,
+
     ],
 
     faq: [

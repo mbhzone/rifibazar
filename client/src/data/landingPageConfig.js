@@ -297,22 +297,22 @@ export const landingPages = [
   //     ],
   //   },
   // },
-  // 🟣 4. হারিভাঙ্গা (harivanga)
+  // 🟣 4. আম্রপালি (Amropali)
   {
-    id: 'harivanga',
+    id: 'Amropali',
 
     card: {
-      title: 'হারিভাঙ্গা ',
-      shortDescription: 'মিষ্টি ও সুস্বাদু হারিভাঙ্গা  সরাসরি বাগান থেকে',
+      title: 'আম্রপালি ',
+      shortDescription: 'মিষ্টি ও সুস্বাদু আম্রপালি  সরাসরি বাগান থেকে',
       image: Amropali,
     },
 
     hero: {
-      sesionTime: 'মাত্র ২০ দিনের সিজন কোন সময়',
-      heading: 'সেরা মানের হারিভাঙ্গা ',
+      sesionTime: 'আম্রপালি সিজন শেষ হতে আর মাত্র কয়েকদিন বাকি!',
+      heading: 'আমের রাণী আম্রপালি ',
       subHeading: 'তাজা, মিষ্টি এবং প্রাকৃতিকভাবে পাকা আম',
       description:
-        'আমাদের হারিভাঙ্গা  সম্পূর্ণ প্রাকৃতিকভাবে বাগান থেকে সংগ্রহ করা হয়। কোনো কেমিক্যাল ব্যবহার করা হয় না।',
+        'আমাদের আম্রপালি  সম্পূর্ণ প্রাকৃতিকভাবে বাগান থেকে সংগ্রহ করা হয়। কোনো কেমিক্যাল ব্যবহার করা হয় না।',
       images: AmropaliBanner,
     },
 
@@ -371,15 +371,15 @@ export const landingPages = [
       note: 'অর্ডার করার পর আমরা দ্রুত আপনার সাথে যোগাযোগ করবো',
       packages: [
         {
-          label: '১২ কেজি প্যাকেজ',
-          value: 12,
-          price: 3000,
+          label: '১১ কেজি প্যাকেজ',
+          value: 11,
+          price: 1430,
           popular: false,
         },
         {
           label: '২৪ কেজি প্যাকেজ',
-          value: 24,
-          price: 5000,
+          value: 22,
+          price: 2860,
           popular: true,
         },
       ],

@@ -17,7 +17,7 @@ import himsagorslider2 from '../assets/am/shihab2.webp';
 
 // Amropali
 import AmropaliSilder1 from '../assets/am/foodappi.webp';
-import AmropaliSilder2 from '../assets/am/foodappi.webp';
+import AmropaliSilder2 from '../assets/am/shihab2.webp';
 
 // Nak Fojli
 import NakFojliSilder1 from '../assets/am/foodappi.webp';
@@ -338,7 +338,7 @@ export const landingPages = [
       AmropaProductliSilder1,
       AmropaProductliSilder2,
       AmropaProductliSilder3,
-
+      AmropaProductliSilder1,
     ],
 
     faq: [

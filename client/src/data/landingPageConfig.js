@@ -306,6 +306,7 @@ export const landingPages = [
       title: 'আম্রপালি ',
       shortDescription: 'মিষ্টি ও সুস্বাদু আম্রপালি  সরাসরি বাগান থেকে',
       image: Amropali,
+      date: '১৫ জুন, ২০২৬',
     },
 
     hero: {
@@ -376,7 +377,7 @@ export const landingPages = [
           popular: false,
         },
         {
-          label: '২৪ কেজি প্যাকেজ',
+          label: '২২ কেজি প্যাকেজ',
           value: 22,
           price: 2860,
           popular: true,

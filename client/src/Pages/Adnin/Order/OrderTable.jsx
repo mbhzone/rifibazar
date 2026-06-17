@@ -23,7 +23,7 @@ const OrderTable = ({ order, setOrders }) => {
         `${import.meta.env.VITE_BASE_URL}/update-order/${order._id}`,
         { status: newStatus },
       );
-      if (res.data.status !== 'cancel') {
+      if (res.data.status == 'processing') {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'purchase',

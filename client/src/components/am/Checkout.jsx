@@ -56,7 +56,7 @@ const Checkout = ({ selectedProduct }) => {
       image: selectedProduct?.card?.image,
       qty: selectedPackage.value, // Send KG/Package size instead of quantity
       total: finalTotal,
-      status: 'processing',
+      status: 'pending',
       orderDate: new Date().toISOString(),
     };
     console.log(orderData);

@@ -19,10 +19,36 @@ const OrderTable = ({ order, setOrders }) => {
     if (!newStatus || newStatus === 'all') return;
 
     try {
-      await axios.patch(
+      const res = await axios.patch(
         `${import.meta.env.VITE_BASE_URL}/update-order/${order._id}`,
         { status: newStatus },
       );
+      if (res.data.status !== 'cancel') {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'purchase',
+          ecommerce: {
+            transaction_id: Date.now().toString(),
+            currency: 'BDT',
+            value: order.price,
+            customer_type: 'new',
+            customer_name: order.name,
+            customer_phone: order.mobile,
+            delivery_area: order.address,
+            payment_method: 'COD',
+            items: [
+              {
+                item_id: order._id,
+                item_name: order.productName,
+                item_brand: 'Rifi Bazar',
+                item_category: 'Mango',
+                price: order?.price,
+                quantity: order.qty,
+              },
+            ],
+          },
+        });
+      }
       setOrders(prev =>
         prev.map(o => (o._id === order._id ? { ...o, status: newStatus } : o)),
       );

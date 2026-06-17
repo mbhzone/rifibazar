@@ -1,5 +1,5 @@
 import Amropali from '../assets/am/amru2.jpg';
-import nakfojli from '../assets/am/heronak.jpg';
+// import nakfojli from '../assets/am/heronak.jpg';
 import himsagor from '../assets/am/home him.webp';
 // import langra from '../assets/am/home him.webp';
 
@@ -41,7 +41,6 @@ import NakFojliProductSilder1 from '../assets/am/nak3.jpg';
 import NakFojliProductSilder2 from '../assets/am/nak2.jpg';
 import NakFojliProductSilder3 from '../assets/am/nak3.jpg';
 import NakFojliProductSilder4 from '../assets/am/nak4.jpg';
-
 
 export const landingPages = [
   // 🔵 1. হিমসাগর (Himsagor)
@@ -312,7 +311,8 @@ export const landingPages = [
     hero: {
       sesionTime: 'আম্রপালি সিজন শেষ হতে আর মাত্র কয়েকদিন বাকি!',
       heading: 'আমের রাণী আম্রপালি ',
-      subHeading: 'আমের সিজনের সবথেকে সেরা এই আম একবার খেলে সিজন শেষে আবার খুঁজবেন গ্যারান্টি দিয়ে বললাম',
+      subHeading:
+        'আমের সিজনের সবথেকে সেরা এই আম একবার খেলে সিজন শেষে আবার খুঁজবেন গ্যারান্টি দিয়ে বললাম',
       description:
         'আমাদের আম্রপালি  সম্পূর্ণ প্রাকৃতিকভাবে বাগান থেকে সংগ্রহ করা হয়। কোনো কেমিক্যাল ব্যবহার করা হয় না।',
       images: AmropaliBanner,

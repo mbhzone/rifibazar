@@ -68,33 +68,33 @@ const Checkout = ({ selectedProduct }) => {
       );
       const data = res.data;
       if (data.message === 'Order saved successfully!') {
-        window.dataLayer = window.dataLayer || [];
+        // window.dataLayer = window.dataLayer || [];
 
-        window.dataLayer.push({
-          event: 'purchase',
-          ecommerce: {
-            transaction_id: Date.now().toString(),
-            currency: 'BDT',
-            value: finalTotal,
-            customer_type: 'new',
-            customer_name: formData.name,
-            customer_phone: formData.mobile,
-            delivery_area: formData.address,
-            payment_method: 'COD',
+        // window.dataLayer.push({
+        //   event: 'purchase',
+        //   ecommerce: {
+        //     transaction_id: Date.now().toString(),
+        //     currency: 'BDT',
+        //     value: finalTotal,
+        //     customer_type: 'new',
+        //     customer_name: formData.name,
+        //     customer_phone: formData.mobile,
+        //     delivery_area: formData.address,
+        //     payment_method: 'COD',
 
-            items: [
-              {
-                item_id: selectedProduct.id,
-                item_name: selectedProduct.card.title,
-                item_brand: 'Rifi Bazar',
-                item_category: 'Mango',
-                item_variant: selectedPackage.label,
-                price: selectedPackage.price,
-                quantity: qty,
-              },
-            ],
-          },
-        });
+        //     items: [
+        //       {
+        //         item_id: selectedProduct.id,
+        //         item_name: selectedProduct.card.title,
+        //         item_brand: 'Rifi Bazar',
+        //         item_category: 'Mango',
+        //         item_variant: selectedPackage.label,
+        //         price: selectedPackage.price,
+        //         quantity: qty,
+        //       },
+        //     ],
+        //   },
+        // });
 
         // Show success UI after GTM event
         Swal.fire({
@@ -135,7 +135,10 @@ const Checkout = ({ selectedProduct }) => {
             {/* Header */}
             <div className="p-5 md:p-6 border-b border-gray-100 bg-gradient-to-r from-orange-50 to-amber-50">
               <h2 className="text-xl md:text-2xl font-bold text-gray-800 flex items-center gap-2">
-                <ShoppingBag className="w-6 h-6 text-orange-500" aria-hidden="true" />
+                <ShoppingBag
+                  className="w-6 h-6 text-orange-500"
+                  aria-hidden="true"
+                />
                 এই আমের সিজন কিন্তু অল্প কয়দিনের
               </h2>
               <p className="text-gray-500 text-sm mt-1">
@@ -151,7 +154,7 @@ const Checkout = ({ selectedProduct }) => {
                 <div className="flex gap-4 pb-4 border-b border-gray-100">
                   <img
                     src={selectedProduct?.card?.image}
-                    alt={selectedProduct?.card?.name || "Product Image"}
+                    alt={selectedProduct?.card?.name || 'Product Image'}
                     className="w-20 h-20 object-cover rounded-xl shadow-md"
                   />
                   <div>
@@ -178,7 +181,10 @@ const Checkout = ({ selectedProduct }) => {
                 {/* Package Selection */}
                 <div>
                   <span className="block font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                    <Package className="w-4 h-4 text-orange-500" aria-hidden="true" />
+                    <Package
+                      className="w-4 h-4 text-orange-500"
+                      aria-hidden="true"
+                    />
                     প্যাকেজ সিলেক্ট করুন
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -269,7 +275,10 @@ const Checkout = ({ selectedProduct }) => {
               <div className="px-3  py-5 md:p-6 bg-white">
                 <div className="mb-4">
                   <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-                    <CreditCard className="w-5 h-5 text-orange-500" aria-hidden="true" />
+                    <CreditCard
+                      className="w-5 h-5 text-orange-500"
+                      aria-hidden="true"
+                    />
                     চেকআউট ফর্ম
                   </h3>
                   <p className="text-xs text-gray-500 mt-1">
@@ -279,7 +288,10 @@ const Checkout = ({ selectedProduct }) => {
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" aria-hidden="true" />
+                    <User
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <input
                       type="text"
                       name="name"
@@ -293,7 +305,10 @@ const Checkout = ({ selectedProduct }) => {
                   </div>
 
                   <div className="relative">
-                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" aria-hidden="true" />
+                    <Phone
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <input
                       type="tel"
                       name="mobile"
@@ -307,7 +322,10 @@ const Checkout = ({ selectedProduct }) => {
                   </div>
 
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-4 w-4 h-4 text-gray-400" aria-hidden="true" />
+                    <MapPin
+                      className="absolute left-3 top-4 w-4 h-4 text-gray-400"
+                      aria-hidden="true"
+                    />
                     <textarea
                       name="address"
                       placeholder="ঠিকানা"
@@ -379,7 +397,10 @@ const Checkout = ({ selectedProduct }) => {
 
             {/* Delivery Info Note */}
             <div className="p-4 bg-blue-50 flex items-start gap-2">
-              <Truck className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" aria-hidden="true" />
+              <Truck
+                className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0"
+                aria-hidden="true"
+              />
               <p className="text-xs text-blue-700">
                 অর্ডার কনফার্মেশনের ২৪-৭২ ঘন্টার মধ্যে ডেলিভারি দেওয়া হবে
               </p>

@@ -325,7 +325,10 @@ async function run() {
           { $set: { status } },
         );
 
-        res.json(result);
+        res.json({
+          ...result,
+          status,
+        });
       } catch (error) {
         res.status(500).json({ error: 'Server error' });
       }

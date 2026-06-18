@@ -261,8 +261,15 @@ async function run() {
     // =================== ORDER SAVE ONLY ===================
     app.post('/orders', async (req, res) => {
       try {
-        const order = req.body;
-        order.createdAt = new Date();
+        const ipAddress =
+          req.headers['x-forwarded-for']?.split(',')[0] ||
+          req.socket.remoteAddress;
+
+        const order = {
+          ...req.body,
+          ipAddress,
+          createdAt: new Date(),
+        };
 
         // Save order to MongoDB
         const result = await ordersCollection.insertOne(order);

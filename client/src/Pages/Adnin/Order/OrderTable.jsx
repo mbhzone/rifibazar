@@ -12,6 +12,7 @@ import { OrderViewModal } from '../../../components/Modal/OrderViewModal';
 import axios from 'axios';
 
 const OrderTable = ({ order, setOrders }) => {
+  console.log(order);
   const [newStatus, setNewStatus] = useState(order?.status || '');
   const [showModal, setShowModal] = useState(false);
 

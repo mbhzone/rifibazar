@@ -85,6 +85,7 @@ const Checkout = ({ selectedProduct }) => {
         `${import.meta.env.VITE_BASE_URL}/orders`,
         orderData,
       );
+      console.log(res);
       const data = res.data;
       if (data.message === 'Order saved successfully!') {
         window.dataLayer = window.dataLayer || [];
@@ -132,7 +133,7 @@ const Checkout = ({ selectedProduct }) => {
         setIsSubmitting(false);
       }
     } catch (error) {
-      console.log(error);
+      toast.error(error.message || 'Failed to place order');
       setIsSubmitting(false);
     }
   };

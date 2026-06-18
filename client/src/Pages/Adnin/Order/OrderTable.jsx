@@ -12,7 +12,6 @@ import { OrderViewModal } from '../../../components/Modal/OrderViewModal';
 import axios from 'axios';
 
 const OrderTable = ({ order, setOrders }) => {
-  console.log(order);
   const [newStatus, setNewStatus] = useState(order?.status || '');
   const [showModal, setShowModal] = useState(false);
 
@@ -31,7 +30,6 @@ const OrderTable = ({ order, setOrders }) => {
       toast.success('Order updated successfully ✅');
     } catch (error) {
       toast.error('Failed to update order ❌');
-      console.log(error);
     }
   };
 

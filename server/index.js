@@ -43,7 +43,7 @@ async function run() {
 
     // Test route
     app.get('/', (req, res) => {
-      res.send('🚀 Rifi Bazar Server is running fine!');
+      res.send(' Rifi Bazar Server is running fine!');
     });
 
     // Save a product
@@ -282,6 +282,43 @@ async function run() {
       }
     });
 
+    // delete order by id
+    app.delete('/orders/:id', async (req, res) => {
+      try {
+        const { id } = req.params;
+
+        // validate ObjectId
+        if (!ObjectId.isValid(id)) {
+          return res.status(400).json({
+            success: false,
+            message: 'Invalid order ID',
+          });
+        }
+
+        const result = await ordersCollection.deleteOne({
+          _id: new ObjectId(id),
+        });
+
+        if (result.deletedCount === 0) {
+          return res.status(404).json({
+            success: false,
+            message: 'Order not found',
+          });
+        }
+
+        res.json({
+          success: true,
+          message: 'Order deleted successfully',
+          deletedCount: result.deletedCount,
+        });
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+      }
+    });
+
     // Get orders
     app.get('/get-orders', async (req, res) => {
       try {
@@ -295,7 +332,7 @@ async function run() {
       }
     });
 
-    // ✅ Get single order by orderId
+    //  Get single order by orderId
     app.get('/orders/:orderId', async (req, res) => {
       try {
         const { orderId } = req.params;

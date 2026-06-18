@@ -37,6 +37,7 @@ async function run() {
     const productCollection = db.collection('products');
     const ordersCollection = db.collection('orders');
     const usersCollection = db.collection('users');
+    const blacklistCollection = db.collection('blacklist');
 
     // -------------------- Routes --------------------
 
@@ -265,6 +266,21 @@ async function run() {
           req.headers['x-forwarded-for']?.split(',')[0] ||
           req.socket.remoteAddress;
 
+        const blocked = await blacklistCollection.findOne({
+          $or: [
+            { visitorId: req.body.visitorId },
+            { mobile: req.body.mobile },
+            { ipAddress },
+          ],
+        });
+
+        if (blocked) {
+          return res.status(403).send({
+            success: false,
+            message: 'You are blocked',
+          });
+        }
+
         const order = {
           ...req.body,
           ipAddress,
@@ -324,20 +340,53 @@ async function run() {
         const { id } = req.params;
         const { status } = req.body;
 
-        if (!ObjectId.isValid(id))
-          return res.status(400).json({ error: 'Invalid order ID' });
+        const order = await ordersCollection.findOne({
+          _id: new ObjectId(id),
+        });
 
-        const result = await ordersCollection.updateOne(
+        if (!order) {
+          return res.status(404).send({
+            message: 'Order not found',
+          });
+        }
+
+        await ordersCollection.updateOne(
           { _id: new ObjectId(id) },
-          { $set: { status } },
+          {
+            $set: { status },
+          },
         );
 
-        res.json({
-          ...result,
+        // if order marked as fake, add to blacklist
+        if (status === 'fake') {
+          // duplicate blacklist prevent
+          const alreadyBlocked = await blacklistCollection.findOne({
+            $or: [
+              { visitorId: order.visitorId },
+              { ipAddress: order.ipAddress },
+              { mobile: order.mobile },
+            ],
+          });
+
+          if (!alreadyBlocked) {
+            await blacklistCollection.insertOne({
+              visitorId: order.visitorId,
+              ipAddress: order.ipAddress,
+              mobile: order.mobile,
+              reason: 'Fake order',
+              createdAt: new Date(),
+            });
+          }
+        }
+
+        res.send({
+          success: true,
           status,
         });
       } catch (error) {
-        res.status(500).json({ error: 'Server error' });
+        res.status(500).send({
+          error: error.message,
+        });
       }
     });
 

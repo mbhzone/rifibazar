@@ -68,33 +68,33 @@ const Checkout = ({ selectedProduct }) => {
       );
       const data = res.data;
       if (data.message === 'Order saved successfully!') {
-        // window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
 
-        // window.dataLayer.push({
-        //   event: 'purchase',
-        //   ecommerce: {
-        //     transaction_id: Date.now().toString(),
-        //     currency: 'BDT',
-        //     value: finalTotal,
-        //     customer_type: 'new',
-        //     customer_name: formData.name,
-        //     customer_phone: formData.mobile,
-        //     delivery_area: formData.address,
-        //     payment_method: 'COD',
+        window.dataLayer.push({
+          event: 'purchase',
+          ecommerce: {
+            transaction_id: Date.now().toString(),
+            currency: 'BDT',
+            value: finalTotal,
+            customer_type: 'new',
+            customer_name: formData.name,
+            customer_phone: formData.mobile,
+            delivery_area: formData.address,
+            payment_method: 'COD',
 
-        //     items: [
-        //       {
-        //         item_id: selectedProduct.id,
-        //         item_name: selectedProduct.card.title,
-        //         item_brand: 'Rifi Bazar',
-        //         item_category: 'Mango',
-        //         item_variant: selectedPackage.label,
-        //         price: selectedPackage.price,
-        //         quantity: qty,
-        //       },
-        //     ],
-        //   },
-        // });
+            items: [
+              {
+                item_id: selectedProduct.id,
+                item_name: selectedProduct.card.title,
+                item_brand: 'Rifi Bazar',
+                item_category: 'Mango',
+                item_variant: selectedPackage.label,
+                price: selectedPackage.price,
+                quantity: qty,
+              },
+            ],
+          },
+        });
 
         // Show success UI after GTM event
         Swal.fire({

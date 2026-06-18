@@ -133,7 +133,9 @@ const Checkout = ({ selectedProduct }) => {
         setIsSubmitting(false);
       }
     } catch (error) {
-      toast.error(error.message || 'Failed to place order');
+      console.log(error);
+
+      toast.error(error.response.data.message || 'Failed to place order');
       setIsSubmitting(false);
     }
   };

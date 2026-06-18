@@ -18,6 +18,7 @@ import {
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
+import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 const Checkout = ({ selectedProduct }) => {
   const [formData, setFormData] = useState({
@@ -46,6 +47,20 @@ const Checkout = ({ selectedProduct }) => {
     if (isSubmitting) return;
     setIsSubmitting(true);
 
+    const fpPromise = FingerprintJS.load();
+    const fp = await fpPromise;
+    const result = await fp.get();
+
+    const visitorId = result.visitorId;
+
+    const deviceInfo = {
+      userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      language: navigator.language,
+      screenWidth: window.screen.width,
+      screenHeight: window.screen.height,
+    };
+
     // Prepare data for backend
     const orderData = {
       name: formData.name,
@@ -56,10 +71,14 @@ const Checkout = ({ selectedProduct }) => {
       image: selectedProduct?.card?.image,
       qty: selectedPackage.value, // Send KG/Package size instead of quantity
       total: finalTotal,
+
+      visitorId,
+
+      deviceInfo,
+
       status: 'pending',
       orderDate: new Date().toISOString(),
     };
-    console.log(orderData);
 
     try {
       const res = await axios.post(

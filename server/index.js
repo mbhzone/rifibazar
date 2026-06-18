@@ -112,26 +112,6 @@ async function run() {
       }
     });
 
-    // Delete all orders
-    app.delete('/delete-all-orders', async (req, res) => {
-      try {
-        const result = await ordersCollection.deleteMany({});
-
-        res.json({
-          success: true,
-          message: 'All orders deleted successfully',
-          deletedCount: result.deletedCount,
-        });
-      } catch (error) {
-        console.error('❌ Delete failed:', error);
-
-        res.status(500).json({
-          success: false,
-          error: error.message,
-        });
-      }
-    });
-
     app.put('/products/:id', async (req, res) => {
       try {
         const { id } = req.params;
@@ -426,6 +406,43 @@ async function run() {
       }
     });
 
+    // Delete all orders
+    app.delete('/delete-all-orders', async (req, res) => {
+      try {
+        const result = await ordersCollection.deleteMany({});
+
+        res.json({
+          success: true,
+          message: 'All orders deleted successfully',
+          deletedCount: result.deletedCount,
+        });
+      } catch (error) {
+        console.error('❌ Delete failed:', error);
+
+        res.status(500).json({
+          success: false,
+          error: error.message,
+        });
+      }
+    });
+
+    // Clear blacklist
+    app.delete('/admin/blacklist/clear', async (req, res) => {
+      try {
+        const result = await blacklistCollection.deleteMany({});
+
+        res.json({
+          success: true,
+          message: 'Blacklist cleared successfully',
+          deletedCount: result.deletedCount,
+        });
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+      }
+    });
     console.log('🏓 MongoDB ready!');
   } catch (err) {
     console.error('❌ MongoDB connection failed:', err);

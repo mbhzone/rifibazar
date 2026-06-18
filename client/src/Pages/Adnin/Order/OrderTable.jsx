@@ -106,7 +106,7 @@ const OrderTable = ({ order, setOrders }) => {
             <option value="delivered">Delivered</option>
             <option value="cancel">Cancel</option>
             <option value="processing">Processing</option>
-            <option value="fake">Fake Order</option>
+            {/* <option value="fake">Fake Order</option> */}
           </select>
 
           <button

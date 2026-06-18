@@ -47,6 +47,14 @@ const Checkout = ({ selectedProduct }) => {
     if (isSubmitting) return;
     setIsSubmitting(true);
 
+    const mobileRegex = /^[0-9]{11}$/;
+
+    if (!mobileRegex.test(formData.mobile)) {
+      toast.warning('মোবাইল নম্বর ১১ ডিজিট দিন !');
+      setIsSubmitting(false);
+      return;
+    }
+
     const fpPromise = FingerprintJS.load();
     const fp = await fpPromise;
     const result = await fp.get();
@@ -337,7 +345,15 @@ const Checkout = ({ selectedProduct }) => {
                       placeholder="মোবাইল নম্বর"
                       aria-label="মোবাইল নম্বর"
                       value={formData.mobile}
-                      onChange={handleChange}
+                      onChange={e => {
+                        const value = e.target.value;
+
+                        // only allow numbers
+                        if (/^[0-9]*$/.test(value)) {
+                          setFormData({ ...formData, mobile: value });
+                        }
+                      }}
+                      maxLength={11}
                       className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition-all"
                       required
                     />

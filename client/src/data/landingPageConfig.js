@@ -35,7 +35,7 @@ import himsagorProductliSilder4 from '../assets/am/am4.webp';
 import AmropaProductliSilder1 from '../assets/am/amru7.jpg';
 import AmropaProductliSilder2 from '../assets/am/amru2.jpg';
 import AmropaProductliSilder3 from '../assets/am/amru1.jpg';
-import AmropaProductliSilder3 from '../assets/am/amru6.jpg';
+import AmropaProductliSilder4 from '../assets/am/amru6.jpg';
 
 
 // Nak Fojli

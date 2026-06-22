@@ -19,6 +19,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
+import Turnstile from 'react-turnstile';
 
 const Checkout = ({ selectedProduct }) => {
   const [formData, setFormData] = useState({
@@ -31,6 +32,7 @@ const Checkout = ({ selectedProduct }) => {
   const [selectedPackage, setSelectedPackage] = useState(packages[0] || null);
   const [qty, setQty] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState('');
 
   // Calculate total based on selected package price and quantity
   const total = selectedPackage.price * qty;
@@ -74,6 +76,7 @@ const Checkout = ({ selectedProduct }) => {
       name: formData.name,
       mobile: formData.mobile,
       address: formData.address,
+      website: formData.website || '', // Honeypot field
       productName: selectedProduct?.card?.title,
       price: selectedPackage.price, // Selected package price
       image: selectedProduct?.card?.image,
@@ -81,7 +84,7 @@ const Checkout = ({ selectedProduct }) => {
       total: finalTotal,
 
       visitorId,
-
+      turnstileToken,
       deviceInfo,
 
       status: 'pending',
@@ -375,6 +378,14 @@ const Checkout = ({ selectedProduct }) => {
                       required
                     />
                   </div>
+                  {/* Hidden input for website */}
+                  <input
+                    type="text"
+                    name="website"
+                    autoComplete="off"
+                    tabIndex="-1"
+                    className="hidden"
+                  />
                   <div className="mt-3">
                     <div className="relative bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 px-3 py-2 rounded-r-lg">
                       <div className="flex items-center gap-2">
@@ -410,6 +421,12 @@ const Checkout = ({ selectedProduct }) => {
                       </div>
                     </div>
                   </div>
+
+                  {/* turnstile check */}
+                  <Turnstile
+                    sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                    onVerify={token => setTurnstileToken(token)}
+                  />
 
                   {/* Submit Button */}
                   <button

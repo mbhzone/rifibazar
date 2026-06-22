@@ -132,7 +132,7 @@ async function run() {
     });
     // require rate limiter middleware
     const orderLimiter = rateLimit({
-      windowMs: 15 * 60 * 1000, // 15 minutes
+      windowMs: 24 * 60 * 60 * 1000, // 24 hours
       max: 2, // limit each IP to 2 orders per windowMs
       message: {
         success: false,
